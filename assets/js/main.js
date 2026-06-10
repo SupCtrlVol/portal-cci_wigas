@@ -3,7 +3,7 @@ function entrarPortal() {
   const inicio = document.getElementById('inicio');
   const balance = document.getElementById('balance');
 
-  // Fade-out de inicio
+  // Ocultar inicio con fade-out
   inicio.classList.add('hidden');
 
   // Mostrar balance con fade-in
@@ -11,8 +11,39 @@ function entrarPortal() {
   setTimeout(() => {
     balance.classList.add('visible');
   }, 100);
+
+  // Mostrar bienvenida y círculos inmediatamente
+  mostrarBienvenida();
 }
 
+// Función para mostrar la bienvenida con círculos
+function mostrarBienvenida() {
+  const contenido = `
+    <div class="card p-3 bienvenida">
+      <h2>Bienvenido al Centro de Control de Información</h2>
+      <p>Seleccione una opción para continuar</p>
+      <div class="opciones-principales">
+        <div class="opcion-circulo" onclick="mostrarCategoria('balance')">
+          <span class="icono">⚡</span>
+          <span class="texto">Balance de Energía / Ventas y Distribución</span>
+        </div>
+        <div class="opcion-circulo" onclick="mostrarCategoria('herramientas')">
+          <span class="icono">🛠️</span>
+          <span class="texto">Herramientas</span>
+        </div>
+        <div class="opcion-circulo" onclick="mostrarCategoria('ventas')">
+          <span class="icono">📊</span>
+          <span class="texto">Ventas</span>
+        </div>
+        <div class="opcion-circulo" onclick="mostrarCategoria('cumplimiento')">
+          <span class="icono">✅</span>
+          <span class="texto">Cumplimiento</span>
+        </div>
+      </div>
+    </div>
+  `;
+  document.getElementById('contenedor').innerHTML = contenido;
+}
 // Función para mostrar categorías principales
 function mostrarCategoria(categoria) {
   let contenido = '';
@@ -90,4 +121,4 @@ function mostrarReporte(estacion) {
     '<div class="card p-3"><iframe src="'+src+'" width="100%" height="600" frameborder="0" allowFullScreen="true"></iframe></div>';
 }
 
-console.log("Portal ajustado: transición, bienvenida, círculos de categorías e integración de todos los reportes listo");
+console.log("Portal ajustado: transición, bienvenida con círculos y reportes integrados listo");
