@@ -17,33 +17,93 @@ function entrarPortal() {
 }
 
 // Función para mostrar la bienvenida con círculos
-function mostrarBienvenida() {
-  const contenido = `
-    <div class="card p-3 bienvenida">
-      <h2>Bienvenido al Centro de Control de Información</h2>
-      <p>Seleccione una opción para continuar</p>
-      <div class="opciones-principales">
-        <div class="opcion-circulo" onclick="mostrarCategoria('balance')">
-          <span class="icono">⚡</span>
-          <span class="texto">Balance de Energía / Ventas y Distribución</span>
-        </div>
-        <div class="opcion-circulo" onclick="mostrarCategoria('herramientas')">
-          <span class="icono">🛠️</span>
-          <span class="texto">Herramientas</span>
-        </div>
-        <div class="opcion-circulo" onclick="mostrarCategoria('ventas')">
-          <span class="icono">📊</span>
-          <span class="texto">Ventas</span>
-        </div>
-        <div class="opcion-circulo" onclick="mostrarCategoria('cumplimiento')">
-          <span class="icono">✅</span>
-          <span class="texto">Cumplimiento</span>
-        </div>
-      </div>
-    </div>
-  `;
-  document.getElementById('contenedor').innerHTML = contenido;
+/* Contenedor central */
+.dashboard {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;   /* Centra verticalmente todo */
+  height: 100vh;         /* Ocupa toda la ventana */
+  background-color: #f9f9f9;
+  overflow: hidden;      /* Evita scroll */
 }
+
+/* Tarjeta de bienvenida */
+.card.bienvenida {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 30px;
+  text-align: center;
+  max-width: 800px;
+  animation: fadeDown 1s ease forwards; /* animación para el texto */
+}
+
+/* Animaciones */
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Opciones principales en círculos */
+.opciones-principales {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+  animation: fadeUp 1s ease forwards; /* animación al aparecer */
+}
+
+.opcion-circulo {
+  background-color: #CA142B;
+  color: #fff;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.4s, background-color 0.4s;
+}
+
+.opcion-circulo .icono {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.opcion-circulo .texto {
+  font-size: 0.9em;
+  padding: 0 10px;
+}
+
+.opcion-circulo:hover {
+  transform: scale(1.1);
+  background-color: #FFD700;
+  color: #333;
+}
+
 // Función para mostrar categorías principales
 function mostrarCategoria(categoria) {
   let contenido = '';
