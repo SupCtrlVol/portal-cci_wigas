@@ -3,9 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <title>Portal Ejecutivo Wigas</title>
+  <!-- Estilos -->
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <h1>Bienvenido al Portal Ejecutivo Wigas</h1>
-  <p>Este es tu archivo inicial.</p>
+  <header>
+    <h1>Portal Ejecutivo Wigas</h1>
+  </header>
+
+  <!-- Contenedor central tipo dashboard -->
+  <main id="contenedor" class="dashboard">
+    <div class="card p-3">
+      <h2>Panel de Bienvenida</h2>
+      <p>Este es tu portal ejecutivo. Aquí podrás visualizar KPIs, reportes y widgets financieros.</p>
+    </div>
+
+    <div class="card p-3">
+      <h2>Gas Natural</h2>
+      <iframe src="https://ssltsw.investing.com?tabs=2&commodities=8830,8836,8849,8833,8862,954867,8988"
+              width="100%" height="200" frameborder="0"></iframe>
+    </div>
+
+    <div class="card p-3">
+      <h2>MXN/USD</h2>
+      <iframe src="https://ssltsw.investing.com?tabs=1&forex=1,2,3,5,7,4,39"
+              width="100%" height="200" frameborder="0"></iframe>
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
