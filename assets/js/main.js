@@ -2,13 +2,11 @@
 function entrarPortal() {
   const inicio = document.getElementById('inicio');
   const balance = document.getElementById('balance');
-  const navbar = document.getElementById('navbar');
 
   // Fade-out de inicio
   inicio.classList.add('hidden');
 
-  // Mostrar navbar y balance con fade-in
-  navbar.style.display = 'flex';
+  // Mostrar balance con fade-in
   balance.style.display = 'flex';
   setTimeout(() => {
     balance.classList.add('visible');
@@ -92,4 +90,4 @@ function mostrarReporte(estacion) {
     '<div class="card p-3"><iframe src="'+src+'" width="100%" height="600" frameborder="0" allowFullScreen="true"></iframe></div>';
 }
 
-console.log("Portal con transición, círculos de categorías e integración de todos los reportes listo");
+console.log("Portal ajustado: transición, bienvenida, círculos de categorías e integración de todos los reportes listo");
