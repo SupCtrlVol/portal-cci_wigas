@@ -1,4 +1,5 @@
 /* Estilos generales del portal */
+/* Estilos generales */
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
   background-color: #f4f4f4;
@@ -9,13 +10,51 @@ body {
   height: 100vh;
 }
 
-/* Header */
-header {
+/* Navbar superior */
+.navbar {
   background-color: #CA142B;
   color: #fff;
-  padding: 15px 30px;
-  font-size: 1.4em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.navbar-logo span {
+  font-size: 1.2em;
   font-weight: bold;
+}
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-menu li {
+  margin-left: 20px;
+}
+
+.navbar-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1em;
+  transition: color 0.3s;
+}
+
+.navbar-menu a:hover {
+  color: #FFD700; /* dorado elegante */
 }
 
 /* Layout principal */
@@ -55,7 +94,7 @@ header {
 .sidebar a:hover {
   background-color: #CA142B;
   color: #fff;
-  padding-left: 15px; /* efecto de desplazamiento elegante */
+  padding-left: 15px;
 }
 
 /* Contenedor central */
@@ -72,4 +111,3 @@ header {
   margin-bottom: 20px;
   padding: 20px;
 }
-
