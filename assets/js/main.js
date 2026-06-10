@@ -2,18 +2,62 @@
 function entrarPortal() {
   const inicio = document.getElementById('inicio');
   const balance = document.getElementById('balance');
+  const navbar = document.getElementById('navbar');
 
   // Fade-out de inicio
   inicio.classList.add('hidden');
 
-  // Mostrar balance con fade-in
+  // Mostrar navbar y balance con fade-in
+  navbar.style.display = 'flex';
   balance.style.display = 'flex';
   setTimeout(() => {
     balance.classList.add('visible');
-  }, 100); // pequeño delay para activar la transición
+  }, 100);
 }
 
-// Función para mostrar reportes
+// Función para mostrar categorías principales
+function mostrarCategoria(categoria) {
+  let contenido = '';
+
+  if(categoria === 'balance') {
+    contenido = `
+      <h3>Balance de Energía / Ventas y Distribución</h3>
+      <p>Seleccione una estación:</p>
+      <div class="sidebar">
+        <a href="#" onclick="mostrarReporte('ecatepec')">13 GAS</a>
+        <a href="#" onclick="mostrarReporte('bexica')">Bexica</a>
+        <a href="#" onclick="mostrarReporte('coacalco')">Coacalco</a>
+        <a href="#" onclick="mostrarReporte('ecatepecII')">Ecatepec II</a>
+        <a href="#" onclick="mostrarReporte('tlanepantla')">Tlanepantla</a>
+        <a href="#" onclick="mostrarReporte('naucalpan')">WIGAS</a>
+        <a href="#" onclick="mostrarReporte('lr_almacenamiento')">Landsegen - Modelo de Almacenamiento</a>
+      </div>`;
+  } else if(categoria === 'herramientas') {
+    contenido = `
+      <h3>Herramientas de Análisis de Consumo</h3>
+      <div class="sidebar">
+        <a href="#" onclick="mostrarReporte('eca_tool')">13 GAS - Herramienta</a>
+        <a href="#" onclick="mostrarReporte('nau_tool')">WIGAS - Herramienta</a>
+      </div>`;
+  } else if(categoria === 'ventas') {
+    contenido = `
+      <h3>Ventas</h3>
+      <div class="sidebar">
+        <a href="#" onclick="mostrarReporte('ventas')">Ventas por Cliente</a>
+      </div>`;
+  } else if(categoria === 'cumplimiento') {
+    contenido = `
+      <h3>Cumplimiento</h3>
+      <div class="sidebar">
+        <a href="#" onclick="mostrarReporte('json_tool')">JSON Mensual</a>
+      </div>`;
+  }
+
+  document.getElementById('contenedor').innerHTML =
+    '<div class="card p-3">' + contenido + '</div>';
+}
+
+// Función para mostrar reportes según estación/categoría
 function mostrarReporte(estacion) {
   let src = '';
 
@@ -48,4 +92,4 @@ function mostrarReporte(estacion) {
     '<div class="card p-3"><iframe src="'+src+'" width="100%" height="600" frameborder="0" allowFullScreen="true"></iframe></div>';
 }
 
-console.log("Portal con transición y todos los reportes integrado");
+console.log("Portal con transición, círculos de categorías e integración de todos los reportes listo");
