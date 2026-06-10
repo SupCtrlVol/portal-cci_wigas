@@ -50,40 +50,47 @@ function mostrarCategoria(categoria) {
 
   if(categoria === 'balance') {
     contenido = `
-      <h3>Balance de Energía / Ventas y Distribución</h3>
-      <p>Seleccione una estación:</p>
-      <div class="sidebar">
-        <a href="#" onclick="mostrarReporte('ecatepec')">13 GAS</a>
-        <a href="#" onclick="mostrarReporte('bexica')">Bexica</a>
-        <a href="#" onclick="mostrarReporte('coacalco')">Coacalco</a>
-        <a href="#" onclick="mostrarReporte('ecatepecII')">Ecatepec II</a>
-        <a href="#" onclick="mostrarReporte('tlanepantla')">Tlanepantla</a>
-        <a href="#" onclick="mostrarReporte('naucalpan')">WIGAS</a>
-        <a href="#" onclick="mostrarReporte('lr_almacenamiento')">Landsegen - Modelo de Almacenamiento</a>
+      <div class="card p-3 bienvenida">
+        <h3>Balance de Energía / Ventas y Distribución</h3>
+        <p>Seleccione una estación:</p>
+        <div class="sidebar">
+          <a href="#" onclick="mostrarReporte('ecatepec')">13 GAS</a>
+          <a href="#" onclick="mostrarReporte('bexica')">Bexica</a>
+          <a href="#" onclick="mostrarReporte('coacalco')">Coacalco</a>
+          <a href="#" onclick="mostrarReporte('ecatepecII')">Ecatepec II</a>
+          <a href="#" onclick="mostrarReporte('tlanepantla')">Tlanepantla</a>
+          <a href="#" onclick="mostrarReporte('naucalpan')">WIGAS</a>
+          <a href="#" onclick="mostrarReporte('lr_almacenamiento')">Landsegen - Modelo de Almacenamiento</a>
+        </div>
       </div>`;
   } else if(categoria === 'herramientas') {
     contenido = `
-      <h3>Herramientas de Análisis de Consumo</h3>
-      <div class="sidebar">
-        <a href="#" onclick="mostrarReporte('eca_tool')">13 GAS - Herramienta</a>
-        <a href="#" onclick="mostrarReporte('nau_tool')">WIGAS - Herramienta</a>
+      <div class="card p-3 bienvenida">
+        <h3>Herramientas de Análisis de Consumo</h3>
+        <div class="sidebar">
+          <a href="#" onclick="mostrarReporte('eca_tool')">13 GAS - Herramienta</a>
+          <a href="#" onclick="mostrarReporte('nau_tool')">WIGAS - Herramienta</a>
+        </div>
       </div>`;
   } else if(categoria === 'ventas') {
     contenido = `
-      <h3>Ventas</h3>
-      <div class="sidebar">
-        <a href="#" onclick="mostrarReporte('ventas')">Ventas por Cliente</a>
+      <div class="card p-3 bienvenida">
+        <h3>Ventas</h3>
+        <div class="sidebar">
+          <a href="#" onclick="mostrarReporte('ventas')">Ventas por Cliente</a>
+        </div>
       </div>`;
   } else if(categoria === 'cumplimiento') {
     contenido = `
-      <h3>Cumplimiento</h3>
-      <div class="sidebar">
-        <a href="#" onclick="mostrarReporte('json_tool')">JSON Mensual</a>
+      <div class="card p-3 bienvenida">
+        <h3>Cumplimiento</h3>
+        <div class="sidebar">
+          <a href="#" onclick="mostrarReporte('json_tool')">JSON Mensual</a>
+        </div>
       </div>`;
   }
 
-  document.getElementById('contenedor').innerHTML =
-    '<div class="card p-3">' + contenido + '</div>';
+  document.getElementById('contenedor').innerHTML = contenido;
 }
 
 // Función para mostrar reportes según estación/categoría
