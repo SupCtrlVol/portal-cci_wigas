@@ -6,19 +6,6 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <!-- Navbar superior (oculto al inicio) -->
-  <nav id="navbar" class="navbar" style="display:none;">
-    <div class="navbar-logo">
-      <img src="assets/images/log.png" alt="Logo Wigas">
-      <span>Centro de Control de Información</span>
-    </div>
-    <ul class="navbar-menu">
-      <li><a href="#">Inicio</a></li>
-      <li><a href="#">Reportes</a></li>
-      <li><a href="#">Configuración</a></li>
-    </ul>
-  </nav>
-
   <!-- Pantalla de inicio -->
   <div id="inicio" class="inicio">
     <img src="assets/images/log.png" alt="Logo Wigas" class="logo-grande" onclick="entrarPortal()">
@@ -30,7 +17,7 @@
   <div id="balance" class="main" style="display:none;">
     <!-- Contenedor central -->
     <main id="contenedor" class="dashboard">
-      <div class="card p-3">
+      <div class="card p-3 bienvenida">
         <h2>Bienvenido al Centro de Control de Información</h2>
         <p>Seleccione una opción para continuar</p>
 
@@ -60,3 +47,4 @@
   <script src="assets/js/main.js"></script>
 </body>
 </html>
+
