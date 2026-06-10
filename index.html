@@ -6,10 +6,18 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <h1>Portal Ejecutivo Wigas</h1>
-  </header>
+  <!-- Navbar superior -->
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <img src="log.png" alt="Logo Wigas">
+      <span>Portal Ejecutivo Wigas</span>
+    </div>
+    <ul class="navbar-menu">
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#" onclick="mostrarReporte('reportes')">Reportes</a></li>
+      <li><a href="#" onclick="mostrarReporte('configuracion')">Configuración</a></li>
+    </ul>
+  </nav>
 
   <div class="main">
     <!-- Sidebar -->
@@ -28,12 +36,11 @@
     <main id="contenedor" class="dashboard">
       <div class="card p-3">
         <h2>Panel de Bienvenida</h2>
-        <p>Selecciona un reporte en el menú lateral para visualizarlo aquí.</p>
+        <p>Selecciona un reporte en el menú lateral o superior para visualizarlo aquí.</p>
       </div>
     </main>
   </div>
 
-  <!-- Scripts -->
   <script src="assets/js/main.js"></script>
 </body>
 </html>
