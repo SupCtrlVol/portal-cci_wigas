@@ -1,7 +1,16 @@
-// Función para pasar de inicio al balance
+// Función para pasar de inicio al balance con animación
 function entrarPortal() {
-  document.getElementById('inicio').style.display = 'none';
-  document.getElementById('balance').style.display = 'flex';
+  const inicio = document.getElementById('inicio');
+  const balance = document.getElementById('balance');
+
+  // Fade-out de inicio
+  inicio.classList.add('hidden');
+
+  // Mostrar balance con fade-in
+  balance.style.display = 'flex';
+  setTimeout(() => {
+    balance.classList.add('visible');
+  }, 100); // pequeño delay para activar la transición
 }
 
 // Función para mostrar reportes
@@ -39,4 +48,4 @@ function mostrarReporte(estacion) {
     '<div class="card p-3"><iframe src="'+src+'" width="100%" height="600" frameborder="0" allowFullScreen="true"></iframe></div>';
 }
 
-console.log("Portal con todos los reportes integrado");
+console.log("Portal con transición y todos los reportes integrado");
