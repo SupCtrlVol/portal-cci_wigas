@@ -6,46 +6,35 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <!-- Navbar superior -->
-  <nav class="navbar">
-    <div class="navbar-logo">
-      <img src="log.png" alt="Logo Wigas">
-      <span>Portal Ejecutivo Wigas</span>
-    </div>
-    <ul class="navbar-menu">
-      <li><a href="#">Inicio</a></li>
-      <li><a href="#" onclick="mostrarReporte('reportes')">Reportes</a></li>
-      <li><a href="#" onclick="mostrarReporte('configuracion')">Configuración</a></li>
-    </ul>
-  </nav>
+  <!-- Página de inicio -->
+  <div id="inicio" class="inicio">
+    <img src="log.png" alt="Logo Wigas" class="logo-grande" onclick="entrarPortal()">
+    <h1>Portal Ejecutivo Wigas</h1>
+    <p>Haz clic en el logo para entrar al Balance de Energía</p>
+  </div>
 
-  <div class="main">
+  <!-- Balance de Energía (oculto al inicio) -->
+  <div id="balance" class="main" style="display:none;">
     <!-- Sidebar -->
-   <div class="sidebar">
-  <h5>Reportes</h5>
-  <a href="#" onclick="mostrarReporte('ecatepec')">Ecatepec</a>
-  <a href="#" onclick="mostrarReporte('naucalpan')">Naucalpan</a>
-  <a href="#" onclick="mostrarReporte('lr_almacenamiento')">Los Reyes - Almacenamiento</a>
-  <a href="#" onclick="mostrarReporte('lr_ducto')">Los Reyes - Ducto Virtual</a>
-  <a href="#" onclick="mostrarReporte('bexica')">Bexica</a>
-  <a href="#" onclick="mostrarReporte('ventas')">Ventas por Cliente</a>
-  <hr>
-  <h5>Consorcio GNV</h5>
-  <a href="#" onclick="mostrarReporte('coacalco')">Coacalco</a>
-  <a href="#" onclick="mostrarReporte('ecatepecII')">Ecatepec II</a>
-  <a href="#" onclick="mostrarReporte('tlanepantla')">Tlanepantla</a>
-  <hr>
-  <h5>Herramientas</h5>
-  <a href="#" onclick="mostrarReporte('eca_tool')">Análisis Ecatepec I</a>
-  <a href="#" onclick="mostrarReporte('nau_tool')">Análisis Naucalpan</a>
-  <a href="#" onclick="mostrarReporte('json_tool')">Reporte JSON Global</a>
-</div>
+    <div class="sidebar">
+      <h5>Balance de Energía</h5>
+      <a href="#" onclick="mostrarReporte('ecatepec')">13 GAS</a>
+      <a href="#" onclick="mostrarReporte('bexica')">Bexica</a>
+      <h5>CONSORCIO DE GNV</h5>
+      <a href="#" onclick="mostrarReporte('coacalco')">Coacalco</a>
+      <a href="#" onclick="mostrarReporte('ecatepecII')">Ecatepec II</a>
+      <a href="#" onclick="mostrarReporte('tlanepantla')">Tlanepantla</a>
+      <h5>LANDSEGEN</h5>
+      <a href="#" onclick="mostrarReporte('lr_almacenamiento')">Modelo de Almacenamiento</a>
+      <h5>WIGAS</h5>
+      <a href="#" onclick="mostrarReporte('naucalpan')">WIGAS</a>
+    </div>
 
     <!-- Contenedor central -->
     <main id="contenedor" class="dashboard">
       <div class="card p-3">
-        <h2>Panel de Bienvenida</h2>
-        <p>Selecciona un reporte en el menú lateral o superior para visualizarlo aquí.</p>
+        <h2>Bienvenido al Balance de Energía</h2>
+        <p>Selecciona un reporte en el menú lateral.</p>
       </div>
     </main>
   </div>
