@@ -15,8 +15,7 @@ function mostrarReporte(estacion) {
 
   // Reemplaza el contenido del contenedor con el reporte seleccionado
   document.getElementById('contenedor').innerHTML =
-    '<div class="card p-3"><iframe src="'+src+'" width="100%" height="600" frameborder="0" allowFullScreen="true"></iframe></div>';
-}
+  '<div class="card p-3"><iframe src="'+src+'" width="100%" height="600" frameborder="0" allowFullScreen="true"></iframe></div>';
 
 console.log("Sidebar dinámico listo");
 
