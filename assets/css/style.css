@@ -1,4 +1,4 @@
-/* Estilos generales del portal */
+/* Estilos generales */
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
   background-color: #f4f4f4;
@@ -53,7 +53,7 @@ body {
 }
 
 .navbar-menu a:hover {
-  color: #FFD700; /* dorado elegante */
+  color: #FFD700;
 }
 
 /* Layout principal */
@@ -66,40 +66,6 @@ body {
 
 .main.visible {
   opacity: 1;
-}
-
-/* Sidebar */
-.sidebar {
-  width: 220px;
-  background-color: #fff;
-  border-right: 1px solid #ddd;
-  padding: 20px;
-  box-shadow: 2px 0 6px rgba(0,0,0,0.1);
-}
-
-.sidebar h5 {
-  color: #CA142B;
-  margin-bottom: 15px;
-  font-size: 1.1em;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 5px;
-}
-
-.sidebar a {
-  display: block;
-  padding: 10px;
-  margin-bottom: 8px;
-  color: #333;
-  text-decoration: none;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-  font-size: 0.95em;
-}
-
-.sidebar a:hover {
-  background-color: #CA142B;
-  color: #fff;
-  padding-left: 15px; /* efecto de desplazamiento elegante */
 }
 
 /* Contenedor central */
@@ -115,9 +81,10 @@ body {
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   margin-bottom: 20px;
   padding: 20px;
+  text-align: center;
 }
 
-/* Página de inicio */
+/* Pantalla de inicio */
 .inicio {
   display: flex;
   flex-direction: column;
@@ -144,3 +111,45 @@ body {
 .logo-grande:hover {
   transform: scale(1.1);
 }
+
+/* Opciones principales en círculos */
+.opciones-principales {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.opcion-circulo {
+  background-color: #CA142B;
+  color: #fff;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.4s, background-color 0.4s;
+}
+
+.opcion-circulo .icono {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.opcion-circulo .texto {
+  font-size: 0.9em;
+  padding: 0 10px;
+}
+
+.opcion-circulo:hover {
+  transform: scale(1.1);
+  background-color: #FFD700;
+  color: #333;
+}
+
