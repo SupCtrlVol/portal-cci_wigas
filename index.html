@@ -19,7 +19,7 @@
     </ul>
   </nav>
 
-  <!-- Página de inicio -->
+  <!-- Pantalla de inicio -->
   <div id="inicio" class="inicio">
     <img src="assets/images/log.png" alt="Logo Wigas" class="logo-grande" onclick="entrarPortal()">
     <h1>Centro de Control de Información</h1>
@@ -28,26 +28,31 @@
 
   <!-- Balance de Energía (oculto al inicio) -->
   <div id="balance" class="main" style="display:none;">
-    <!-- Sidebar -->
-    <div class="sidebar">
-      <h5>Balance de Energía</h5>
-      <a href="#" onclick="mostrarReporte('ecatepec')">13 GAS</a>
-      <a href="#" onclick="mostrarReporte('bexica')">Bexica</a>
-      <h5>CONSORCIO DE GNV</h5>
-      <a href="#" onclick="mostrarReporte('coacalco')">Coacalco</a>
-      <a href="#" onclick="mostrarReporte('ecatepecII')">Ecatepec II</a>
-      <a href="#" onclick="mostrarReporte('tlanepantla')">Tlanepantla</a>
-      <h5>LANDSEGEN</h5>
-      <a href="#" onclick="mostrarReporte('lr_almacenamiento')">Modelo de Almacenamiento</a>
-      <h5>WIGAS</h5>
-      <a href="#" onclick="mostrarReporte('naucalpan')">WIGAS</a>
-    </div>
-
     <!-- Contenedor central -->
     <main id="contenedor" class="dashboard">
       <div class="card p-3">
         <h2>Bienvenido al Centro de Control de Información</h2>
-        <p>Selecciona un reporte en el menú lateral.</p>
+        <p>Seleccione una opción para continuar</p>
+
+        <!-- Opciones principales en círculos -->
+        <div class="opciones-principales">
+          <div class="opcion-circulo" onclick="mostrarCategoria('balance')">
+            <span class="icono">⚡</span>
+            <span class="texto">Balance de Energía / Ventas y Distribución</span>
+          </div>
+          <div class="opcion-circulo" onclick="mostrarCategoria('herramientas')">
+            <span class="icono">🛠️</span>
+            <span class="texto">Herramientas</span>
+          </div>
+          <div class="opcion-circulo" onclick="mostrarCategoria('ventas')">
+            <span class="icono">📊</span>
+            <span class="texto">Ventas</span>
+          </div>
+          <div class="opcion-circulo" onclick="mostrarCategoria('cumplimiento')">
+            <span class="icono">✅</span>
+            <span class="texto">Cumplimiento</span>
+          </div>
+        </div>
       </div>
     </main>
   </div>
@@ -55,4 +60,3 @@
   <script src="assets/js/main.js"></script>
 </body>
 </html>
-
