@@ -2,15 +2,28 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Portal Ejecutivo Wigas</title>
+  <title>Centro de Control de Información</title>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+  <!-- Navbar superior -->
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <img src="assets/images/log.png" alt="Logo Wigas">
+      <span>Centro de Control de Información</span>
+    </div>
+    <ul class="navbar-menu">
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#">Reportes</a></li>
+      <li><a href="#">Configuración</a></li>
+    </ul>
+  </nav>
+
   <!-- Página de inicio -->
   <div id="inicio" class="inicio">
-   <img src="assets/images/log.png" alt="Logo Wigas" class="logo-grande" onclick="entrarPortal()">
-    <h1>Portal Ejecutivo Wigas</h1>
-    <p>Haz clic en el logo para entrar al Balance de Energía</p>
+    <img src="assets/images/log.png" alt="Logo Wigas" class="logo-grande" onclick="entrarPortal()">
+    <h1>Centro de Control de Información</h1>
+    <p>Clic en el logo para entrar</p>
   </div>
 
   <!-- Balance de Energía (oculto al inicio) -->
@@ -33,7 +46,7 @@
     <!-- Contenedor central -->
     <main id="contenedor" class="dashboard">
       <div class="card p-3">
-        <h2>Bienvenido al Balance de Energía</h2>
+        <h2>Bienvenido al Centro de Control de Información</h2>
         <p>Selecciona un reporte en el menú lateral.</p>
       </div>
     </main>
