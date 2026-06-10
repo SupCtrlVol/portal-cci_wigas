@@ -24,11 +24,12 @@ body {
 /* Contenedor central */
 .dashboard {
   flex: 1;
-  padding: 20px;
-  background-color: #f9f9f9;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center;   /* Centra verticalmente */
+  height: 100vh;         /* Ocupa toda la altura de la ventana */
+  background-color: #f9f9f9;
+  overflow: hidden;      /* Evita la barra desplazadora */
 }
 
 .card.bienvenida {
@@ -37,6 +38,7 @@ body {
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   padding: 30px;
   text-align: center;
+  max-width: 800px;
 }
 
 /* Pantalla de inicio */
