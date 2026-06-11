@@ -19,7 +19,7 @@ function mostrarBienvenida() {
       <div class="opciones-principales">
         <div class="opcion-circulo" data-cat="balance">
           <img src="assets/images/Energia.jpeg" alt="Balance" class="icono-img">
-          <span class="texto">Balance de Energía / Ventas y Distribución</span>
+          <span class="texto">Balance de Energía</span>
         </div>
         <div class="opcion-circulo" data-cat="herramientas">
           <img src="assets/images/Herramienta.png" alt="Herramientas" class="icono-img">
