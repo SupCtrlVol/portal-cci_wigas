@@ -1,11 +1,11 @@
 /* Estilos generales */
-body {
-  font-family: 'Segoe UI', Arial, sans-serif;
+html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
-  height: 100vh;
-  overflow: hidden; /* evita scroll */
+  font-family: 'Segoe UI', Arial, sans-serif;
   background-color: #f4f4f4;
+  overflow: hidden; /* evita scroll */
 }
 
 /* Pantalla de inicio */
@@ -14,7 +14,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 100%;
   text-align: center;
   background-color: #fff;
   opacity: 1;
@@ -40,8 +40,9 @@ body {
 .main {
   display: flex;
   justify-content: center;
-  align-items: center;   /* Centra verticalmente */
-  height: 100vh;
+  align-items: center;
+  min-height: 100vh;   /* asegura que siempre ocupe toda la ventana */
+  width: 100%;
   background-color: #f9f9f9;
   opacity: 0;
   transition: opacity 0.8s ease-in-out;
@@ -59,7 +60,7 @@ body {
   padding: 30px;
   text-align: center;
   max-width: 800px;
-  animation: fadeDown 1s ease forwards; /* animación para el texto */
+  animation: fadeDown 1s ease forwards;
 }
 
 /* Animaciones */
@@ -82,7 +83,6 @@ body {
   flex-wrap: wrap;
 }
 
-/* Animación secuencial para cada círculo */
 .opcion-circulo {
   background-color: #CA142B;
   color: #fff;
