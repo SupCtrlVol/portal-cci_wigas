@@ -120,9 +120,10 @@ html, body {
 
 /* Íconos personalizados dentro de los círculos */
 .icono-img {
-  width: 60px;
-  height: 60px;
-  margin-bottom: 10px;
+  width: 50px;          /* tamaño compacto */
+  height: 50px;         /* mantiene proporción */
+  object-fit: contain;  /* evita deformaciones */
+  margin-bottom: 8px;   /* separación con el texto */
 }
 
 .opcion-circulo .texto {
