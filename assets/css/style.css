@@ -96,7 +96,6 @@ html, body {
 
 .opcion-circulo {
   background-color: #808080;   /* gris por defecto */
-  color: #fff;
   width: 160px;
   height: 160px;
   border-radius: 50%;
@@ -107,11 +106,11 @@ html, body {
   text-align: center;
   font-weight: bold;
   cursor: pointer;
-  transition: transform 0.4s, background-color 0.4s;
   opacity: 0;
   transform: translateY(50px);
   animation: fadeUp 0.8s ease forwards;
   overflow: hidden;
+  transition: transform 0.4s, background-color 0.6s ease, color 0.6s ease;
 }
 
 .opcion-circulo:nth-child(1) { animation-delay: 0.3s; }
@@ -122,7 +121,6 @@ html, body {
 /* Estado seleccionado: rojo institucional */
 .opcion-circulo.seleccionado {
   background-color: #CA142B;
-  color: #fff;
 }
 
 /* Íconos personalizados dentro de los círculos */
@@ -134,9 +132,16 @@ html, body {
   display: block;
 }
 
+/* Texto dentro del círculo */
 .opcion-circulo .texto {
   font-size: 0.9em;
   padding: 0 10px;
+  color: #000;          /* negro cuando está en gris */
+  transition: color 0.6s ease;
+}
+
+.opcion-circulo.seleccionado .texto {
+  color: #fff;          /* blanco cuando está en rojo */
 }
 
 .opcion-circulo:hover {
