@@ -2,7 +2,7 @@ function entrarPortal() {
   const inicio = document.getElementById('inicio');
   const balance = document.getElementById('balance');
 
-  // Ocultar inicio completamente (ya no ocupa espacio)
+  // Ocultar inicio completamente
   inicio.classList.add('hidden');
 
   // Mostrar balance
@@ -13,7 +13,7 @@ function entrarPortal() {
   }, 300);
 }
 
-// Bienvenida con círculos principales
+// Bienvenida con íconos personalizados
 function mostrarBienvenida() {
   const contenido = `
     <div class="card p-3 bienvenida">
@@ -21,19 +21,19 @@ function mostrarBienvenida() {
       <p>Seleccione una opción para continuar</p>
       <div class="opciones-principales">
         <div class="opcion-circulo" onclick="mostrarCategoria('balance')">
-          <span class="icono">⚡</span>
+          <img src="assets/images/Energia.jpeg" alt="Balance" class="icono-img">
           <span class="texto">Balance de Energía / Ventas y Distribución</span>
         </div>
         <div class="opcion-circulo" onclick="mostrarCategoria('herramientas')">
-          <span class="icono">🛠️</span>
+          <img src="assets/images/Herramienta.jpeg" alt="Herramientas" class="icono-img">
           <span class="texto">Herramientas</span>
         </div>
         <div class="opcion-circulo" onclick="mostrarCategoria('ventas')">
-          <span class="icono">📊</span>
+          <img src="assets/images/Grafica.jpeg" alt="Ventas" class="icono-img">
           <span class="texto">Ventas</span>
         </div>
         <div class="opcion-circulo" onclick="mostrarCategoria('cumplimiento')">
-          <span class="icono">✅</span>
+          <img src="assets/images/Cumplimiento.jpeg" alt="Cumplimiento" class="icono-img">
           <span class="texto">Cumplimiento</span>
         </div>
       </div>
@@ -122,4 +122,4 @@ function mostrarReporte(estacion) {
     '<div class="card p-3"><iframe src="'+src+'" width="100%" height="600" frameborder="0" allowFullScreen="true"></iframe></div>';
 }
 
-console.log("Portal listo: transición limpia del inicio a la bienvenida");
+console.log("Portal listo: íconos personalizados integrados");
