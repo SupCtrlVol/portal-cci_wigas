@@ -20,19 +20,19 @@ function mostrarBienvenida() {
       <h2>BIENVENIDO</h2>
       <p>Seleccione una opción para continuar</p>
       <div class="opciones-principales">
-        <div class="opcion-circulo" onclick="mostrarCategoria('balance')">
+        <div class="opcion-circulo" onclick="seleccionarOpcion(this); mostrarCategoria('balance')">
           <img src="assets/images/Energia.jpeg" alt="Balance" class="icono-img">
           <span class="texto">Balance de Energía / Ventas y Distribución</span>
         </div>
-        <div class="opcion-circulo" onclick="mostrarCategoria('herramientas')">
+        <div class="opcion-circulo" onclick="seleccionarOpcion(this); mostrarCategoria('herramientas')">
           <img src="assets/images/Herramienta.png" alt="Herramientas" class="icono-img">
           <span class="texto">Herramientas</span>
         </div>
-        <div class="opcion-circulo" onclick="mostrarCategoria('ventas')">
+        <div class="opcion-circulo" onclick="seleccionarOpcion(this); mostrarCategoria('ventas')">
           <img src="assets/images/Grafica.png" alt="Ventas" class="icono-img">
           <span class="texto">Ventas</span>
         </div>
-        <div class="opcion-circulo" onclick="mostrarCategoria('cumplimiento')">
+        <div class="opcion-circulo" onclick="seleccionarOpcion(this); mostrarCategoria('cumplimiento')">
           <img src="assets/images/Cumplimiento.png" alt="Cumplimiento" class="icono-img">
           <span class="texto">Cumplimiento</span>
         </div>
@@ -40,6 +40,13 @@ function mostrarBienvenida() {
     </div>
   `;
   document.getElementById('contenedor').innerHTML = contenido;
+}
+
+// Función para marcar la opción seleccionada
+function seleccionarOpcion(elemento) {
+  const opciones = document.querySelectorAll('.opcion-circulo');
+  opciones.forEach(op => op.classList.remove('seleccionado'));
+  elemento.classList.add('seleccionado');
 }
 
 // Categorías principales
@@ -122,4 +129,4 @@ function mostrarReporte(estacion) {
     '<div class="card p-3"><iframe src="'+src+'" width="100%" height="600" frameborder="0" allowFullScreen="true"></iframe></div>';
 }
 
-console.log("Portal listo: íconos personalizados integrados");
+console.log("Portal listo: círculos grises por defecto, rojos al seleccionar, texto negro/blanco según estado");
