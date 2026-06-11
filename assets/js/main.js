@@ -124,9 +124,9 @@ function mostrarReporte(estacion) {
     src = "https://app.powerbi.com/reportEmbed?reportId=71c98777-7533-4821-b145-4ad8c9cc2e9d&autoAuth=true&ctid=fed0588c-2eb2-4466-bb01-afd3795657ec";
   }
 
-  // Reemplaza el contenido del contenedor con el reporte
+  // Reemplaza el contenido del contenedor con el reporte seleccionado
   document.getElementById('contenedor').innerHTML =
     '<div class="card p-3"><iframe src="'+src+'" width="100%" height="600" frameborder="0" allowFullScreen="true"></iframe></div>';
 }
 
-console.log("Portal ajustado: transición, bienvenida con círculos y reportes integrados listo");
+console.log("Portal ajustado: categorías y reportes integrados correctamente");
