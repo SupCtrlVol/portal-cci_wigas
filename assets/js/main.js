@@ -52,7 +52,7 @@ function seleccionarOpcion(elemento) {
   elemento.classList.add('seleccionado');
 }
 
-// Nueva función para abrir vistas dinámicas
+// Nueva función para abrir vistas ejecutivas
 function abrirVista(categoria) {
   let contenido = '';
 
@@ -104,6 +104,7 @@ function abrirVista(categoria) {
       </div>`;
   }
 
+  // 🔑 Reemplazamos TODO el contenido del contenedor
   document.getElementById('contenedor').innerHTML = contenido;
 }
 
@@ -148,8 +149,9 @@ function mostrarReporte(estacion) {
     src = "https://app.powerbi.com/reportEmbed?reportId=71c98777-7533-4821-b145-4ad8c9cc2e9d&autoAuth=true&ctid=fed0588c-2eb2-4466-bb01-afd3795657ec";
   }
 
+  // 🔑 Reemplazamos TODO el contenido del contenedor con el iframe
   document.getElementById('contenedor').innerHTML =
     '<div class="card p-3"><iframe src="'+src+'" width="1140" height="541.25" frameborder="0" allowFullScreen="true"></iframe></div>';
 }
 
-console.log("Portal listo: vistas ejecutivas y iframes actualizados para Balance de Energía, Ventas, Herramientas y Cumplimiento");
+console.log("Portal listo: vistas ejecutivas independientes y iframes actualizados");
