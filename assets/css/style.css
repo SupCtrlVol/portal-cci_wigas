@@ -95,7 +95,7 @@ html, body {
 }
 
 .opcion-circulo {
-  background-color: #CA142B;
+  background-color: #808080;   /* gris por defecto */
   color: #fff;
   width: 160px;
   height: 160px;
@@ -111,6 +111,7 @@ html, body {
   opacity: 0;
   transform: translateY(50px);
   animation: fadeUp 0.8s ease forwards;
+  overflow: hidden;
 }
 
 .opcion-circulo:nth-child(1) { animation-delay: 0.3s; }
@@ -118,14 +119,19 @@ html, body {
 .opcion-circulo:nth-child(3) { animation-delay: 0.9s; }
 .opcion-circulo:nth-child(4) { animation-delay: 1.2s; }
 
+/* Estado seleccionado: rojo institucional */
+.opcion-circulo.seleccionado {
+  background-color: #CA142B;
+  color: #fff;
+}
+
 /* Íconos personalizados dentro de los círculos */
 .icono-img {
-  max-width: 60px;       /* límite máximo horizontal */
-  max-height: 60px;      /* límite máximo vertical */
-  width: auto;           /* escala proporcional */
-  height: auto;          /* escala proporcional */
-  object-fit: contain;   /* evita deformaciones */
-  margin-bottom: 8px;    /* separación con el texto */
+  max-width: 50%;       /* nunca más de la mitad del círculo */
+  max-height: 50%;
+  object-fit: contain;
+  margin-bottom: 8px;
+  display: block;
 }
 
 .opcion-circulo .texto {
@@ -135,8 +141,6 @@ html, body {
 
 .opcion-circulo:hover {
   transform: scale(1.1);
-  background-color: #FFD700;
-  color: #333;
 }
 
 /* Sidebar para categorías */
