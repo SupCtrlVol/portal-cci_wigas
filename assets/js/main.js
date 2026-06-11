@@ -52,7 +52,7 @@ function seleccionarOpcion(elemento) {
   elemento.classList.add('seleccionado');
 }
 
-// Nueva función para abrir vistas ejecutivas con recuadros
+// Vista ejecutiva con recuadros redondeados (efecto de círculos)
 function abrirVista(categoria) {
   let contenido = '';
 
@@ -153,4 +153,4 @@ function mostrarReporte(estacion) {
     '<div class="card p-3"><iframe src="'+src+'" width="1140" height="541.25" frameborder="0" allowFullScreen="true"></iframe></div>';
 }
 
-console.log("Portal listo: vistas ejecutivas con recuadros y iframes actualizados");
+console.log("Portal listo: vistas ejecutivas con recuadros dinámicos y iframes actualizados");
