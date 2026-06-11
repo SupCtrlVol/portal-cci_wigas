@@ -7,29 +7,48 @@ body {
   height: 100vh;
 }
 
-/* Layout principal */
+/* Pantalla de inicio */
+.inicio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  background-color: #fff;
+  opacity: 1;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.inicio.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.logo-grande {
+  width: 200px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.logo-grande:hover {
+  transform: scale(1.1);
+}
+
+/* Contenedor principal */
 .main {
   display: flex;
   flex: 1;
   justify-content: center;
-  align-items: center;
+  align-items: center;   /* Centra verticalmente */
+  height: 100vh;
+  background-color: #f9f9f9;
   opacity: 0;
   transition: opacity 0.8s ease-in-out;
 }
 
 .main.visible {
   opacity: 1;
-}
-
-/* Contenedor central */
-.dashboard {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;   /* Centra verticalmente todo */
-  height: 100vh;         /* Ocupa toda la ventana */
-  background-color: #f9f9f9;
-  overflow: hidden;      /* Evita scroll */
 }
 
 /* Tarjeta de bienvenida */
@@ -107,73 +126,3 @@ body {
   background-color: #FFD700;
   color: #333;
 }
-
-/* Pantalla de inicio */
-.inicio {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  text-align: center;
-  background-color: #fff;
-  opacity: 1;
-  transition: opacity 0.8s ease-in-out;
-}
-
-.inicio.hidden {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.logo-grande {
-  width: 200px;
-  cursor: pointer;
-  transition: transform 0.3s;
-}
-
-.logo-grande:hover {
-  transform: scale(1.1);
-}
-
-/* Opciones principales en círculos */
-.opciones-principales {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  margin-top: 30px;
-  flex-wrap: wrap;
-}
-
-.opcion-circulo {
-  background-color: #CA142B;
-  color: #fff;
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-weight: bold;
-  cursor: pointer;
-  transition: transform 0.4s, background-color 0.4s;
-}
-
-.opcion-circulo .icono {
-  font-size: 2em;
-  margin-bottom: 10px;
-}
-
-.opcion-circulo .texto {
-  font-size: 0.9em;
-  padding: 0 10px;
-}
-
-.opcion-circulo:hover {
-  transform: scale(1.1);
-  background-color: #FFD700;
-  color: #333;
-}
-
