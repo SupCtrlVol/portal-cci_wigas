@@ -13,38 +13,13 @@
     <p>Clic en el logo para entrar</p>
   </div>
 
-  <!-- Balance de Energía (oculto al inicio) -->
+  <!-- Contenedor principal (oculto al inicio) -->
   <div id="balance" class="main" style="display:none;">
-    <!-- Contenedor central -->
     <main id="contenedor" class="dashboard">
-      <div class="card p-3 bienvenida">
-        <h2>Bienvenido al Centro de Control de Información</h2>
-        <p>Seleccione una opción para continuar</p>
-
-        <!-- Opciones principales en círculos -->
-        <div class="opciones-principales">
-          <div class="opcion-circulo" onclick="mostrarCategoria('balance')">
-            <span class="icono">⚡</span>
-            <span class="texto">Balance de Energía / Ventas y Distribución</span>
-          </div>
-          <div class="opcion-circulo" onclick="mostrarCategoria('herramientas')">
-            <span class="icono">🛠️</span>
-            <span class="texto">Herramientas</span>
-          </div>
-          <div class="opcion-circulo" onclick="mostrarCategoria('ventas')">
-            <span class="icono">📊</span>
-            <span class="texto">Ventas</span>
-          </div>
-          <div class="opcion-circulo" onclick="mostrarCategoria('cumplimiento')">
-            <span class="icono">✅</span>
-            <span class="texto">Cumplimiento</span>
-          </div>
-        </div>
-      </div>
+      <!-- Aquí se inyecta el mensaje de bienvenida y los círculos -->
     </main>
   </div>
 
   <script src="assets/js/main.js"></script>
 </body>
 </html>
-
