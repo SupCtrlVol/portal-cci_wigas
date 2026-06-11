@@ -39,7 +39,6 @@ function mostrarBienvenida() {
   `;
   document.getElementById('contenedor').innerHTML = contenido;
 
-  // 🔑 Asignar eventos a cada círculo
   document.querySelectorAll('.opcion-circulo').forEach(opcion => {
     opcion.addEventListener('click', () => {
       seleccionarOpcion(opcion);
@@ -48,14 +47,13 @@ function mostrarBienvenida() {
   });
 }
 
-// Función para marcar la opción seleccionada
 function seleccionarOpcion(elemento) {
   const opciones = document.querySelectorAll('.opcion-circulo');
   opciones.forEach(op => op.classList.remove('seleccionado'));
   elemento.classList.add('seleccionado');
 }
 
-// Mostrar contenido de la categoría sin borrar la bienvenida
+// Categorías principales
 function mostrarCategoria(categoria) {
   let contenido = '';
 
@@ -63,26 +61,29 @@ function mostrarCategoria(categoria) {
     contenido = `
       <h3>Balance de Energía / Ventas y Distribución</h3>
       <div class="sidebar">
-        <a href="#" onclick="mostrarReporte('ecatepec')">13 GAS</a>
-        <a href="#" onclick="mostrarReporte('bexica')">Bexica</a>
-        <a href="#" onclick="mostrarReporte('coacalco')">Coacalco</a>
-        <a href="#" onclick="mostrarReporte('ecatepecII')">Ecatepec II</a>
-        <a href="#" onclick="mostrarReporte('tlanepantla')">Tlanepantla</a>
-        <a href="#" onclick="mostrarReporte('naucalpan')">WIGAS</a>
-        <a href="#" onclick="mostrarReporte('lr_almacenamiento')">Landsegen - Almacenamiento</a>
+        <a href="#" onclick="mostrarReporte('13gas_be')">13 GAS</a>
+        <a href="#" onclick="mostrarReporte('bexica_be')">Bexica</a>
+        <a href="#" onclick="mostrarReporte('coacalco_be')">Consorcio GNV - Coacalco</a>
+        <a href="#" onclick="mostrarReporte('ecatepec_be')">Consorcio GNV - Ecatepec</a>
+        <a href="#" onclick="mostrarReporte('tlanepantla_be')">Consorcio GNV - Tlanepantla</a>
+        <a href="#" onclick="mostrarReporte('landsegen_be')">Landsegen</a>
+        <a href="#" onclick="mostrarReporte('wigas_be')">WIGAS</a>
       </div>`;
   } else if(categoria === 'herramientas') {
     contenido = `
       <h3>Herramientas de Análisis</h3>
       <div class="sidebar">
-        <a href="#" onclick="mostrarReporte('eca_tool')">13 GAS - Herramienta</a>
-        <a href="#" onclick="mostrarReporte('nau_tool')">WIGAS - Herramienta</a>
+        <a href="#" onclick="mostrarReporte('13gas_tool')">13 GAS - Herramienta</a>
+        <a href="#" onclick="mostrarReporte('wigas_tool')">WIGAS - Herramienta</a>
       </div>`;
   } else if(categoria === 'ventas') {
     contenido = `
       <h3>Ventas</h3>
       <div class="sidebar">
-        <a href="#" onclick="mostrarReporte('ventas')">Ventas por Cliente</a>
+        <a href="#" onclick="mostrarReporte('13gas_vd')">13 GAS</a>
+        <a href="#" onclick="mostrarReporte('landsegen_vd')">Landsegen</a>
+        <a href="#" onclick="mostrarReporte('wigas_vd')">WIGAS</a>
+        <a href="#" onclick="mostrarReporte('ventxcliente_trimes')">Global - Ventas por Cliente</a>
       </div>`;
   } else if(categoria === 'cumplimiento') {
     contenido = `
@@ -99,32 +100,45 @@ function mostrarCategoria(categoria) {
 function mostrarReporte(estacion) {
   let src = '';
 
-  if(estacion === 'ecatepec') {
-    src = "https://app.powerbi.com/reportEmbed?reportId=2ddebbce-cdf0-4477-aa9a-e0436612e147&autoAuth=true";
-  } else if(estacion === 'naucalpan') {
-    src = "https://app.powerbi.com/reportEmbed?reportId=7ae09a8b-e08f-46c7-b5d4-400fba0c5231&autoAuth=true";
-  } else if(estacion === 'lr_almacenamiento') {
-    src = "https://app.powerbi.com/reportEmbed?reportId=3a6273ad-43d8-414a-a41e-b084836f62e7&autoAuth=true";
-  } else if(estacion === 'bexica') {
-    src = "https://app.powerbi.com/reportEmbed?reportId=c2052364-3067-4665-bcdb-43e8bf3f8de7&autoAuth=true";
-  } else if(estacion === 'ventas') {
-    src = "https://app.powerbi.com/reportEmbed?reportId=9a54a13b-b1ba-46c0-9d9a-7f36a9bf40e5&autoAuth=true";
-  } else if(estacion === 'coacalco') {
-    src = "https://app.powerbi.com/reportEmbed?reportId=f4d6aaf9-dc93-4c70-8ce5-387b713cf9e5&autoAuth=true";
-  } else if(estacion === 'ecatepecII') {
-    src = "https://app.powerbi.com/reportEmbed?reportId=bfa5000f-acc4-4c55-b83b-0ee73fbbbd45&autoAuth=true";
-  } else if(estacion === 'tlanepantla') {
-    src = "https://app.powerbi.com/reportEmbed?reportId=6be45fc4-3d1c-4e4f-a545-92776b7392ea&autoAuth=true";
-  } else if(estacion === 'eca_tool') {
-    src = "https://app.powerbi.com/reportEmbed?reportId=449c2a0f-a1be-4fa6-827b-4500ab1b609f&autoAuth=true";
-  } else if(estacion === 'nau_tool') {
-    src = "https://app.powerbi.com/reportEmbed?reportId=a4e021aa-4281-4f9b-a2fe-07d03d43871d&autoAuth=true";
+  // Balance de Energía
+  if(estacion === '13gas_be') {
+    src = "https://app.powerbi.com/reportEmbed?reportId=56676f9f-5b2a-48bb-9e70-01bcba832eb2&autoAuth=true&ctid=fed0588c-2eb2-4466-bb01-afd3795657ec";
+  } else if(estacion === 'bexica_be') {
+    src = "https://app.powerbi.com/reportEmbed?reportId=bd69620e-cb6f-4401-b25d-bd3c401c909c&autoAuth=true&ctid=fed0588c-2eb2-4466-bb01-afd3795657ec";
+  } else if(estacion === 'coacalco_be') {
+    src = "https://app.powerbi.com/reportEmbed?reportId=e3694e0a-353c-4957-98bc-5a7055e72f93&autoAuth=true&ctid=fed0588c-2eb2-4466-bb01-afd3795657ec";
+  } else if(estacion === 'ecatepec_be') {
+    src = "https://app.powerbi.com/reportEmbed?reportId=a011b09e-67fa-4c91-99bb-64563a0b35bf&autoAuth=true&ctid=fed0588c-2eb2-4466-bb01-afd3795657ec";
+  } else if(estacion === 'tlanepantla_be') {
+    src = "https://app.powerbi.com/reportEmbed?reportId=a011b09e-67fa-4c91-99bb-64563a0b35bf&autoAuth=true&ctid=fed0588c-2eb2-4466-bb01-afd3795657ec";
+  } else if(estacion === 'landsegen_be') {
+    src = "https://app.powerbi.com/reportEmbed?reportId=802df296-a9ee-42ed-b59c-00d0c5393b22&autoAuth=true&ctid=fed0588c-2eb2-4466-bb01-afd3795657ec";
+  } else if(estacion === 'wigas_be') {
+    src = "https://app.powerbi.com/reportEmbed?reportId=40572fd5-d90b-441b-acac-30eae98e545b&autoAuth=true&ctid=fed0588c-2eb2-4466-bb01-afd3795657ec";
+
+  // Ventas
+  } else if(estacion === '13gas_vd') {
+    src = "https://app.powerbi.com/reportEmbed?reportId=3a0bd50d-1c22-47a5-93e6-64724f740208&autoAuth=true&ctid=fed0588c-2eb2-4466-bb01-afd3795657ec";
+  } else if(estacion === 'landsegen_vd') {
+    src = "https://app.powerbi.com/reportEmbed?reportId=8dfc39db-c41e-4e4c-b36c-4fbff34edf06&autoAuth=true&ctid=fed0588c-2eb2-4466-bb01-afd3795657ec";
+  } else if(estacion === 'wigas_vd') {
+    src = "https://app.powerbi.com/reportEmbed?reportId=094fff5e-dbe2-459c-9c5a-b189dcac71e9&autoAuth=true&ctid=fed0588c-2eb2-4466-bb01-afd3795657ec";
+  } else if(estacion === 'ventxcliente_trimes') {
+    src = "https://app.powerbi.com/reportEmbed?reportId=2b5357da-f62c-4575-8499-e7e666291b3d&autoAuth=true&ctid=fed0588c-2eb2-4466-bb01-afd3795657ec";
+
+  // Herramientas
+  } else if(estacion === '13gas_tool') {
+    src = "https://app.powerbi.com/reportEmbed?reportId=318743fa-05d5-40a5-b0db-11ae78c595e5&autoAuth=true&ctid=fed0588c-2eb2-4466-bb01-afd3795657ec";
+  } else if(estacion === 'wigas_tool') {
+    src = "https://app.powerbi.com/reportEmbed?reportId=02fe3d46-7d4e-41a2-84a5-f863b364643a&autoAuth=true&ctid=fed0588c-2eb2-4466-bb01-afd3795657ec";
+
+  // Cumplimiento
   } else if(estacion === 'json_tool') {
-    src = "https://app.powerbi.com/reportEmbed?reportId=71c98777-7533-4821-b145-4ad8c9cc2e9d&autoAuth=true";
+    src = "https://app.powerbi.com/reportEmbed?reportId=71c98777-7533-4821-b145-4ad8c9cc2e9d&autoAuth=true&ctid=fed0588c-2eb2-4466-bb01-afd3795657ec";
   }
 
   document.getElementById('contenido-categoria').innerHTML =
-    '<div class="card p-3"><iframe src="'+src+'" width="100%" height="600" frameborder="0" allowFullScreen="true"></iframe></div>';
+    '<div class="card p-3"><iframe src="'+src+'" width="1140" height="541.25" frameborder="0" allowFullScreen="true"></iframe></div>';
 }
 
-console.log("Portal listo: círculos grises por defecto, rojos al seleccionar, texto negro/blanco según estado");
+console.log("Portal listo: iframes actualizados para Balance de Energía, Ventas, Herramientas y Cumplimiento");
