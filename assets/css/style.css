@@ -22,7 +22,7 @@ html, body {
 .inicio.hidden {
   opacity: 0;
   pointer-events: none;
-  display: none;   /* 🔑 ahora sí desaparece del flujo */
+  display: none;   /* 🔑 desaparece del flujo */
 }
 
 .logo-grande {
@@ -71,7 +71,7 @@ html, body {
   max-width: 800px;
   width: 90%;
   animation: fadeDown 1s ease forwards;
-  margin: 0;                 /* evita que se desplace hacia abajo */
+  margin: 0;
 }
 
 /* Animaciones */
@@ -118,8 +118,10 @@ html, body {
 .opcion-circulo:nth-child(3) { animation-delay: 0.9s; }
 .opcion-circulo:nth-child(4) { animation-delay: 1.2s; }
 
-.opcion-circulo .icono {
-  font-size: 2em;
+/* Íconos personalizados dentro de los círculos */
+.icono-img {
+  width: 60px;
+  height: 60px;
   margin-bottom: 10px;
 }
 
