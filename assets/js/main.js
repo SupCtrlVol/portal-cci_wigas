@@ -2,7 +2,7 @@ function entrarPortal() {
   const inicio = document.getElementById('inicio');
   const balance = document.getElementById('balance');
 
-  // Ocultar inicio
+  // Ocultar inicio completamente (ya no ocupa espacio)
   inicio.classList.add('hidden');
 
   // Mostrar balance
@@ -122,4 +122,4 @@ function mostrarReporte(estacion) {
     '<div class="card p-3"><iframe src="'+src+'" width="100%" height="600" frameborder="0" allowFullScreen="true"></iframe></div>';
 }
 
-console.log("Portal listo: bienvenida, categorías y reportes integrados");
+console.log("Portal listo: transición limpia del inicio a la bienvenida");
