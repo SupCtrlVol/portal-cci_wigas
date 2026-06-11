@@ -52,6 +52,16 @@ html, body {
   opacity: 1;
 }
 
+/* Contenedor dinámico */
+#contenedor {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* centra verticalmente */
+  align-items: center;       /* centra horizontalmente */
+  min-height: 100vh;         /* ocupa toda la ventana */
+  box-sizing: border-box;
+}
+
 /* Tarjeta de bienvenida */
 .card.bienvenida {
   background-color: #fff;
