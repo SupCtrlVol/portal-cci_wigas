@@ -123,4 +123,3 @@ function mostrarReporte(estacion) {
 }
 
 console.log("Portal listo: bienvenida, categorías y reportes integrados");
-
