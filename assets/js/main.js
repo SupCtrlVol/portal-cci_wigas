@@ -17,7 +17,7 @@ function entrarPortal() {
 function mostrarBienvenida() {
   const contenido = `
     <div class="card p-3 bienvenida">
-      <h2>Bienvenido al Centro de Control de Información</h2>
+      <h2>BIENVENIDO</h2>
       <p>Seleccione una opción para continuar</p>
       <div class="opciones-principales">
         <div class="opcion-circulo" onclick="mostrarCategoria('balance')">
