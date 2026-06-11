@@ -1,6 +1,5 @@
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
-  background-color: #f4f4f4;
   margin: 0;
   padding: 0;
   height: 100vh;
@@ -15,23 +14,13 @@ body {
   height: 100vh;
   text-align: center;
   background-color: #fff;
-  opacity: 1;
   transition: opacity 0.8s ease-in-out;
 }
 
-.inicio.hidden {
-  opacity: 0;
-  pointer-events: none;
-}
+.inicio.hidden { opacity: 0; pointer-events: none; }
 
-.logo-grande {
-  width: 200px;
-  cursor: pointer;
-  transition: transform 0.3s;
-}
-.logo-grande:hover {
-  transform: scale(1.1);
-}
+.logo-grande { width: 200px; cursor: pointer; transition: transform 0.3s; }
+.logo-grande:hover { transform: scale(1.1); }
 
 .main {
   display: flex;
@@ -42,9 +31,7 @@ body {
   opacity: 0;
   transition: opacity 0.8s ease-in-out;
 }
-.main.visible {
-  opacity: 1;
-}
+.main.visible { opacity: 1; }
 
 .card.bienvenida {
   background-color: #fff;
