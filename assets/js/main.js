@@ -91,6 +91,7 @@ function mostrarCategoria(categoria) {
       </div>`;
   }
 
+  // Inyecta el contenido centrado en el contenedor
   document.getElementById('contenedor').innerHTML = contenido;
 }
 
