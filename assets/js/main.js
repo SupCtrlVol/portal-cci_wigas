@@ -25,15 +25,15 @@ function mostrarBienvenida() {
           <span class="texto">Balance de Energía / Ventas y Distribución</span>
         </div>
         <div class="opcion-circulo" onclick="mostrarCategoria('herramientas')">
-          <img src="assets/images/Herramienta.jpeg" alt="Herramientas" class="icono-img">
+          <img src="assets/images/Herramienta.png" alt="Herramientas" class="icono-img">
           <span class="texto">Herramientas</span>
         </div>
         <div class="opcion-circulo" onclick="mostrarCategoria('ventas')">
-          <img src="assets/images/Grafica.jpeg" alt="Ventas" class="icono-img">
+          <img src="assets/images/Grafica.png" alt="Ventas" class="icono-img">
           <span class="texto">Ventas</span>
         </div>
         <div class="opcion-circulo" onclick="mostrarCategoria('cumplimiento')">
-          <img src="assets/images/Cumplimiento.jpeg" alt="Cumplimiento" class="icono-img">
+          <img src="assets/images/Cumplimiento.png" alt="Cumplimiento" class="icono-img">
           <span class="texto">Cumplimiento</span>
         </div>
       </div>
