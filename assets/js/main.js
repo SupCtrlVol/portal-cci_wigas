@@ -34,7 +34,6 @@ function mostrarBienvenida() {
           <span class="texto">Cumplimiento</span>
         </div>
       </div>
-      <div id="contenido-categoria"></div>
     </div>
   `;
   document.getElementById('contenedor').innerHTML = contenido;
@@ -42,7 +41,7 @@ function mostrarBienvenida() {
   document.querySelectorAll('.opcion-circulo').forEach(opcion => {
     opcion.addEventListener('click', () => {
       seleccionarOpcion(opcion);
-      mostrarCategoria(opcion.dataset.cat);
+      abrirVista(opcion.dataset.cat);
     });
   });
 }
@@ -53,47 +52,59 @@ function seleccionarOpcion(elemento) {
   elemento.classList.add('seleccionado');
 }
 
-// Categorías principales
-function mostrarCategoria(categoria) {
+// Nueva función para abrir vistas dinámicas
+function abrirVista(categoria) {
   let contenido = '';
 
   if(categoria === 'balance') {
     contenido = `
-      <h3>Balance de Energía / Ventas y Distribución</h3>
-      <div class="sidebar">
-        <a href="#" onclick="mostrarReporte('13gas_be')">13 GAS</a>
-        <a href="#" onclick="mostrarReporte('bexica_be')">Bexica</a>
-        <a href="#" onclick="mostrarReporte('coacalco_be')">Consorcio GNV - Coacalco</a>
-        <a href="#" onclick="mostrarReporte('ecatepec_be')">Consorcio GNV - Ecatepec</a>
-        <a href="#" onclick="mostrarReporte('tlanepantla_be')">Consorcio GNV - Tlanepantla</a>
-        <a href="#" onclick="mostrarReporte('landsegen_be')">Landsegen</a>
-        <a href="#" onclick="mostrarReporte('wigas_be')">WIGAS</a>
+      <div class="card p-3 bienvenida">
+        <h2>Balance de Energía</h2>
+        <p>Seleccione la estación:</p>
+        <div class="sidebar">
+          <a href="#" onclick="mostrarReporte('13gas_be')">13 GAS</a>
+          <a href="#" onclick="mostrarReporte('bexica_be')">Bexica</a>
+          <a href="#" onclick="mostrarReporte('coacalco_be')">Consorcio GNV - Coacalco</a>
+          <a href="#" onclick="mostrarReporte('ecatepec_be')">Consorcio GNV - Ecatepec</a>
+          <a href="#" onclick="mostrarReporte('tlanepantla_be')">Consorcio GNV - Tlanepantla</a>
+          <a href="#" onclick="mostrarReporte('landsegen_be')">Landsegen</a>
+          <a href="#" onclick="mostrarReporte('wigas_be')">WIGAS</a>
+        </div>
       </div>`;
   } else if(categoria === 'herramientas') {
     contenido = `
-      <h3>Herramientas de Análisis</h3>
-      <div class="sidebar">
-        <a href="#" onclick="mostrarReporte('13gas_tool')">13 GAS - Herramienta</a>
-        <a href="#" onclick="mostrarReporte('wigas_tool')">WIGAS - Herramienta</a>
+      <div class="card p-3 bienvenida">
+        <h2>Herramientas de Análisis</h2>
+        <p>Seleccione la estación:</p>
+        <div class="sidebar">
+          <a href="#" onclick="mostrarReporte('13gas_tool')">13 GAS</a>
+          <a href="#" onclick="mostrarReporte('wigas_tool')">WIGAS</a>
+        </div>
       </div>`;
   } else if(categoria === 'ventas') {
     contenido = `
-      <h3>Ventas</h3>
-      <div class="sidebar">
-        <a href="#" onclick="mostrarReporte('13gas_vd')">13 GAS</a>
-        <a href="#" onclick="mostrarReporte('landsegen_vd')">Landsegen</a>
-        <a href="#" onclick="mostrarReporte('wigas_vd')">WIGAS</a>
-        <a href="#" onclick="mostrarReporte('ventxcliente_trimes')">Global - Ventas por Cliente</a>
+      <div class="card p-3 bienvenida">
+        <h2>Ventas</h2>
+        <p>Seleccione el reporte:</p>
+        <div class="sidebar">
+          <a href="#" onclick="mostrarReporte('13gas_vd')">13 GAS</a>
+          <a href="#" onclick="mostrarReporte('landsegen_vd')">Landsegen</a>
+          <a href="#" onclick="mostrarReporte('wigas_vd')">WIGAS</a>
+          <a href="#" onclick="mostrarReporte('ventxcliente_trimes')">Global - Ventas por Cliente</a>
+        </div>
       </div>`;
   } else if(categoria === 'cumplimiento') {
     contenido = `
-      <h3>Cumplimiento</h3>
-      <div class="sidebar">
-        <a href="#" onclick="mostrarReporte('json_tool')">JSON Mensual</a>
+      <div class="card p-3 bienvenida">
+        <h2>Cumplimiento</h2>
+        <p>Seleccione el reporte:</p>
+        <div class="sidebar">
+          <a href="#" onclick="mostrarReporte('json_tool')">JSON Mensual</a>
+        </div>
       </div>`;
   }
 
-  document.getElementById('contenido-categoria').innerHTML = contenido;
+  document.getElementById('contenedor').innerHTML = contenido;
 }
 
 // Reportes Power BI
@@ -137,8 +148,8 @@ function mostrarReporte(estacion) {
     src = "https://app.powerbi.com/reportEmbed?reportId=71c98777-7533-4821-b145-4ad8c9cc2e9d&autoAuth=true&ctid=fed0588c-2eb2-4466-bb01-afd3795657ec";
   }
 
-  document.getElementById('contenido-categoria').innerHTML =
+  document.getElementById('contenedor').innerHTML =
     '<div class="card p-3"><iframe src="'+src+'" width="1140" height="541.25" frameborder="0" allowFullScreen="true"></iframe></div>';
 }
 
-console.log("Portal listo: iframes actualizados para Balance de Energía, Ventas, Herramientas y Cumplimiento");
+console.log("Portal listo: vistas ejecutivas y iframes actualizados para Balance de Energía, Ventas, Herramientas y Cumplimiento");
