@@ -1,5 +1,3 @@
-console.log("main.js cargado correctamente");
-
 function entrarPortal() {
   const inicio = document.getElementById('inicio');
   const balance = document.getElementById('balance');
