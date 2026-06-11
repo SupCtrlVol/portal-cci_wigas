@@ -1,24 +1,27 @@
-<!CtrlVol html>
+<!DOCTYPE html
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <title>Centro de Control de Información</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
   <!-- Pantalla de inicio -->
   <div id="inicio" class="inicio">
-    <img src="logo.png" alt="Logo Wigas" class="logo-grande" onclick="entrarPortal()">
+    <img src="assets/images/log.png" alt="Logo Wigas" class="logo-grande" onclick="entrarPortal()">
     <h1>Centro de Control de Información</h1>
     <p>Clic en el logo para entrar</p>
   </div>
 
   <!-- Contenedor principal (oculto al inicio) -->
   <div id="balance" class="main" style="display:none;">
-    <main id="contenedor" class="dashboard"></main>
+    <main id="contenedor" class="dashboard">
+      <!-- Aquí se inyecta el mensaje de bienvenida y los círculos -->
+    </main>
   </div>
 
-  <script src="main.js"></script>
+  <!-- Script principal -->
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
 
