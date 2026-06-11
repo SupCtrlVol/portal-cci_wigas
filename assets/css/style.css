@@ -28,7 +28,7 @@ html, body {
 .logo-grande {
   width: 200px;
   cursor: pointer;
-  transition: transform 0.3s;
+  transition: transform 0.3s ease;
 }
 
 .logo-grande:hover {
@@ -110,7 +110,7 @@ html, body {
   transform: translateY(50px);
   animation: fadeUp 0.8s ease forwards;
   overflow: hidden;
-  transition: transform 0.4s, background-color 0.6s ease, color 0.6s ease;
+  transition: transform 0.4s ease, background-color 0.4s ease, color 0.4s ease;
 }
 
 .opcion-circulo:nth-child(1) { animation-delay: 0.3s; }
@@ -118,34 +118,40 @@ html, body {
 .opcion-circulo:nth-child(3) { animation-delay: 0.9s; }
 .opcion-circulo:nth-child(4) { animation-delay: 1.2s; }
 
-/* Estado seleccionado: rojo institucional */
+/* Texto negro cuando está en gris */
+.opcion-circulo .texto {
+  font-size: 0.9em;
+  padding: 0 10px;
+  color: #000;
+  transition: color 0.4s ease;
+}
+
+/* Hover: rojo institucional + agrandamiento + texto blanco */
+.opcion-circulo:hover {
+  background-color: #CA142B;
+  transform: scale(1.1);
+}
+
+.opcion-circulo:hover .texto {
+  color: #fff;
+}
+
+/* Estado seleccionado (clic) también rojo */
 .opcion-circulo.seleccionado {
   background-color: #CA142B;
 }
 
+.opcion-circulo.seleccionado .texto {
+  color: #fff;
+}
+
 /* Íconos personalizados dentro de los círculos */
 .icono-img {
-  max-width: 50%;       /* nunca más de la mitad del círculo */
+  max-width: 50%;
   max-height: 50%;
   object-fit: contain;
   margin-bottom: 8px;
   display: block;
-}
-
-/* Texto dentro del círculo */
-.opcion-circulo .texto {
-  font-size: 0.9em;
-  padding: 0 10px;
-  color: #000;          /* negro cuando está en gris */
-  transition: color 0.6s ease;
-}
-
-.opcion-circulo.seleccionado .texto {
-  color: #fff;          /* blanco cuando está en rojo */
-}
-
-.opcion-circulo:hover {
-  transform: scale(1.1);
 }
 
 /* Sidebar para categorías */
