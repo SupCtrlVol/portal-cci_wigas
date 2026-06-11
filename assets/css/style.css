@@ -1,3 +1,4 @@
+/* Estilos generales */
 html, body {
   height: 100%;
   margin: 0;
@@ -21,6 +22,7 @@ html, body {
 .inicio.hidden {
   opacity: 0;
   pointer-events: none;
+  display: none;   /* 🔑 ahora sí desaparece del flujo */
 }
 
 .logo-grande {
@@ -70,4 +72,83 @@ html, body {
   width: 90%;
   animation: fadeDown 1s ease forwards;
   margin: 0;                 /* evita que se desplace hacia abajo */
+}
+
+/* Animaciones */
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Opciones principales en círculos */
+.opciones-principales {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.opcion-circulo {
+  background-color: #CA142B;
+  color: #fff;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.4s, background-color 0.4s;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.opcion-circulo:nth-child(1) { animation-delay: 0.3s; }
+.opcion-circulo:nth-child(2) { animation-delay: 0.6s; }
+.opcion-circulo:nth-child(3) { animation-delay: 0.9s; }
+.opcion-circulo:nth-child(4) { animation-delay: 1.2s; }
+
+.opcion-circulo .icono {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.opcion-circulo .texto {
+  font-size: 0.9em;
+  padding: 0 10px;
+}
+
+.opcion-circulo:hover {
+  transform: scale(1.1);
+  background-color: #FFD700;
+  color: #333;
+}
+
+/* Sidebar para categorías */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #CA142B;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.sidebar a:hover {
+  color: #FFD700;
 }
