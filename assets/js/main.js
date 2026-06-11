@@ -2,10 +2,7 @@ function entrarPortal() {
   const inicio = document.getElementById('inicio');
   const balance = document.getElementById('balance');
 
-  // Ocultar inicio completamente
   inicio.classList.add('hidden');
-
-  // Mostrar balance
   balance.style.display = 'flex';
   setTimeout(() => {
     balance.classList.add('visible');
@@ -37,11 +34,12 @@ function mostrarBienvenida() {
           <span class="texto">Cumplimiento</span>
         </div>
       </div>
+      <div id="contenido-categoria"></div>
     </div>
   `;
   document.getElementById('contenedor').innerHTML = contenido;
 
-  // 🔑 Reasignar eventos después de renderizar
+  // 🔑 Asignar eventos a cada círculo
   document.querySelectorAll('.opcion-circulo').forEach(opcion => {
     opcion.addEventListener('click', () => {
       seleccionarOpcion(opcion);
@@ -57,52 +55,44 @@ function seleccionarOpcion(elemento) {
   elemento.classList.add('seleccionado');
 }
 
-// Categorías principales
+// Mostrar contenido de la categoría sin borrar la bienvenida
 function mostrarCategoria(categoria) {
   let contenido = '';
 
   if(categoria === 'balance') {
     contenido = `
-      <div class="card p-3 bienvenida">
-        <h3>Balance de Energía / Ventas y Distribución</h3>
-        <div class="sidebar">
-          <a href="#" onclick="mostrarReporte('ecatepec')">13 GAS</a>
-          <a href="#" onclick="mostrarReporte('bexica')">Bexica</a>
-          <a href="#" onclick="mostrarReporte('coacalco')">Coacalco</a>
-          <a href="#" onclick="mostrarReporte('ecatepecII')">Ecatepec II</a>
-          <a href="#" onclick="mostrarReporte('tlanepantla')">Tlanepantla</a>
-          <a href="#" onclick="mostrarReporte('naucalpan')">WIGAS</a>
-          <a href="#" onclick="mostrarReporte('lr_almacenamiento')">Landsegen - Almacenamiento</a>
-        </div>
+      <h3>Balance de Energía / Ventas y Distribución</h3>
+      <div class="sidebar">
+        <a href="#" onclick="mostrarReporte('ecatepec')">13 GAS</a>
+        <a href="#" onclick="mostrarReporte('bexica')">Bexica</a>
+        <a href="#" onclick="mostrarReporte('coacalco')">Coacalco</a>
+        <a href="#" onclick="mostrarReporte('ecatepecII')">Ecatepec II</a>
+        <a href="#" onclick="mostrarReporte('tlanepantla')">Tlanepantla</a>
+        <a href="#" onclick="mostrarReporte('naucalpan')">WIGAS</a>
+        <a href="#" onclick="mostrarReporte('lr_almacenamiento')">Landsegen - Almacenamiento</a>
       </div>`;
   } else if(categoria === 'herramientas') {
     contenido = `
-      <div class="card p-3 bienvenida">
-        <h3>Herramientas de Análisis</h3>
-        <div class="sidebar">
-          <a href="#" onclick="mostrarReporte('eca_tool')">13 GAS - Herramienta</a>
-          <a href="#" onclick="mostrarReporte('nau_tool')">WIGAS - Herramienta</a>
-        </div>
+      <h3>Herramientas de Análisis</h3>
+      <div class="sidebar">
+        <a href="#" onclick="mostrarReporte('eca_tool')">13 GAS - Herramienta</a>
+        <a href="#" onclick="mostrarReporte('nau_tool')">WIGAS - Herramienta</a>
       </div>`;
   } else if(categoria === 'ventas') {
     contenido = `
-      <div class="card p-3 bienvenida">
-        <h3>Ventas</h3>
-        <div class="sidebar">
-          <a href="#" onclick="mostrarReporte('ventas')">Ventas por Cliente</a>
-        </div>
+      <h3>Ventas</h3>
+      <div class="sidebar">
+        <a href="#" onclick="mostrarReporte('ventas')">Ventas por Cliente</a>
       </div>`;
   } else if(categoria === 'cumplimiento') {
     contenido = `
-      <div class="card p-3 bienvenida">
-        <h3>Cumplimiento</h3>
-        <div class="sidebar">
-          <a href="#" onclick="mostrarReporte('json_tool')">JSON Mensual</a>
-        </div>
+      <h3>Cumplimiento</h3>
+      <div class="sidebar">
+        <a href="#" onclick="mostrarReporte('json_tool')">JSON Mensual</a>
       </div>`;
   }
 
-  document.getElementById('contenedor').innerHTML = contenido;
+  document.getElementById('contenido-categoria').innerHTML = contenido;
 }
 
 // Reportes Power BI
@@ -133,7 +123,7 @@ function mostrarReporte(estacion) {
     src = "https://app.powerbi.com/reportEmbed?reportId=71c98777-7533-4821-b145-4ad8c9cc2e9d&autoAuth=true";
   }
 
-  document.getElementById('contenedor').innerHTML =
+  document.getElementById('contenido-categoria').innerHTML =
     '<div class="card p-3"><iframe src="'+src+'" width="100%" height="600" frameborder="0" allowFullScreen="true"></iframe></div>';
 }
 
