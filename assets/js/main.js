@@ -52,7 +52,7 @@ function seleccionarOpcion(elemento) {
   elemento.classList.add('seleccionado');
 }
 
-// Nueva función para abrir vistas ejecutivas
+// Nueva función para abrir vistas ejecutivas con recuadros
 function abrirVista(categoria) {
   let contenido = '';
 
@@ -61,14 +61,14 @@ function abrirVista(categoria) {
       <div class="card p-3 bienvenida">
         <h2>Balance de Energía</h2>
         <p>Seleccione la estación:</p>
-        <div class="sidebar">
-          <a href="#" onclick="mostrarReporte('13gas_be')">13 GAS</a>
-          <a href="#" onclick="mostrarReporte('bexica_be')">Bexica</a>
-          <a href="#" onclick="mostrarReporte('coacalco_be')">Consorcio GNV - Coacalco</a>
-          <a href="#" onclick="mostrarReporte('ecatepec_be')">Consorcio GNV - Ecatepec</a>
-          <a href="#" onclick="mostrarReporte('tlanepantla_be')">Consorcio GNV - Tlanepantla</a>
-          <a href="#" onclick="mostrarReporte('landsegen_be')">Landsegen</a>
-          <a href="#" onclick="mostrarReporte('wigas_be')">WIGAS</a>
+        <div class="opciones-vista">
+          <div class="opcion-recuadro" onclick="mostrarReporte('13gas_be')">13 GAS</div>
+          <div class="opcion-recuadro" onclick="mostrarReporte('bexica_be')">Bexica</div>
+          <div class="opcion-recuadro" onclick="mostrarReporte('coacalco_be')">Consorcio GNV - Coacalco</div>
+          <div class="opcion-recuadro" onclick="mostrarReporte('ecatepec_be')">Consorcio GNV - Ecatepec</div>
+          <div class="opcion-recuadro" onclick="mostrarReporte('tlanepantla_be')">Consorcio GNV - Tlanepantla</div>
+          <div class="opcion-recuadro" onclick="mostrarReporte('landsegen_be')">Landsegen</div>
+          <div class="opcion-recuadro" onclick="mostrarReporte('wigas_be')">WIGAS</div>
         </div>
       </div>`;
   } else if(categoria === 'herramientas') {
@@ -76,9 +76,9 @@ function abrirVista(categoria) {
       <div class="card p-3 bienvenida">
         <h2>Herramientas de Análisis</h2>
         <p>Seleccione la estación:</p>
-        <div class="sidebar">
-          <a href="#" onclick="mostrarReporte('13gas_tool')">13 GAS</a>
-          <a href="#" onclick="mostrarReporte('wigas_tool')">WIGAS</a>
+        <div class="opciones-vista">
+          <div class="opcion-recuadro" onclick="mostrarReporte('13gas_tool')">13 GAS</div>
+          <div class="opcion-recuadro" onclick="mostrarReporte('wigas_tool')">WIGAS</div>
         </div>
       </div>`;
   } else if(categoria === 'ventas') {
@@ -86,11 +86,11 @@ function abrirVista(categoria) {
       <div class="card p-3 bienvenida">
         <h2>Ventas</h2>
         <p>Seleccione el reporte:</p>
-        <div class="sidebar">
-          <a href="#" onclick="mostrarReporte('13gas_vd')">13 GAS</a>
-          <a href="#" onclick="mostrarReporte('landsegen_vd')">Landsegen</a>
-          <a href="#" onclick="mostrarReporte('wigas_vd')">WIGAS</a>
-          <a href="#" onclick="mostrarReporte('ventxcliente_trimes')">Global - Ventas por Cliente</a>
+        <div class="opciones-vista">
+          <div class="opcion-recuadro" onclick="mostrarReporte('13gas_vd')">13 GAS</div>
+          <div class="opcion-recuadro" onclick="mostrarReporte('landsegen_vd')">Landsegen</div>
+          <div class="opcion-recuadro" onclick="mostrarReporte('wigas_vd')">WIGAS</div>
+          <div class="opcion-recuadro" onclick="mostrarReporte('ventxcliente_trimes')">Global - Ventas por Cliente</div>
         </div>
       </div>`;
   } else if(categoria === 'cumplimiento') {
@@ -98,13 +98,12 @@ function abrirVista(categoria) {
       <div class="card p-3 bienvenida">
         <h2>Cumplimiento</h2>
         <p>Seleccione el reporte:</p>
-        <div class="sidebar">
-          <a href="#" onclick="mostrarReporte('json_tool')">JSON Mensual</a>
+        <div class="opciones-vista">
+          <div class="opcion-recuadro" onclick="mostrarReporte('json_tool')">JSON Mensual</div>
         </div>
       </div>`;
   }
 
-  // 🔑 Reemplazamos TODO el contenido del contenedor
   document.getElementById('contenedor').innerHTML = contenido;
 }
 
@@ -154,4 +153,4 @@ function mostrarReporte(estacion) {
     '<div class="card p-3"><iframe src="'+src+'" width="1140" height="541.25" frameborder="0" allowFullScreen="true"></iframe></div>';
 }
 
-console.log("Portal listo: vistas ejecutivas independientes y iframes actualizados");
+console.log("Portal listo: vistas ejecutivas con recuadros y iframes actualizados");
