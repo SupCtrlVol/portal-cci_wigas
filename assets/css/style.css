@@ -56,7 +56,7 @@ html, body {
   display: flex;
   justify-content: center;   /* centra verticalmente */
   align-items: center;       /* centra horizontalmente */
-  height: 100%;              /* ocupa toda la altura disponible */
+  height: 100%;              /* ocupa toda la altura del padre */
   width: 100%;
   box-sizing: border-box;
 }
