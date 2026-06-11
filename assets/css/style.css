@@ -58,7 +58,8 @@ html, body {
   flex-direction: column;
   justify-content: center;   /* centra verticalmente */
   align-items: center;       /* centra horizontalmente */
-  min-height: 100vh;         /* ocupa toda la ventana */
+  min-height: 100vh;
+  width: 100%;
   box-sizing: border-box;
 }
 
@@ -70,6 +71,9 @@ html, body {
   padding: 30px;
   text-align: center;
   max-width: 800px;
+  max-height: 90vh;        /* nunca excede la altura de la ventana */
+  overflow-y: auto;        /* si el contenido es más grande, aparece scroll interno */
+  margin: auto;            /* asegura que se centre en el contenedor */
   animation: fadeDown 1s ease forwards;
 }
 
