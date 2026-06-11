@@ -20,19 +20,19 @@ function mostrarBienvenida() {
       <h2>BIENVENIDO</h2>
       <p>Seleccione una opción para continuar</p>
       <div class="opciones-principales">
-        <div class="opcion-circulo" onclick="seleccionarOpcion(this); mostrarCategoria('balance')">
+        <div class="opcion-circulo" data-cat="balance">
           <img src="assets/images/Energia.jpeg" alt="Balance" class="icono-img">
           <span class="texto">Balance de Energía / Ventas y Distribución</span>
         </div>
-        <div class="opcion-circulo" onclick="seleccionarOpcion(this); mostrarCategoria('herramientas')">
+        <div class="opcion-circulo" data-cat="herramientas">
           <img src="assets/images/Herramienta.png" alt="Herramientas" class="icono-img">
           <span class="texto">Herramientas</span>
         </div>
-        <div class="opcion-circulo" onclick="seleccionarOpcion(this); mostrarCategoria('ventas')">
+        <div class="opcion-circulo" data-cat="ventas">
           <img src="assets/images/Grafica.png" alt="Ventas" class="icono-img">
           <span class="texto">Ventas</span>
         </div>
-        <div class="opcion-circulo" onclick="seleccionarOpcion(this); mostrarCategoria('cumplimiento')">
+        <div class="opcion-circulo" data-cat="cumplimiento">
           <img src="assets/images/Cumplimiento.png" alt="Cumplimiento" class="icono-img">
           <span class="texto">Cumplimiento</span>
         </div>
@@ -40,6 +40,14 @@ function mostrarBienvenida() {
     </div>
   `;
   document.getElementById('contenedor').innerHTML = contenido;
+
+  // 🔑 Reasignar eventos después de renderizar
+  document.querySelectorAll('.opcion-circulo').forEach(opcion => {
+    opcion.addEventListener('click', () => {
+      seleccionarOpcion(opcion);
+      mostrarCategoria(opcion.dataset.cat);
+    });
+  });
 }
 
 // Función para marcar la opción seleccionada
