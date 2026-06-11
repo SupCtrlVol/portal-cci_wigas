@@ -10,10 +10,8 @@ function entrarPortal() {
   balance.style.display = 'flex';
   setTimeout(() => {
     balance.classList.add('visible');
-  }, 100);
-
-  // Mostrar bienvenida y círculos inmediatamente
-  mostrarBienvenida();
+    mostrarBienvenida(); // mostrar bienvenida después de activar balance
+  }, 300);
 }
 
 // Función para mostrar la bienvenida con círculos
@@ -91,7 +89,6 @@ function mostrarCategoria(categoria) {
       </div>`;
   }
 
-  // Inyecta el contenido centrado en el contenedor
   document.getElementById('contenedor').innerHTML = contenido;
 }
 
