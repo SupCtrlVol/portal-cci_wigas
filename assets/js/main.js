@@ -13,7 +13,7 @@ function entrarPortal() {
 // Bienvenida con íconos personalizados
 function mostrarBienvenida() {
   const contenido = `
-    <div class="card p-3 bienvenida">
+    <div class="card p-3 bienvenida" style="margin-top:100px">
       <h2>BIENVENIDO</h2>
       <p>Seleccione una opción para continuar</p>
       <div class="opciones-principales">
@@ -36,7 +36,7 @@ function mostrarBienvenida() {
       </div>
     </div>
   `;
-  document.getElementById('contenedor').innerHTML = contenido;
+  document.getElementById('contenedor').innerHTML = renderBanner() + contenido;
 
   document.querySelectorAll('.opcion-circulo').forEach(opcion => {
     opcion.addEventListener('click', () => {
@@ -84,7 +84,7 @@ function renderBanner() {
 
 // Vista ejecutiva con recuadros y banner
 function abrirVista(categoria) {
-  let contenido = renderBanner(); // siempre inserta el banner arriba
+  let contenido = renderBanner();
 
   if(categoria === 'balance') {
     contenido += `
@@ -178,7 +178,6 @@ function mostrarReporte(estacion) {
     src = "https://app.powerbi.com/reportEmbed?reportId=71c98777-7533-4821-b145-4ad8c9cc2e9d&autoAuth=true&ctid=fed0588c-2eb2-4466-bb01-afd3795657ec";
   }
 
-  // 🔑 Reemplazamos TODO el contenido del contenedor con el banner + iframe
   document.getElementById('contenedor').innerHTML =
     renderBanner() +
     '<div class="card p-3" style="margin-top:100px">' +
@@ -186,4 +185,4 @@ function mostrarReporte(estacion) {
     '</div>';
 }
 
-console.log("Portal listo: banner modular, recuadros dinámicos y iframes actualizados");
+console.log("Portal listo: banner modular, tarjetas con margen superior y iframes actualizados");
