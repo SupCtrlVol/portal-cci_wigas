@@ -18,19 +18,19 @@ function mostrarBienvenida() {
       <p>Seleccione una opción para continuar</p>
       <div class="opciones-principales">
         <div class="opcion-circulo" data-cat="balance">
-          <img src="assets/images/Energia.jpeg?v=2" alt="Balance" class="icono-img">
+          <img src="assets/images/Energia.jpeg?v=5" alt="Balance" class="icono-img">
           <span class="texto">Balance de Energía</span>
         </div>
         <div class="opcion-circulo" data-cat="herramientas">
-          <img src="assets/images/Herramienta.png?v=2" alt="Herramientas" class="icono-img">
+          <img src="assets/images/Herramienta.png?v=5" alt="Herramientas" class="icono-img">
           <span class="texto">Herramientas</span>
         </div>
         <div class="opcion-circulo" data-cat="ventas">
-          <img src="assets/images/Grafica.png?v=2" alt="Ventas" class="icono-img">
+          <img src="assets/images/Grafica.png?v=5" alt="Ventas" class="icono-img">
           <span class="texto">Ventas</span>
         </div>
         <div class="opcion-circulo" data-cat="cumplimiento">
-          <img src="assets/images/Cumplimiento.png?v=2" alt="Cumplimiento" class="icono-img">
+          <img src="assets/images/Cumplimiento.png?v=5" alt="Cumplimiento" class="icono-img">
           <span class="texto">Cumplimiento</span>
         </div>
       </div>
@@ -64,7 +64,7 @@ function renderBanner() {
     <div class="banner-superior">
       <div class="banner-blanco">
         <div class="banner-logo" onclick="mostrarBienvenida()">
-          <img src="assets/images/logo.png?v=2" alt="Logo">
+          <img src="assets/images/logo.png?v=5" alt="Logo">
         </div>
       </div>
       <div class="banner-rojo">
