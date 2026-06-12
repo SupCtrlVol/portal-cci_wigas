@@ -10,7 +10,7 @@ function entrarPortal() {
   }, 300);
 }
 
-// Bienvenida con íconos personalizados
+// Bienvenida con íconos personalizados (sin banner)
 function mostrarBienvenida() {
   const contenido = `
     <div class="card p-3 bienvenida" style="margin-top:100px">
@@ -36,7 +36,7 @@ function mostrarBienvenida() {
       </div>
     </div>
   `;
-  document.getElementById('contenedor').innerHTML = renderBanner() + contenido;
+  document.getElementById('contenedor').innerHTML = contenido;
 
   document.querySelectorAll('.opcion-circulo').forEach(opcion => {
     opcion.addEventListener('click', () => {
@@ -84,7 +84,7 @@ function renderBanner() {
 
 // Vista ejecutiva con recuadros y banner
 function abrirVista(categoria) {
-  let contenido = renderBanner();
+  let contenido = renderBanner(); // aquí sí aparece el banner
 
   if(categoria === 'balance') {
     contenido += `
@@ -178,6 +178,7 @@ function mostrarReporte(estacion) {
     src = "https://app.powerbi.com/reportEmbed?reportId=71c98777-7533-4821-b145-4ad8c9cc2e9d&autoAuth=true&ctid=fed0588c-2eb2-4466-bb01-afd3795657ec";
   }
 
+
   document.getElementById('contenedor').innerHTML =
     renderBanner() +
     '<div class="card p-3" style="margin-top:100px">' +
@@ -185,4 +186,4 @@ function mostrarReporte(estacion) {
     '</div>';
 }
 
-console.log("Portal listo: banner modular, tarjetas con margen superior y iframes actualizados");
+console.log("Portal listo: banner solo en categorías y reportes, bienvenida limpia sin banner");
