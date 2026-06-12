@@ -192,12 +192,18 @@ html, body {
   z-index: 1000;
 }
 
-.banner-logo {
+/* Logo lado izquierdo */
+.banner-logo img {
+  height: 40px;
   cursor: pointer;
-  font-weight: bold;
-  font-size: 1.2em;
+  transition: transform 0.3s ease;
 }
 
+.banner-logo img:hover {
+  transform: scale(1.1);
+}
+
+/* Menú lado derecho */
 .banner-menu {
   position: relative;
 }
