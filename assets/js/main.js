@@ -60,6 +60,7 @@ function toggleMenu() {
 
 // Vista ejecutiva con banner superior y recuadros
 function abrirVista(categoria) {
+  // Banner superior fijo
   let contenido = `
     <div class="banner-superior">
       <div class="banner-logo" onclick="mostrarBienvenida()">
@@ -77,27 +78,7 @@ function abrirVista(categoria) {
     </div>
   `;
 
-  if(categoria === 'balance') {
-    contenido += `
-      <div class="card p-3 bienvenida">
-        <h2>Balance de Energía</h2>
-        <p>Seleccione la estación:</p>
-        <div class="opciones-vista">
-          <div class="opcion-recuadro" onclick="mostrarReporte('13gas_be')">13 GAS</div>
-          <div class="opcion-recuadro" onclick="mostrarReporte('bexica_be')">Bexica</div>
-          <div class="opcion-recuadro" onclick="mostrarReporte('coacalco_be')">Consorcio GNV - Coacalco</div>
-          <div class="opcion-recuadro" onclick="mostrarReporte('ecatepec_be')">Consorcio GNV - Ecatepec</div>
-          <div class="opcion-recuadro" onclick="mostrarReporte('tlanepantla_be')">Consorcio GNV - Tlanepantla</div>
-          <div class="opcion-recuadro" onclick="mostrarReporte('landsegen_be')">Landsegen</div>
-          <div class="opcion-recuadro" onclick="mostrarReporte('wigas_be')">WIGAS</div>
-        </div>
-      </div>`;
-  }
-  // ... aquí siguen las demás categorías en la Parte 2
-  document.getElementById('contenedor').innerHTML = contenido;
-}
-
-  else if(categoria === 'herramientas') {
+   else if(categoria === 'herramientas') {
     contenido += `
       <div class="card p-3 bienvenida">
         <h2>Herramientas de Análisis</h2>
@@ -176,7 +157,23 @@ function mostrarReporte(estacion) {
 
   // 🔑 Reemplazamos TODO el contenido del contenedor con el iframe
   document.getElementById('contenedor').innerHTML =
-    '<div class="card p-3"><iframe src="'+src+'" width="1140" height="541.25" frameborder="0" allowFullScreen="true"></iframe></div>';
+    '<div class="banner-superior">' +
+      '<div class="banner-logo" onclick="mostrarBienvenida()">' +
+        '<img src="assets/images/logo.png" alt="Logo">' +
+      '</div>' +
+      '<div class="banner-menu">' +
+        '<button onclick="toggleMenu()">Menú ▾</button>' +
+        '<div class="banner-menu-opciones">' +
+          '<a href="#" onclick="abrirVista(\'balance\')">Balance de Energía</a>' +
+          '<a href="#" onclick="abrirVista(\'herramientas\')">Herramientas</a>' +
+          '<a href="#" onclick="abrirVista(\'ventas\')">Ventas</a>' +
+          '<a href="#" onclick="abrirVista(\'cumplimiento\')">Cumplimiento</a>' +
+        '</div>' +
+      '</div>' +
+    '</div>' +
+    '<div class="card p-3" style="margin-top:80px">' +
+      '<iframe src="'+src+'" width="1140" height="541.25" frameborder="0" allowFullScreen="true"></iframe>' +
+    '</div>';
 }
 
-console.log("Portal listo: vistas ejecutivas con banner superior, recuadros dinámicos y iframes actualizados");
+console.log("Portal listo: banner superior fijo, recuadros dinámicos y iframes actualizados");
