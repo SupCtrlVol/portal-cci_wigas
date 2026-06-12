@@ -64,7 +64,7 @@ function renderBanner() {
     <div class="banner-superior">
       <div class="banner-blanco">
         <div class="banner-logo" onclick="mostrarBienvenida()">
-          <img src="assets/images/logo.png?v=2" alt="Logo">
+          <img src="assets/images/logo_blanco.webp?v=3" alt="Logo">
         </div>
       </div>
       <div class="banner-rojo">
