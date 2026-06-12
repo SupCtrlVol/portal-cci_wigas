@@ -10,6 +10,18 @@ function entrarPortal() {
   }, 300);
 }
 
+// Función para regresar al inicio desde el logo del banner
+function volverInicio() {
+  const inicio = document.getElementById('inicio');
+  const balance = document.getElementById('balance');
+
+  balance.classList.remove('visible');
+  balance.style.display = 'none';
+  inicio.classList.remove('hidden');
+  inicio.style.display = 'flex';
+  inicio.style.opacity = 1;
+}
+
 // Bienvenida con íconos personalizados
 function mostrarBienvenida() {
   const contenido = `
@@ -63,7 +75,7 @@ function abrirVista(categoria) {
   // Banner superior fijo
   let contenido = `
     <div class="banner-superior">
-      <div class="banner-logo" onclick="mostrarBienvenida()">
+      <div class="banner-logo" onclick="volverInicio()">
         <img src="assets/images/logo.png" alt="Logo">
       </div>
       <div class="banner-menu">
@@ -78,9 +90,24 @@ function abrirVista(categoria) {
     </div>
   `;
 
-  else if(categoria === 'herramientas') {
+    if(categoria === 'balance') {
     contenido += `
-      <div class="card p-3 bienvenida">
+      <div class="card p-3 bienvenida" style="margin-top:80px">
+        <h2>Balance de Energía</h2>
+        <p>Seleccione la estación:</p>
+        <div class="opciones-vista">
+          <div class="opcion-recuadro" onclick="mostrarReporte('13gas_be')">13 GAS</div>
+          <div class="opcion-recuadro" onclick="mostrarReporte('bexica_be')">Bexica</div>
+          <div class="opcion-recuadro" onclick="mostrarReporte('coacalco_be')">Consorcio GNV - Coacalco</div>
+          <div class="opcion-recuadro" onclick="mostrarReporte('ecatepec_be')">Consorcio GNV - Ecatepec</div>
+          <div class="opcion-recuadro" onclick="mostrarReporte('tlanepantla_be')">Consorcio GNV - Tlanepantla</div>
+          <div class="opcion-recuadro" onclick="mostrarReporte('landsegen_be')">Landsegen</div>
+          <div class="opcion-recuadro" onclick="mostrarReporte('wigas_be')">WIGAS</div>
+        </div>
+      </div>`;
+  } else if(categoria === 'herramientas') {
+    contenido += `
+      <div class="card p-3 bienvenida" style="margin-top:80px">
         <h2>Herramientas de Análisis</h2>
         <p>Seleccione la estación:</p>
         <div class="opciones-vista">
@@ -90,7 +117,7 @@ function abrirVista(categoria) {
       </div>`;
   } else if(categoria === 'ventas') {
     contenido += `
-      <div class="card p-3 bienvenida">
+      <div class="card p-3 bienvenida" style="margin-top:80px">
         <h2>Ventas</h2>
         <p>Seleccione el reporte:</p>
         <div class="opciones-vista">
@@ -102,7 +129,7 @@ function abrirVista(categoria) {
       </div>`;
   } else if(categoria === 'cumplimiento') {
     contenido += `
-      <div class="card p-3 bienvenida">
+      <div class="card p-3 bienvenida" style="margin-top:80px">
         <h2>Cumplimiento</h2>
         <p>Seleccione el reporte:</p>
         <div class="opciones-vista">
@@ -155,10 +182,10 @@ function mostrarReporte(estacion) {
     src = "https://app.powerbi.com/reportEmbed?reportId=71c98777-7533-4821-b145-4ad8c9cc2e9d&autoAuth=true&ctid=fed0588c-2eb2-4466-bb01-afd3795657ec";
   }
 
-  // 🔑 Reemplazamos TODO el contenido del contenedor con el iframe
+  // 🔑 Reemplazamos TODO el contenido del contenedor con el banner + iframe
   document.getElementById('contenedor').innerHTML =
     '<div class="banner-superior">' +
-      '<div class="banner-logo" onclick="mostrarBienvenida()">' +
+      '<div class="banner-logo" onclick="volverInicio()">' +
         '<img src="assets/images/logo.png" alt="Logo">' +
       '</div>' +
       '<div class="banner-menu">' +
