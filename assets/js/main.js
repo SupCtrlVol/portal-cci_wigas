@@ -76,7 +76,6 @@ function abrirVista(categoria) {
         </div>
       </div>
     </div>
-  `;
 
    else if(categoria === 'herramientas') {
     contenido += `
