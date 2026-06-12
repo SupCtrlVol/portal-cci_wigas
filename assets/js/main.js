@@ -10,33 +10,32 @@ function entrarPortal() {
   }, 300);
 }
 
-// Bienvenida con íconos personalizados (sin banner)
+// Bienvenida con íconos personalizados (sin banner y margen reducido)
 function mostrarBienvenida() {
   const contenido = `
-    <div class="card p-3 bienvenida" style="margin-top:100px">
+    <div class="card p-3 bienvenida" style="margin-top:30px">
       <h2>BIENVENIDO</h2>
       <p>Seleccione una opción para continuar</p>
       <div class="opciones-principales">
         <div class="opcion-circulo" data-cat="balance">
-          <img src="assets/images/Energia.jpeg" alt="Balance" class="icono-img">
+          <img src="assets/images/Energia.jpeg?v=2" alt="Balance" class="icono-img">
           <span class="texto">Balance de Energía</span>
         </div>
         <div class="opcion-circulo" data-cat="herramientas">
-          <img src="assets/images/Herramienta.png" alt="Herramientas" class="icono-img">
+          <img src="assets/images/Herramienta.png?v=2" alt="Herramientas" class="icono-img">
           <span class="texto">Herramientas</span>
         </div>
         <div class="opcion-circulo" data-cat="ventas">
-          <img src="assets/images/Grafica.png" alt="Ventas" class="icono-img">
+          <img src="assets/images/Grafica.png?v=2" alt="Ventas" class="icono-img">
           <span class="texto">Ventas</span>
         </div>
         <div class="opcion-circulo" data-cat="cumplimiento">
-          <img src="assets/images/Cumplimiento.png" alt="Cumplimiento" class="icono-img">
+          <img src="assets/images/Cumplimiento.png?v=2" alt="Cumplimiento" class="icono-img">
           <span class="texto">Cumplimiento</span>
         </div>
       </div>
     </div>
   `;
-  // 👇 Aquí ya NO concatenamos renderBanner()
   document.getElementById('contenedor').innerHTML = contenido;
 
   document.querySelectorAll('.opcion-circulo').forEach(opcion => {
@@ -65,7 +64,7 @@ function renderBanner() {
     <div class="banner-superior">
       <div class="banner-blanco">
         <div class="banner-logo" onclick="mostrarBienvenida()">
-          <img src="assets/images/logo.png" alt="Logo">
+          <img src="assets/images/logo.png?v=2" alt="Logo">
         </div>
       </div>
       <div class="banner-rojo">
@@ -83,13 +82,13 @@ function renderBanner() {
   `;
 }
 
-// Vista ejecutiva con recuadros y banner
+// Vista ejecutiva con recuadros y banner (margen reducido)
 function abrirVista(categoria) {
-  let contenido = renderBanner(); // aquí sí aparece el banner
+  let contenido = renderBanner();
 
   if(categoria === 'balance') {
     contenido += `
-      <div class="card p-3 bienvenida" style="margin-top:100px">
+      <div class="card p-3 bienvenida" style="margin-top:60px">
         <h2>Balance de Energía</h2>
         <p>Seleccione la estación:</p>
         <div class="opciones-vista">
@@ -104,7 +103,7 @@ function abrirVista(categoria) {
       </div>`;
   } else if(categoria === 'herramientas') {
     contenido += `
-      <div class="card p-3 bienvenida" style="margin-top:100px">
+      <div class="card p-3 bienvenida" style="margin-top:60px">
         <h2>Herramientas de Análisis</h2>
         <p>Seleccione la estación:</p>
         <div class="opciones-vista">
@@ -114,7 +113,7 @@ function abrirVista(categoria) {
       </div>`;
   } else if(categoria === 'ventas') {
     contenido += `
-      <div class="card p-3 bienvenida" style="margin-top:100px">
+      <div class="card p-3 bienvenida" style="margin-top:60px">
         <h2>Ventas</h2>
         <p>Seleccione el reporte:</p>
         <div class="opciones-vista">
@@ -126,7 +125,7 @@ function abrirVista(categoria) {
       </div>`;
   } else if(categoria === 'cumplimiento') {
     contenido += `
-      <div class="card p-3 bienvenida" style="margin-top:100px">
+      <div class="card p-3 bienvenida" style="margin-top:60px">
         <h2>Cumplimiento</h2>
         <p>Seleccione el reporte:</p>
         <div class="opciones-vista">
@@ -138,7 +137,7 @@ function abrirVista(categoria) {
   document.getElementById('contenedor').innerHTML = contenido;
 }
 
-// Reportes Power BI
+// Reportes Power BI (margen reducido)
 function mostrarReporte(estacion) {
   let src = '';
 
@@ -181,9 +180,9 @@ function mostrarReporte(estacion) {
 
   document.getElementById('contenedor').innerHTML =
     renderBanner() +
-    '<div class="card p-3" style="margin-top:100px">' +
+    '<div class="card p-3" style="margin-top:60px">' +
       '<iframe src="'+src+'" width="1140" height="541.25" frameborder="0" allowFullScreen="true"></iframe>' +
     '</div>';
 }
 
-console.log("Portal listo: banner solo en categorías y reportes, bienvenida limpia sin banner");
+console.log("Portal listo: bienvenida compacta sin banner, categorías y reportes con banner y márgenes reducidos");
