@@ -10,10 +10,10 @@ function entrarPortal() {
   }, 300);
 }
 
-// Bienvenida inicial (sin banner y margen reducido)
+// Bienvenida inicial (sin banner, clase inicio-view)
 function mostrarBienvenida() {
   const contenido = `
-    <div class="card p-3 bienvenida" style="margin-top:30px">
+    <div class="card p-3 bienvenida inicio-view">
       <h2>BIENVENIDO</h2>
       <p>Seleccione una opción para continuar</p>
       <div class="opciones-principales">
@@ -82,13 +82,13 @@ function renderBanner() {
   `;
 }
 
-// Vista ejecutiva con recuadros y banner (margen amplio)
+// Vista ejecutiva con recuadros y banner (clase banner-view)
 function abrirVista(categoria) {
   let contenido = renderBanner();
 
   if(categoria === 'balance') {
     contenido += `
-      <div class="card p-3 bienvenida" style="margin-top:100px">
+      <div class="card p-3 bienvenida banner-view">
         <h2>Balance de Energía</h2>
         <p>Seleccione la estación:</p>
         <div class="opciones-vista">
@@ -103,7 +103,7 @@ function abrirVista(categoria) {
       </div>`;
   } else if(categoria === 'herramientas') {
     contenido += `
-      <div class="card p-3 bienvenida" style="margin-top:100px">
+      <div class="card p-3 bienvenida banner-view">
         <h2>Herramientas de Análisis</h2>
         <p>Seleccione la estación:</p>
         <div class="opciones-vista">
@@ -113,7 +113,7 @@ function abrirVista(categoria) {
       </div>`;
   } else if(categoria === 'ventas') {
     contenido += `
-      <div class="card p-3 bienvenida" style="margin-top:100px">
+      <div class="card p-3 bienvenida banner-view">
         <h2>Ventas</h2>
         <p>Seleccione el reporte:</p>
         <div class="opciones-vista">
@@ -125,7 +125,7 @@ function abrirVista(categoria) {
       </div>`;
   } else if(categoria === 'cumplimiento') {
     contenido += `
-      <div class="card p-3 bienvenida" style="margin-top:100px">
+      <div class="card p-3 bienvenida banner-view">
         <h2>Cumplimiento</h2>
         <p>Seleccione el reporte:</p>
         <div class="opciones-vista">
@@ -137,7 +137,7 @@ function abrirVista(categoria) {
   document.getElementById('contenedor').innerHTML = contenido;
 }
 
-// Reportes Power BI (margen amplio)
+// Reportes Power BI (clase banner-view)
 function mostrarReporte(estacion) {
   let src = '';
 
@@ -180,9 +180,9 @@ function mostrarReporte(estacion) {
 
   document.getElementById('contenedor').innerHTML =
     renderBanner() +
-    '<div class="card p-3" style="margin-top:100px">' +
+    '<div class="card p-3 bienvenida banner-view">' +
       '<iframe src="'+src+'" width="1140" height="541.25" frameborder="0" allowFullScreen="true"></iframe>' +
     '</div>';
 }
 
-console.log("Portal listo: bienvenida sin banner (30px), categorías y reportes con banner (100px)");
+console.log("Portal listo: bienvenida con clase inicio-view, categorías y reportes con clase banner-view");
