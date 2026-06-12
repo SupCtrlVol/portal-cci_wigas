@@ -18,7 +18,7 @@ function mostrarBienvenida() {
       <p>Seleccione una opción para continuar</p>
       <div class="opciones-principales">
         <div class="opcion-circulo" data-cat="balance">
-          <img src="assets/images/Energia.jpeg?v=5" alt="Balance" class="icono-img">
+          <img src="assets/images/Energia.png?v=5" alt="Balance" class="icono-img">
           <span class="texto">Balance de Energía</span>
         </div>
         <div class="opcion-circulo" data-cat="herramientas">
