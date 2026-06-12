@@ -36,6 +36,7 @@ function mostrarBienvenida() {
       </div>
     </div>
   `;
+  // 👇 Aquí ya NO concatenamos renderBanner()
   document.getElementById('contenedor').innerHTML = contenido;
 
   document.querySelectorAll('.opcion-circulo').forEach(opcion => {
@@ -177,7 +178,6 @@ function mostrarReporte(estacion) {
   } else if(estacion === 'json_tool') {
     src = "https://app.powerbi.com/reportEmbed?reportId=71c98777-7533-4821-b145-4ad8c9cc2e9d&autoAuth=true&ctid=fed0588c-2eb2-4466-bb01-afd3795657ec";
   }
-
 
   document.getElementById('contenedor').innerHTML =
     renderBanner() +
