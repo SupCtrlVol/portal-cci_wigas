@@ -76,8 +76,9 @@ function abrirVista(categoria) {
         </div>
       </div>
     </div>
+  `;
 
-   else if(categoria === 'herramientas') {
+  else if(categoria === 'herramientas') {
     contenido += `
       <div class="card p-3 bienvenida">
         <h2>Herramientas de Análisis</h2>
