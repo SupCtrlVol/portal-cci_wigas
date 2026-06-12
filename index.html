@@ -2,23 +2,28 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Centro de Control de Información</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Portal Energético</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="assets/css/style.css?v=2">
 </head>
 <body>
-  <!-- Pantalla de inicio -->
+  <!-- Pantalla inicial -->
   <div id="inicio" class="inicio">
-    <img src="assets/images/log.png" alt="Logo Wigas" class="logo-grande" onclick="entrarPortal()">
-    <h1>Centro de Control de Información</h1>
-    <p>Clic en el logo para entrar</p>
+    <div class="card p-3 bienvenida">
+      <h2>Portal Energético</h2>
+      <p>Presione el botón para entrar</p>
+      <button onclick="entrarPortal()">Entrar</button>
+    </div>
   </div>
 
-  <!-- Contenedor principal (oculto al inicio) -->
-  <div id="balance" class="main" style="display:none;">
-    <main id="contenedor" class="dashboard"></main>
+  <!-- Contenedor principal donde se renderizan bienvenida, categorías y reportes -->
+  <div id="balance" class="hidden">
+    <div id="contenedor"></div>
   </div>
 
-  <!-- Script principal -->
-  <script src="assets/js/main.js"></script>
+  <!-- Scripts con parámetro de versión -->
+  <script src="assets/js/main.js?v=2"></script>
 </body>
 </html>
