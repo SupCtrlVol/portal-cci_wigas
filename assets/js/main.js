@@ -52,12 +52,33 @@ function seleccionarOpcion(elemento) {
   elemento.classList.add('seleccionado');
 }
 
-// Vista ejecutiva con recuadros redondeados (efecto de círculos)
+// Función para desplegar/ocultar menú del banner
+function toggleMenu() {
+  const menu = document.querySelector('.banner-menu');
+  menu.classList.toggle('open');
+}
+
+// Vista ejecutiva con banner superior y recuadros
 function abrirVista(categoria) {
-  let contenido = '';
+  let contenido = `
+    <div class="banner-superior">
+      <div class="banner-logo" onclick="mostrarBienvenida()">
+        <img src="assets/images/logo.png" alt="Logo">
+      </div>
+      <div class="banner-menu">
+        <button onclick="toggleMenu()">Menú ▾</button>
+        <div class="banner-menu-opciones">
+          <a href="#" onclick="abrirVista('balance')">Balance de Energía</a>
+          <a href="#" onclick="abrirVista('herramientas')">Herramientas</a>
+          <a href="#" onclick="abrirVista('ventas')">Ventas</a>
+          <a href="#" onclick="abrirVista('cumplimiento')">Cumplimiento</a>
+        </div>
+      </div>
+    </div>
+  `;
 
   if(categoria === 'balance') {
-    contenido = `
+    contenido += `
       <div class="card p-3 bienvenida">
         <h2>Balance de Energía</h2>
         <p>Seleccione la estación:</p>
@@ -71,8 +92,13 @@ function abrirVista(categoria) {
           <div class="opcion-recuadro" onclick="mostrarReporte('wigas_be')">WIGAS</div>
         </div>
       </div>`;
-  } else if(categoria === 'herramientas') {
-    contenido = `
+  }
+  // ... aquí siguen las demás categorías en la Parte 2
+  document.getElementById('contenedor').innerHTML = contenido;
+}
+
+  else if(categoria === 'herramientas') {
+    contenido += `
       <div class="card p-3 bienvenida">
         <h2>Herramientas de Análisis</h2>
         <p>Seleccione la estación:</p>
@@ -82,7 +108,7 @@ function abrirVista(categoria) {
         </div>
       </div>`;
   } else if(categoria === 'ventas') {
-    contenido = `
+    contenido += `
       <div class="card p-3 bienvenida">
         <h2>Ventas</h2>
         <p>Seleccione el reporte:</p>
@@ -94,7 +120,7 @@ function abrirVista(categoria) {
         </div>
       </div>`;
   } else if(categoria === 'cumplimiento') {
-    contenido = `
+    contenido += `
       <div class="card p-3 bienvenida">
         <h2>Cumplimiento</h2>
         <p>Seleccione el reporte:</p>
@@ -153,4 +179,4 @@ function mostrarReporte(estacion) {
     '<div class="card p-3"><iframe src="'+src+'" width="1140" height="541.25" frameborder="0" allowFullScreen="true"></iframe></div>';
 }
 
-console.log("Portal listo: vistas ejecutivas con recuadros dinámicos y iframes actualizados");
+console.log("Portal listo: vistas ejecutivas con banner superior, recuadros dinámicos y iframes actualizados");
