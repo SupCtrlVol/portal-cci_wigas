@@ -52,13 +52,43 @@ function seleccionarOpcion(elemento) {
   elemento.classList.add('seleccionado');
 }
 
-// Vista ejecutiva con recuadros redondeados (efecto de círculos)
+// Función para desplegar/ocultar menú del banner
+function toggleMenu() {
+  const menu = document.querySelector('.banner-menu');
+  menu.classList.toggle('open');
+}
+
+// Bloque modular del banner
+function renderBanner() {
+  return `
+    <div class="banner-superior">
+      <div class="banner-blanco">
+        <div class="banner-logo" onclick="mostrarBienvenida()">
+          <img src="assets/images/logo.png" alt="Logo">
+        </div>
+      </div>
+      <div class="banner-rojo">
+        <div class="banner-menu">
+          <button onclick="toggleMenu()">Menú ▾</button>
+          <div class="banner-menu-opciones">
+            <a href="#" onclick="abrirVista('balance')">Balance de Energía</a>
+            <a href="#" onclick="abrirVista('herramientas')">Herramientas</a>
+            <a href="#" onclick="abrirVista('ventas')">Ventas</a>
+            <a href="#" onclick="abrirVista('cumplimiento')">Cumplimiento</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+// Vista ejecutiva con recuadros y banner
 function abrirVista(categoria) {
-  let contenido = '';
+  let contenido = renderBanner(); // siempre inserta el banner arriba
 
   if(categoria === 'balance') {
-    contenido = `
-      <div class="card p-3 bienvenida">
+    contenido += `
+      <div class="card p-3 bienvenida" style="margin-top:100px">
         <h2>Balance de Energía</h2>
         <p>Seleccione la estación:</p>
         <div class="opciones-vista">
@@ -72,8 +102,8 @@ function abrirVista(categoria) {
         </div>
       </div>`;
   } else if(categoria === 'herramientas') {
-    contenido = `
-      <div class="card p-3 bienvenida">
+    contenido += `
+      <div class="card p-3 bienvenida" style="margin-top:100px">
         <h2>Herramientas de Análisis</h2>
         <p>Seleccione la estación:</p>
         <div class="opciones-vista">
@@ -82,8 +112,8 @@ function abrirVista(categoria) {
         </div>
       </div>`;
   } else if(categoria === 'ventas') {
-    contenido = `
-      <div class="card p-3 bienvenida">
+    contenido += `
+      <div class="card p-3 bienvenida" style="margin-top:100px">
         <h2>Ventas</h2>
         <p>Seleccione el reporte:</p>
         <div class="opciones-vista">
@@ -94,8 +124,8 @@ function abrirVista(categoria) {
         </div>
       </div>`;
   } else if(categoria === 'cumplimiento') {
-    contenido = `
-      <div class="card p-3 bienvenida">
+    contenido += `
+      <div class="card p-3 bienvenida" style="margin-top:100px">
         <h2>Cumplimiento</h2>
         <p>Seleccione el reporte:</p>
         <div class="opciones-vista">
@@ -148,9 +178,12 @@ function mostrarReporte(estacion) {
     src = "https://app.powerbi.com/reportEmbed?reportId=71c98777-7533-4821-b145-4ad8c9cc2e9d&autoAuth=true&ctid=fed0588c-2eb2-4466-bb01-afd3795657ec";
   }
 
-  // 🔑 Reemplazamos TODO el contenido del contenedor con el iframe
+  // 🔑 Reemplazamos TODO el contenido del contenedor con el banner + iframe
   document.getElementById('contenedor').innerHTML =
-    '<div class="card p-3"><iframe src="'+src+'" width="1140" height="541.25" frameborder="0" allowFullScreen="true"></iframe></div>';
+    renderBanner() +
+    '<div class="card p-3" style="margin-top:100px">' +
+      '<iframe src="'+src+'" width="1140" height="541.25" frameborder="0" allowFullScreen="true"></iframe>' +
+    '</div>';
 }
 
-console.log("Portal listo: vistas ejecutivas con recuadros dinámicos y iframes actualizados");
+console.log("Portal listo: banner modular, recuadros dinámicos y iframes actualizados");
