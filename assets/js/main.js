@@ -121,9 +121,10 @@ function abrirVista(categoria) {
         <p>Seleccione el reporte:</p>
         <div class="opciones-vista">
           <div class="opcion-recuadro" onclick="mostrarReporte('13gas_vd')">13 GAS</div>
-          <div class="opcion-recuadro" onclick="mostrarReporte('landsegen_vd')">Landsegen</div>
+          <div class="opcion-recuadro" onclick="mostrarReporte('landsegen_vd')">LANDSEGEN</div>
           <div class="opcion-recuadro" onclick="mostrarReporte('wigas_vd')">WIGAS</div>
-          <div class="opcion-recuadro" onclick="mostrarReporte('ventxcliente_trimes')">Global - Ventas por Cliente</div>
+          <div class="opcion-recuadro" onclick="mostrarReporte('ventxcliente_trimes')">
+          <span class="texto multilinea">GLOBAL<br>Ventas por cliente</span></div>
         </div>
       </div>`;
   } else if(categoria === 'cumplimiento') {
