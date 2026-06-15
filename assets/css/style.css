@@ -134,7 +134,7 @@ html, body {
   transition: color 0.4s ease;
 }
 
-/* Texto en dos líneas para Balance de Energía */
+/* Texto en dos líneas (círculos y recuadros) */
 .texto.multilinea {
   display: block;
   text-align: center;
@@ -185,9 +185,19 @@ html, body {
   color: #000;
 }
 
+.opcion-recuadro .texto {
+  font-size: 1em;
+  font-weight: bold;
+  color: #000;
+}
+
 .opcion-recuadro:hover {
   background-color: #CA142B;
   transform: scale(1.1);
+  color: #fff;
+}
+
+.opcion-recuadro:hover .texto {
   color: #fff;
 }
 
