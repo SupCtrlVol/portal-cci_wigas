@@ -134,6 +134,13 @@ html, body {
   transition: color 0.4s ease;
 }
 
+/* Texto en dos líneas para Balance de Energía */
+.texto.multilinea {
+  display: block;
+  text-align: center;
+  line-height: 1.2em;
+}
+
 .opcion-circulo:hover {
   background-color: #CA142B;
   transform: scale(1.1);
