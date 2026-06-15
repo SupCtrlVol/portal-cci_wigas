@@ -93,11 +93,14 @@ function abrirVista(categoria) {
         <p>Seleccione la estación:</p>
         <div class="opciones-vista">
           <div class="opcion-recuadro" onclick="mostrarReporte('13gas_be')">13 GAS</div>
-          <div class="opcion-recuadro" onclick="mostrarReporte('bexica_be')">Bexica</div>
-          <div class="opcion-recuadro" onclick="mostrarReporte('coacalco_be')">Consorcio GNV - Coacalco</div>
-          <div class="opcion-recuadro" onclick="mostrarReporte('ecatepec_be')">Consorcio GNV - Ecatepec</div>
-          <div class="opcion-recuadro" onclick="mostrarReporte('tlanepantla_be')">Consorcio GNV - Tlanepantla</div>
-          <div class="opcion-recuadro" onclick="mostrarReporte('landsegen_be')">Landsegen</div>
+          <div class="opcion-recuadro" onclick="mostrarReporte('bexica_be')">BEXICA</div>
+          <div class="opcion-recuadro" onclick="mostrarReporte('coacalco_be')">
+  <span class="texto multilinea">CONSORCIO DE GNV<br>Ecatepec</span></div>
+          <div class="opcion-recuadro" onclick="mostrarReporte('ecatepec_be')">
+  <span class="texto multilinea">CONSORCIO DE GNV<br>Ecatepec</span></div>
+          <div class="opcion-recuadro" onclick="mostrarReporte('tlanepantla_be')">
+  <span class="texto multilinea">CONSORCIO DE GNV<br>Tlanepantla</span></div>
+          <div class="opcion-recuadro" onclick="mostrarReporte('landsegen_be')">LANDSEGEN</div>
           <div class="opcion-recuadro" onclick="mostrarReporte('wigas_be')">WIGAS</div>
         </div>
       </div>`;
