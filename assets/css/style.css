@@ -172,28 +172,37 @@ html, body {
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   margin-top: 20px;
+  justify-items: center; /* centra los recuadros */
 }
 
 .opcion-recuadro {
   background-color: #808080;
   border-radius: 20px;
-  padding: 30px;
+  padding: 20px;
   text-align: center;
   font-weight: bold;
   cursor: pointer;
   transition: transform 0.4s ease, background-color 0.4s ease, color 0.4s ease;
   color: #000;
+
+  /* 🔑 Ajuste de tamaño uniforme */
+  min-width: 180px;
+  max-width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .opcion-recuadro .texto {
   font-size: 1em;
   font-weight: bold;
   color: #000;
+  line-height: 1.2em;
 }
 
 .opcion-recuadro:hover {
   background-color: #CA142B;
-  transform: scale(1.1);
+  transform: scale(1.05);
   color: #fff;
 }
 
