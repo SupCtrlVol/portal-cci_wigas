@@ -95,11 +95,11 @@ function abrirVista(categoria) {
           <div class="opcion-recuadro" onclick="mostrarReporte('13gas_be')">13 GAS</div>
           <div class="opcion-recuadro" onclick="mostrarReporte('bexica_be')">BEXICA</div>
           <div class="opcion-recuadro" onclick="mostrarReporte('coacalco_be')">
-  <span class="texto multilinea">CONSORCIO DE GNV<br>Ecatepec</span></div>
+          <span class="texto multilinea">CONSORCIO DE GNV<br>Coacalco</span></div>
           <div class="opcion-recuadro" onclick="mostrarReporte('ecatepec_be')">
-  <span class="texto multilinea">CONSORCIO DE GNV<br>Ecatepec</span></div>
+          <span class="texto multilinea">CONSORCIO DE GNV<br>Ecatepec</span></div>
           <div class="opcion-recuadro" onclick="mostrarReporte('tlanepantla_be')">
-  <span class="texto multilinea">CONSORCIO DE GNV<br>Tlanepantla</span></div>
+          <span class="texto multilinea">CONSORCIO DE GNV<br>Tlanepantla</span></div>
           <div class="opcion-recuadro" onclick="mostrarReporte('landsegen_be')">LANDSEGEN</div>
           <div class="opcion-recuadro" onclick="mostrarReporte('wigas_be')">WIGAS</div>
         </div>
