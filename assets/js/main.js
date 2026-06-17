@@ -144,7 +144,7 @@ function abrirVista(categoria) {
 
 // Mostrar acuses desde metadata.json
 async function mostrarAcuses(estacion) {
-  const response = await fetch('assets/pdfs/metadata.json');
+  const response = await fetch('assets/pdf/acuses/metadata.json');
   const metadata = await response.json();
   const ejercicios = Object.keys(metadata[estacion]);
 
