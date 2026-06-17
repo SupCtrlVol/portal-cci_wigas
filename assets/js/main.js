@@ -127,17 +127,74 @@ function abrirVista(categoria) {
           <span class="texto multilinea">GLOBAL<br>Ventas por cliente</span></div>
         </div>
       </div>`;
-  } else if(categoria === 'cumplimiento') {
+} else if(categoria === 'cumplimiento') {
     contenido += `
       <div class="card p-3 bienvenida banner-view">
         <h2>Cumplimiento</h2>
         <p>Seleccione el reporte:</p>
         <div class="opciones-vista">
           <div class="opcion-recuadro" onclick="mostrarReporte('json_tool')">JSON Mensual</div>
+          <div class="opcion-recuadro" onclick="mostrarAcuses('13gas')">Acuses</div>
         </div>
       </div>`;
   }
 
+  document.getElementById('contenedor').innerHTML = contenido;
+}
+
+// Mostrar acuses desde metadata.json
+async function mostrarAcuses(estacion) {
+  const response = await fetch('assets/pdfs/metadata.json');
+  const metadata = await response.json();
+  const ejercicios = Object.keys(metadata[estacion]);
+
+  let contenido = renderBanner();
+  contenido += `
+    <div class="card p-3 bienvenida banner-view">
+      <h2>Acuses ${estacion}</h2>
+      <p>Seleccione el año:</p>
+      <div class="opciones-vista">`;
+
+  ejercicios.forEach(ejercicio => {
+    contenido += `
+      <div class="opcion-recuadro">
+        <button onclick="mostrarAcusesPorEjercicio('${estacion}', '${ejercicio}')" class="texto">${ejercicio}</button>
+      </div>`;
+  });
+
+  contenido += `</div></div>`;
+  document.getElementById('contenedor').innerHTML = contenido;
+}
+
+async function mostrarAcusesPorEjercicio(estacion, ejercicio) {
+  const response = await fetch('assets/pdfs/metadata.json');
+  const metadata = await response.json();
+  const meses = metadata[estacion][ejercicio];
+
+  let contenido = renderBanner();
+  contenido += `
+    <div class="card p-3 bienvenida banner-view">
+      <h2>Acuses ${estacion} - ${ejercicio}</h2>
+      <p>Seleccione el mes:</p>
+      <div class="opciones-vista">`;
+
+  for (const mes in meses) {
+    contenido += `
+      <div class="opcion-recuadro">
+        <span class="texto">${mes}</span>
+        <div class="opciones-vista">`;
+
+    meses[mes].forEach(pdf => {
+      contenido += `
+        <div class="opcion-recuadro">
+          <a href="assets/pdfs/${estacion}/${ejercicio}/${pdf}" target="_blank" class="texto">${pdf}</a>
+        </div>`;
+    });
+
+    contenido += `</div></div>`;
+  }
+
+  contenido += `</div></div>`;
   document.getElementById('contenedor').innerHTML = contenido;
 }
 
@@ -188,5 +245,8 @@ function mostrarReporte(estacion) {
       '<iframe src="'+src+'" width="1140" height="541.25" frameborder="0" allowFullScreen="true"></iframe>' +
     '</div>';
 }
+
+// Inicializar la vista
+document.addEventListener('DOMContentLoaded', mostrarBienvenida);
 
 console.log("Portal listo: bienvenida con clase inicio-view, categorías y reportes con clase banner-view");
