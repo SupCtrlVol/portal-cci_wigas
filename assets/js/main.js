@@ -156,11 +156,11 @@ async function mostrarAcuses(estacion) {
       <div class="opciones-vista">`;
 
   ejercicios.forEach(ejercicio => {
-    contenido += `
-      <div class="opcion-recuadro">
-        <button onclick="mostrarAcusesPorEjercicio('${estacion}', '${ejercicio}')" class="texto">${ejercicio}</button>
-      </div>`;
-  });
+  contenido += `
+    <div class="opcion-recuadro" onclick="mostrarAcusesPorEjercicio('${estacion}', '${ejercicio}')">
+      <span class="texto">${ejercicio}</span>
+    </div>`;
+});
 
   contenido += `</div></div>`;
   document.getElementById('contenedor').innerHTML = contenido;
