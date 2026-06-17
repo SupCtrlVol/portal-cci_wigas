@@ -167,7 +167,7 @@ async function mostrarAcuses(estacion) {
 }
 
 async function mostrarAcusesPorEjercicio(estacion, ejercicio) {
-  const response = await fetch('assets/pdfs/metadata.json');
+  const response = await fetch('assets/pdf/acuses/metadata.json');
   const metadata = await response.json();
   const meses = metadata[estacion][ejercicio];
 
