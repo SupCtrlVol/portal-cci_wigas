@@ -143,24 +143,33 @@ function abrirVista(categoria) {
 }
 
 // Mostrar acuses desde metadata.json
-async function mostrarAcuses(estacion) {
+async function mostrarAcusesPorEjercicio(estacion, ejercicio) {
   const response = await fetch('assets/pdf/acuses/metadata.json');
   const metadata = await response.json();
-  const ejercicios = Object.keys(metadata[estacion]);
+  const meses = metadata[estacion][ejercicio];
 
   let contenido = renderBanner();
   contenido += `
     <div class="card p-3 bienvenida banner-view">
-      <h2>Acuses ${estacion}</h2>
-      <p>Seleccione el año:</p>
+      <h2>Acuses ${estacion} - ${ejercicio}</h2>
+      <p>Seleccione el mes:</p>
       <div class="opciones-vista">`;
 
-  ejercicios.forEach(ejercicio => {
-  contenido += `
-    <div class="opcion-recuadro" onclick="mostrarAcusesPorEjercicio('${estacion}', '${ejercicio}')">
-      <span class="texto">${ejercicio}</span>
-    </div>`;
-});
+  for (const mes in meses) {
+    contenido += `
+      <div class="card p-2 mb-3 opcion-recuadro">
+        <h4 class="texto">${mes}</h4>
+        <div class="opciones-vista">`;
+
+    meses[mes].forEach(pdf => {
+      contenido += `
+        <div class="opcion-recuadro">
+          <a href="assets/pdf/acuses/${estacion}/${ejercicio}/${pdf}" target="_blank" class="texto">${pdf}</a>
+        </div>`;
+    });
+
+    contenido += `</div></div>`;
+  }
 
   contenido += `</div></div>`;
   document.getElementById('contenedor').innerHTML = contenido;
