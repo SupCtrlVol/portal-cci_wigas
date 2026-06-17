@@ -62,19 +62,15 @@ function toggleMenu() {
 function renderBanner() {
   return `
     <div class="banner-superior">
-      <div class="banner-blanco">
-        <div class="banner-logo">
-          <img src="assets/images/logo.png" alt="Logo" onclick="mostrarBienvenida()">
-        </div>
+      <div class="banner-logo">
+        <img src="assets/images/logo.png" alt="Logo" onclick="mostrarBienvenida()">
       </div>
-      <div class="banner-rojo">
-        <div class="banner-menu">
-          <button onclick="toggleMenu()">Menú</button>
-          <div class="banner-menu-opciones">
-            <a href="#" onclick="mostrarCategorias()">Categorías</a>
-            <a href="#" onclick="mostrarAcuses('13 GAS')">Acuses</a>
-            <a href="#" onclick="mostrarReporte('wigas_be')">Reportes</a>
-          </div>
+      <div class="banner-menu">
+        <button onclick="toggleMenu()">Menú</button>
+        <div class="banner-menu-opciones">
+          <a href="#" onclick="mostrarCategorias()">Categorías</a>
+          <a href="#" onclick="mostrarAcuses('13 GAS')">Acuses</a>
+          <a href="#" onclick="mostrarReporte('wigas_be')">Reportes</a>
         </div>
       </div>
     </div>
@@ -88,21 +84,21 @@ function toggleMenu() {
 // ====== Pantalla de bienvenida ======
 function mostrarBienvenida() {
   let contenido = `
-    <div class="card p-3 bienvenida inicio-view">
+    <div class="card bienvenida inicio-view">
       <h2>Bienvenido al Portal CCI Wigas</h2>
       <p>Seleccione una opción para continuar:</p>
       <div class="opciones-principales">
         <div class="opcion-circulo" onclick="mostrarCategorias()">
           <img src="assets/images/categorias.png" class="icono-img">
-          <span>Categorías</span>
+          <span class="texto">Categorías</span>
         </div>
         <div class="opcion-circulo" onclick="mostrarAcuses('13 GAS')">
           <img src="assets/images/acuses.png" class="icono-img">
-          <span>Acuses</span>
+          <span class="texto">Acuses</span>
         </div>
         <div class="opcion-circulo" onclick="mostrarReporte('wigas_be')">
           <img src="assets/images/reportes.png" class="icono-img">
-          <span>Reportes</span>
+          <span class="texto">Reportes</span>
         </div>
       </div>
     </div>
@@ -114,17 +110,17 @@ function mostrarBienvenida() {
 function mostrarCategorias() {
   let contenido = renderBanner();
   contenido += `
-    <div class="card p-3 bienvenida banner-view">
+    <div class="card bienvenida banner-view">
       <h2>Categorías</h2>
       <p>Seleccione una estación:</p>
       <div class="opciones-vista">
-        <div class="opcion-recuadro" onclick="mostrarReporte('13gas_be')">13 GAS BE</div>
-        <div class="opcion-recuadro" onclick="mostrarReporte('wigas_be')">WIGAS BE</div>
-        <div class="opcion-recuadro" onclick="mostrarReporte('13gas_vd')">13 GAS Ventas</div>
-        <div class="opcion-recuadro" onclick="mostrarReporte('wigas_vd')">WIGAS Ventas</div>
-        <div class="opcion-recuadro" onclick="mostrarReporte('13gas_tool')">13 GAS Tool</div>
-        <div class="opcion-recuadro" onclick="mostrarReporte('wigas_tool')">WIGAS Tool</div>
-        <div class="opcion-recuadro" onclick="mostrarReporte('json_tool')">Cumplimiento JSON</div>
+        <div class="opcion-recuadro" onclick="mostrarReporte('13gas_be')"><span class="texto">13 GAS BE</span></div>
+        <div class="opcion-recuadro" onclick="mostrarReporte('wigas_be')"><span class="texto">WIGAS BE</span></div>
+        <div class="opcion-recuadro" onclick="mostrarReporte('13gas_vd')"><span class="texto">13 GAS Ventas</span></div>
+        <div class="opcion-recuadro" onclick="mostrarReporte('wigas_vd')"><span class="texto">WIGAS Ventas</span></div>
+        <div class="opcion-recuadro" onclick="mostrarReporte('13gas_tool')"><span class="texto">13 GAS Tool</span></div>
+        <div class="opcion-recuadro" onclick="mostrarReporte('wigas_tool')"><span class="texto">WIGAS Tool</span></div>
+        <div class="opcion-recuadro" onclick="mostrarReporte('json_tool')"><span class="texto">Cumplimiento JSON</span></div>
       </div>
     </div>
   `;
@@ -139,15 +135,15 @@ async function mostrarAcuses(estacion) {
 
   let contenido = renderBanner();
   contenido += `
-    <div class="card p-3 bienvenida banner-view">
+    <div class="card bienvenida banner-view">
       <h2>Acuses ${estacion}</h2>
       <p>Seleccione el año:</p>
       <div class="opciones-vista">`;
 
   ejercicios.forEach(ejercicio => {
     contenido += `
-      <div class="card opcion-recuadro" onclick="mostrarAcusesPorEjercicio('${estacion}', '${ejercicio}')">
-        <h4 class="texto">${ejercicio}</h4>
+      <div class="opcion-recuadro" onclick="mostrarAcusesPorEjercicio('${estacion}', '${ejercicio}')">
+        <span class="texto">${ejercicio}</span>
       </div>`;
   });
 
@@ -163,13 +159,14 @@ async function mostrarAcusesPorEjercicio(estacion, ejercicio) {
 
   let contenido = renderBanner();
   contenido += `
-    <div class="card p-3 bienvenida banner-view">
+    <div class="card bienvenida banner-view">
       <h2>Acuses ${estacion} - ${ejercicio}</h2>
-      <p>Seleccione el mes:</p>`;
+      <p>Seleccione el mes:</p>
+      <div class="opciones-vista">`;
 
   for (const mes in meses) {
     contenido += `
-      <div class="card p-2 mb-3 opcion-recuadro">
+      <div class="card opcion-recuadro">
         <h4 class="texto">${mes}</h4>
         <div class="opciones-vista">`;
 
@@ -183,7 +180,7 @@ async function mostrarAcusesPorEjercicio(estacion, ejercicio) {
     contenido += `</div></div>`;
   }
 
-  contenido += `</div>`;
+  contenido += `</div></div>`;
   document.getElementById('contenedor').innerHTML = contenido;
 }
 
@@ -209,7 +206,7 @@ function mostrarReporte(estacion) {
 
   document.getElementById('contenedor').innerHTML =
     renderBanner() +
-    '<div class="card p-3 bienvenida banner-view">' +
+    '<div class="card bienvenida banner-view">' +
       '<iframe src="'+src+'" width="1140" height="541.25" frameborder="0" allowFullScreen="true"></iframe>' +
     '</div>';
 }
@@ -218,4 +215,3 @@ function mostrarReporte(estacion) {
 document.addEventListener('DOMContentLoaded', mostrarBienvenida);
 
 console.log("Portal listo: bienvenida con clase inicio-view, categorías y reportes con clase banner-view, acuses integrados desde metadata.json");
-
