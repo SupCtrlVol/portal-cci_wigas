@@ -134,7 +134,7 @@ function abrirVista(categoria) {
         <p>Seleccione el reporte:</p>
         <div class="opciones-vista">
           <div class="opcion-recuadro" onclick="mostrarReporte('json_tool')">JSON Mensual</div>
-          <div class="opcion-recuadro" onclick="mostrarAcuses('13gas')">Acuses</div>
+          <div class="opcion-recuadro" onclick="mostrarAcuses('13 GAS')">Acuses</div>
         </div>
       </div>`;
   }
@@ -187,7 +187,7 @@ async function mostrarAcusesPorEjercicio(estacion, ejercicio) {
     meses[mes].forEach(pdf => {
       contenido += `
         <div class="opcion-recuadro">
-          <a href="assets/pdfs/${estacion}/${ejercicio}/${pdf}" target="_blank" class="texto">${pdf}</a>
+          <a href="assets/pdf/acuses/${estacion}/${ejercicio}/${pdf}" target="_blank" class="texto">${pdf}</a>
         </div>`;
     });
 
