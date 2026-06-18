@@ -1,233 +1,137 @@
 /* ====== Estilos generales ====== */
-html, body {
-  height: 100%;
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background-color: #f4f4f4;
 }
 
-/* ====== Pantalla de inicio ====== */
-.inicio {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  text-align: center;
-  background-color: #fff;
-  transition: opacity 0.8s ease-in-out;
-}
-
-.inicio.hidden {
-  opacity: 0;
-  pointer-events: none;
-  display: none;
-}
-
-.logo-grande {
-  width: 200px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.logo-grande:hover {
-  transform: scale(1.1);
-}
-
-/* ====== Contenedor principal ====== */
-.main {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  height: 100vh;
-  width: 100%;
-  background-color: #f9f9f9;
-  opacity: 0;
-  transition: opacity 0.8s ease-in-out;
-}
-
-.main.visible {
-  opacity: 1;
-}
-
-/* ====== Contenedor dinámico ====== */
-#contenedor {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  height: 100%;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-/* ====== Tarjeta de bienvenida ====== */
-.card.bienvenida {
+.card {
   background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  padding: 30px;
-  text-align: center;
-  max-width: 900px;
-  width: 90%;
-  animation: fadeDown 1s ease forwards;
-  margin: 0 auto;
+  padding: 20px;
+  margin: 15px auto;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
-.bienvenida.inicio-view {
-  margin-top: 30px;
+/* ====== Bienvenida ====== */
+.bienvenida h2 {
+  color: #b30000; /* rojo institucional */
+  margin-bottom: 10px;
 }
 
-.bienvenida.banner-view {
-  margin-top: 100px;
+.bienvenida p {
+  color: #333;
+  margin-bottom: 20px;
 }
 
-/* ====== Animaciones ====== */
-@keyframes fadeDown {
-  from { opacity: 0; transform: translateY(-30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(50px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* ====== Opciones principales en círculos ====== */
+/* ====== Opciones principales (círculos) ====== */
 .opciones-principales {
   display: flex;
   justify-content: center;
-  gap: 30px;
-  margin-top: 30px;
   flex-wrap: wrap;
+  gap: 20px;
 }
 
 .opcion-circulo {
-  background-color: #808080;
-  width: 160px;
-  height: 160px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
+  background-color: #f4f4f4;
+  border: 2px solid #ccc;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  text-align: center;
-  font-weight: bold;
+  align-items: center;
   cursor: pointer;
-  opacity: 0;
-  transform: translateY(50px);
-  animation: fadeUp 0.8s ease forwards;
-  overflow: hidden;
-  transition: transform 0.4s ease, background-color 0.4s ease, color 0.4s ease;
-}
-
-.opcion-circulo:nth-child(1) { animation-delay: 0.3s; }
-.opcion-circulo:nth-child(2) { animation-delay: 0.6s; }
-.opcion-circulo:nth-child(3) { animation-delay: 0.9s; }
-
-.opcion-circulo .texto {
-  font-size: 0.9em;
-  padding: 0 10px;
-  color: #000;
-  transition: color 0.4s ease;
+  transition: all 0.3s ease;
 }
 
 .opcion-circulo:hover {
-  background-color: #CA142B;
-  transform: scale(1.1);
-}
-
-.opcion-circulo:hover .texto {
-  color: #fff;
+  background-color: #e6e6e6;
+  border-color: #b30000;
 }
 
 .opcion-circulo.seleccionado {
-  background-color: #CA142B;
-}
-
-.opcion-circulo.seleccionado .texto {
+  background-color: #b30000;
   color: #fff;
+  border-color: #b30000;
 }
 
-.icono-img {
-  max-width: 50%;
-  max-height: 50%;
+.opcion-circulo img.icono-img {
+  width: 50px;
+  height: 50px;
   object-fit: contain;
   margin-bottom: 8px;
-  display: block;
 }
 
-/* ====== Opciones ejecutivas en recuadros ====== */
+.opcion-circulo .texto {
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* ====== Opciones en cuadrícula (recuadros) ====== */
 .opciones-vista {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 15px;
   margin-top: 20px;
-  justify-items: center;
 }
 
 .opcion-recuadro {
-  background-color: #808080;
-  border-radius: 20px;
-  padding: 20px;
+  background-color: #f4f4f4;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
   text-align: center;
-  font-weight: bold;
   cursor: pointer;
-  transition: transform 0.4s ease, background-color 0.4s ease, color 0.4s ease;
-  color: #000;
-  min-width: 180px;
-  max-width: 220px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  transition: all 0.3s ease;
 }
 
 .opcion-recuadro .texto {
-  font-size: 1em;
-  font-weight: bold;
-  color: #000;
-  line-height: 1.2em;
+  font-weight: 600;
+  color: #333;
+  display: block;
 }
 
 .opcion-recuadro:hover {
-  background-color: #CA142B;
-  transform: scale(1.05);
-  color: #fff;
+  background-color: #e6e6e6;
+  border-color: #b30000;
 }
 
-.opcion-recuadro:hover .texto {
+.opcion-recuadro.seleccionado {
+  background-color: #b30000;
   color: #fff;
+  border-color: #b30000;
 }
 
 .opcion-recuadro a {
   text-decoration: none;
   color: inherit;
+  display: block;
 }
 
-/* ====== Banner institucional superior ====== */
+/* ====== Banner ====== */
 .banner-superior {
-  background-color: #CA142B;
-  color: #fff;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 20px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 60px;
-  z-index: 1000;
+  flex-direction: column;
+}
+
+.banner-blanco {
+  background-color: #fff;
+  padding: 10px;
+}
+
+.banner-rojo {
+  background-color: #b30000;
+  padding: 10px;
+  color: #fff;
 }
 
 .banner-logo img {
   height: 40px;
   cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.banner-logo img:hover {
-  transform: scale(1.1);
 }
 
 .banner-menu {
@@ -235,38 +139,37 @@ html, body {
 }
 
 .banner-menu button {
-  background: none;
+  background-color: #fff;
+  color: #b30000;
   border: none;
-  color: #fff;
+  padding: 8px 12px;
   font-weight: bold;
   cursor: pointer;
-  font-size: 1em;
+  border-radius: 5px;
 }
 
 .banner-menu-opciones {
   display: none;
-  position: absolute;
-  right: 0;
-  top: 100%;
+  flex-direction: column;
   background-color: #fff;
-  color: #000;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  overflow: hidden;
+  border: 1px solid #ccc;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  z-index: 10;
 }
 
 .banner-menu-opciones a {
-  display: block;
-  padding: 10px 15px;
+  padding: 10px;
   text-decoration: none;
-  color: #000;
-  transition: background-color 0.3s ease;
+  color: #333;
+  border-bottom: 1px solid #eee;
 }
 
 .banner-menu-opciones a:hover {
-  background-color: #f0f0f0;
+  background-color: #f4f4f4;
 }
 
 .banner-menu.open .banner-menu-opciones {
-  display: block;
+  display: flex;
 }
