@@ -191,14 +191,26 @@ function mostrarReporte(estacion) {
     src = "https://app.powerbi.com/reportEmbed?reportId=56676f9f-5b2a-48bb-9e70-01bcba832eb2&autoAuth=true&ctid=fed0588c-2eb2-4466-bb01-afd3795657ec";
   } else if(estacion === 'bexica_be') {
     src = "https://app.powerbi.com/reportEmbed?reportId=bd69620e-cb6f-4401-b25d-bd3c401c909c&autoAuth=true&ctid=fed0588c-2eb2-4466-bb01-afd3795657ec";
+  } else if(estacion === 'coacalco_be') {
+    src = "https://app.powerbi.com/reportEmbed?reportId=e3694e0a-353c-4957-98bc-5a7055e72f93&autoAuth=true&ctid=fed0588c-2eb2-4466-bb01-afd3795657ec";
+  } else if(estacion === 'ecatepec_be') {
+    src = "https://app.powerbi.com/reportEmbed?reportId=a011b09e-67fa-4c91-99bb-64563a0b35bf&autoAuth=true&ctid=fed0588c-2eb2-4466-bb01-afd3795657ec";
+  } else if(estacion === 'tlanepantla_be') {
+    src = "https://app.powerbi.com/reportEmbed?reportId=a011b09e-67fa-4c91-99bb-64563a0b35bf&autoAuth=true&ctid=fed0588c-2eb2-4466-bb01-afd3795657ec";
+  } else if(estacion === 'landsegen_be') {
+    src = "https://app.powerbi.com/reportEmbed?reportId=802df296-a9ee-42ed-b59c-00d0c5393b22&autoAuth=true&ctid=fed0588c-2eb2-4466-bb01-afd3795657ec";
   } else if(estacion === 'wigas_be') {
     src = "https://app.powerbi.com/reportEmbed?reportId=40572fd5-d90b-441b-acac-30eae98e545b&autoAuth=true&ctid=fed0588c-2eb2-4466-bb01-afd3795657ec";
 
   // Ventas
   } else if(estacion === '13gas_vd') {
     src = "https://app.powerbi.com/reportEmbed?reportId=3a0bd50d-1c22-47a5-93e6-64724f740208&autoAuth=true&ctid=fed0588c-2eb2-4466-bb01-afd3795657ec";
+  } else if(estacion === 'landsegen_vd') {
+    src = "https://app.powerbi.com/reportEmbed?reportId=8dfc39db-c41e-4e4c-b36c-4fbff34edf06&autoAuth=true&ctid=fed0588c-2eb2-4466-bb01-afd3795657ec";
   } else if(estacion === 'wigas_vd') {
     src = "https://app.powerbi.com/reportEmbed?reportId=094fff5e-dbe2-459c-9c5a-b189dcac71e9&autoAuth=true&ctid=fed0588c-2eb2-4466-bb01-afd3795657ec";
+  } else if(estacion === 'ventxcliente_trimes') {
+    src = "https://app.powerbi.com/reportEmbed?reportId=2b5357da-f62c-4575-8499-e7e666291b3d&autoAuth=true&ctid=fed0588c-2eb2-4466-bb01-afd3795657ec";
 
   // Herramientas
   } else if(estacion === '13gas_tool') {
