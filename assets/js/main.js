@@ -78,6 +78,7 @@ function renderBanner() {
 }
 
 // ====== Vistas ejecutivas ======
+
 function abrirVista(categoria) {
   let contenido = renderBanner();
 
@@ -89,6 +90,13 @@ function abrirVista(categoria) {
         <div class="opciones-vista">
           <div class="opcion-recuadro" onclick="mostrarReporte('13gas_be')">13 GAS</div>
           <div class="opcion-recuadro" onclick="mostrarReporte('bexica_be')">BEXICA</div>
+          <div class="opcion-recuadro" onclick="mostrarReporte('coacalco_be')">
+          <span class="texto multilinea">CONSORCIO DE GNV<br>Coacalco</span></div>
+          <div class="opcion-recuadro" onclick="mostrarReporte('ecatepec_be')">
+          <span class="texto multilinea">CONSORCIO DE GNV<br>Ecatepec</span></div>
+          <div class="opcion-recuadro" onclick="mostrarReporte('tlanepantla_be')">
+          <span class="texto multilinea">CONSORCIO DE GNV<br>Tlanepantla</span></div>
+          <div class="opcion-recuadro" onclick="mostrarReporte('landsegen_be')">LANDSEGEN</div>
           <div class="opcion-recuadro" onclick="mostrarReporte('wigas_be')">WIGAS</div>
         </div>
       </div>`;
@@ -109,7 +117,10 @@ function abrirVista(categoria) {
         <p>Seleccione el reporte:</p>
         <div class="opciones-vista">
           <div class="opcion-recuadro" onclick="mostrarReporte('13gas_vd')">13 GAS</div>
+          <div class="opcion-recuadro" onclick="mostrarReporte('landsegen_vd')">LANDSEGEN</div>
           <div class="opcion-recuadro" onclick="mostrarReporte('wigas_vd')">WIGAS</div>
+          <div class="opcion-recuadro" onclick="mostrarReporte('ventxcliente_trimes')">
+          <span class="texto multilinea">GLOBAL<br>Ventas por cliente</span></div>
         </div>
       </div>`;
   } else if(categoria === 'cumplimiento') {
@@ -118,14 +129,12 @@ function abrirVista(categoria) {
         <h2>Cumplimiento</h2>
         <p>Seleccione el reporte:</p>
         <div class="opciones-vista">
-          <div class="opcion-recuadro" onclick="mostrarAcuses('13 GAS')">Acuses</div>
           <div class="opcion-recuadro" onclick="mostrarReporte('json_tool')">JSON Mensual</div>
         </div>
       </div>`;
   }
 
   document.getElementById('contenedor').innerHTML = contenido;
-}
 
 // ====== Acuses ======
 async function mostrarAcuses(estacion) {
