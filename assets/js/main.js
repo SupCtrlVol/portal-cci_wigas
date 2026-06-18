@@ -137,6 +137,7 @@ function abrirVista(categoria) {
         <h2>Cumplimiento</h2>
         <p>Seleccione el reporte:</p>
         <div class="opciones-vista">
+          <div class="opcion-recuadro" onclick="mostrarAcuses('13 GAS')">Acuses</div>
           <div class="opcion-recuadro" onclick="mostrarReporte('json_tool')">JSON Mensual</div>
         </div>
       </div>`;
