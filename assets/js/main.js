@@ -10,7 +10,7 @@ function entrarPortal() {
   }, 300);
 }
 
-// ====== Bienvenida inicial ======
+// ====== Bienvenida inicial (sin banner, clase inicio-view) ======
 function mostrarBienvenida() {
   const contenido = `
     <div class="card p-3 bienvenida inicio-view">
@@ -52,33 +52,37 @@ function seleccionarOpcion(elemento) {
   elemento.classList.add('seleccionado');
 }
 
-// ====== Banner ======
+// ====== Función para desplegar/ocultar menú del banner ======
 function toggleMenu() {
   const menu = document.querySelector('.banner-menu');
   menu.classList.toggle('open');
 }
 
+// ====== Bloque modular del banner ======
 function renderBanner() {
   return `
     <div class="banner-superior">
-      <div class="banner-logo" onclick="mostrarBienvenida()">
-        <img src="assets/images/logo_blanco.webp?v=5" alt="Logo">
+      <div class="banner-blanco">
+        <div class="banner-logo" onclick="mostrarBienvenida()">
+          <img src="assets/images/logo_blanco.webp?v=5" alt="Logo">
+        </div>
       </div>
-      <div class="banner-menu">
-        <button onclick="toggleMenu()">Menú ▾</button>
-        <div class="banner-menu-opciones">
-          <a href="#" onclick="abrirVista('balance')">Balance de Energía</a>
-          <a href="#" onclick="abrirVista('herramientas')">Herramientas</a>
-          <a href="#" onclick="abrirVista('ventas')">Ventas</a>
-          <a href="#" onclick="abrirVista('cumplimiento')">Cumplimiento</a>
+      <div class="banner-rojo">
+        <div class="banner-menu">
+          <button onclick="toggleMenu()">Menú ▾</button>
+          <div class="banner-menu-opciones">
+            <a href="#" onclick="abrirVista('balance')">Balance de Energía</a>
+            <a href="#" onclick="abrirVista('herramientas')">Herramientas</a>
+            <a href="#" onclick="abrirVista('ventas')">Ventas</a>
+            <a href="#" onclick="abrirVista('cumplimiento')">Cumplimiento</a>
+          </div>
         </div>
       </div>
     </div>
   `;
 }
 
-// ====== Vistas ejecutivas ======
-
+// ====== Vista ejecutiva con recuadros y banner (clase banner-view) ======
 function abrirVista(categoria) {
   let contenido = renderBanner();
 
@@ -91,11 +95,14 @@ function abrirVista(categoria) {
           <div class="opcion-recuadro" onclick="mostrarReporte('13gas_be')">13 GAS</div>
           <div class="opcion-recuadro" onclick="mostrarReporte('bexica_be')">BEXICA</div>
           <div class="opcion-recuadro" onclick="mostrarReporte('coacalco_be')">
-          <span class="texto multilinea">CONSORCIO DE GNV<br>Coacalco</span></div>
+            <span class="texto multilinea">CONSORCIO DE GNV<br>Coacalco</span>
+          </div>
           <div class="opcion-recuadro" onclick="mostrarReporte('ecatepec_be')">
-          <span class="texto multilinea">CONSORCIO DE GNV<br>Ecatepec</span></div>
+            <span class="texto multilinea">CONSORCIO DE GNV<br>Ecatepec</span>
+          </div>
           <div class="opcion-recuadro" onclick="mostrarReporte('tlanepantla_be')">
-          <span class="texto multilinea">CONSORCIO DE GNV<br>Tlanepantla</span></div>
+            <span class="texto multilinea">CONSORCIO DE GNV<br>Tlanepantla</span>
+          </div>
           <div class="opcion-recuadro" onclick="mostrarReporte('landsegen_be')">LANDSEGEN</div>
           <div class="opcion-recuadro" onclick="mostrarReporte('wigas_be')">WIGAS</div>
         </div>
@@ -120,7 +127,8 @@ function abrirVista(categoria) {
           <div class="opcion-recuadro" onclick="mostrarReporte('landsegen_vd')">LANDSEGEN</div>
           <div class="opcion-recuadro" onclick="mostrarReporte('wigas_vd')">WIGAS</div>
           <div class="opcion-recuadro" onclick="mostrarReporte('ventxcliente_trimes')">
-          <span class="texto multilinea">GLOBAL<br>Ventas por cliente</span></div>
+            <span class="texto multilinea">GLOBAL<br>Ventas por cliente</span>
+          </div>
         </div>
       </div>`;
   } else if(categoria === 'cumplimiento') {
@@ -135,6 +143,7 @@ function abrirVista(categoria) {
   }
 
   document.getElementById('contenedor').innerHTML = contenido;
+}
 
 // ====== Acuses ======
 async function mostrarAcuses(estacion) {
