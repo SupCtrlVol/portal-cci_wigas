@@ -179,25 +179,19 @@ async function mostrarAcusesPorEjercicio(estacion, ejercicio) {
   contenido += `
     <div class="card p-3 bienvenida banner-view">
       <h2>Acuses ${estacion} - ${ejercicio}</h2>
-      <p>Seleccione el mes:</p>`;
+      <p>Seleccione el mes:</p>
+      <div class="opciones-vista">`;
 
   for (const mes in meses) {
+    // Tomamos el primer PDF del mes y lo abrimos directamente
+    const pdf = meses[mes][0];
     contenido += `
-      <div class="card opcion-recuadro">
-        <h4 class="texto">${mes}</h4>
-        <div class="opciones-vista">`;
-
-    meses[mes].forEach(pdf => {
-      contenido += `
-        <div class="opcion-recuadro">
-          <a href="assets/pdf/acuses/${estacion}/${ejercicio}/${pdf}" target="_blank" class="texto">${pdf}</a>
-        </div>`;
-    });
-
-    contenido += `</div></div>`;
+      <div class="opcion-recuadro">
+        <a href="assets/pdf/acuses/${estacion}/${ejercicio}/${pdf}" target="_blank" class="texto">${mes}</a>
+      </div>`;
   }
 
-  contenido += `</div>`;
+  contenido += `</div></div>`;
   document.getElementById('contenedor').innerHTML = contenido;
 }
 
@@ -250,4 +244,4 @@ function mostrarReporte(estacion) {
 }
 
 // ====== Inicialización ======
-console.log("Portal listo: bienvenida con clase inicio-view, categorías y reportes con clase banner-view, acuses integrados desde metadata.json");
+console.log("Portal listo: bienvenida con clase inicio-view, categorías y reportes con clase banner-view, acuses simplificados por mes");
