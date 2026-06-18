@@ -10,7 +10,7 @@ function entrarPortal() {
   }, 300);
 }
 
-// Bienvenida inicial (sin banner, clase inicio-view)
+// ====== Bienvenida inicial ======
 function mostrarBienvenida() {
   const contenido = `
     <div class="card p-3 bienvenida inicio-view">
@@ -52,82 +52,82 @@ function seleccionarOpcion(elemento) {
   elemento.classList.add('seleccionado');
 }
 
-// Función para desplegar/ocultar menú del banner
+// ====== Banner ======
 function toggleMenu() {
   const menu = document.querySelector('.banner-menu');
   menu.classList.toggle('open');
 }
 
-// ====== Banner superior ======
 function renderBanner() {
   return `
     <div class="banner-superior">
-      <div class="banner-logo">
-        <img src="assets/images/logo.png" alt="Logo" onclick="mostrarBienvenida()">
+      <div class="banner-logo" onclick="mostrarBienvenida()">
+        <img src="assets/images/logo_blanco.webp?v=5" alt="Logo">
       </div>
       <div class="banner-menu">
-        <button onclick="toggleMenu()">Menú</button>
+        <button onclick="toggleMenu()">Menú ▾</button>
         <div class="banner-menu-opciones">
-          <a href="#" onclick="mostrarCategorias()">Categorías</a>
-          <a href="#" onclick="mostrarAcuses('13 GAS')">Acuses</a>
-          <a href="#" onclick="mostrarReporte('wigas_be')">Reportes</a>
+          <a href="#" onclick="abrirVista('balance')">Balance de Energía</a>
+          <a href="#" onclick="abrirVista('herramientas')">Herramientas</a>
+          <a href="#" onclick="abrirVista('ventas')">Ventas</a>
+          <a href="#" onclick="abrirVista('cumplimiento')">Cumplimiento</a>
         </div>
       </div>
     </div>
   `;
 }
 
-function toggleMenu() {
-  document.querySelector('.banner-menu').classList.toggle('open');
-}
-
-// ====== Pantalla de bienvenida ======
-function mostrarBienvenida() {
-  let contenido = `
-    <div class="card bienvenida inicio-view">
-      <h2>Bienvenido al Portal CCI Wigas</h2>
-      <p>Seleccione una opción para continuar:</p>
-      <div class="opciones-principales">
-        <div class="opcion-circulo" onclick="mostrarCategorias()">
-          <img src="assets/images/categorias.png" class="icono-img">
-          <span class="texto">Categorías</span>
-        </div>
-        <div class="opcion-circulo" onclick="mostrarAcuses('13 GAS')">
-          <img src="assets/images/acuses.png" class="icono-img">
-          <span class="texto">Acuses</span>
-        </div>
-        <div class="opcion-circulo" onclick="mostrarReporte('wigas_be')">
-          <img src="assets/images/reportes.png" class="icono-img">
-          <span class="texto">Reportes</span>
-        </div>
-      </div>
-    </div>
-  `;
-  document.getElementById('contenedor').innerHTML = contenido;
-}
-
-// ====== Mostrar categorías ======
-function mostrarCategorias() {
+// ====== Vistas ejecutivas ======
+function abrirVista(categoria) {
   let contenido = renderBanner();
-  contenido += `
-    <div class="card bienvenida banner-view">
-      <h2>Categorías</h2>
-      <p>Seleccione una estación:</p>
-      <div class="opciones-vista">
-        <div class="opcion-recuadro" onclick="mostrarReporte('13gas_be')"><span class="texto">13 GAS BE</span></div>
-        <div class="opcion-recuadro" onclick="mostrarReporte('wigas_be')"><span class="texto">WIGAS BE</span></div>
-        <div class="opcion-recuadro" onclick="mostrarReporte('13gas_vd')"><span class="texto">13 GAS Ventas</span></div>
-        <div class="opcion-recuadro" onclick="mostrarReporte('wigas_vd')"><span class="texto">WIGAS Ventas</span></div>
-        <div class="opcion-recuadro" onclick="mostrarReporte('13gas_tool')"><span class="texto">13 GAS Tool</span></div>
-        <div class="opcion-recuadro" onclick="mostrarReporte('wigas_tool')"><span class="texto">WIGAS Tool</span></div>
-        <div class="opcion-recuadro" onclick="mostrarReporte('json_tool')"><span class="texto">Cumplimiento JSON</span></div>
-      </div>
-    </div>
-  `;
+
+  if(categoria === 'balance') {
+    contenido += `
+      <div class="card p-3 bienvenida banner-view">
+        <h2>Balance de Energía</h2>
+        <p>Seleccione la estación:</p>
+        <div class="opciones-vista">
+          <div class="opcion-recuadro" onclick="mostrarReporte('13gas_be')">13 GAS</div>
+          <div class="opcion-recuadro" onclick="mostrarReporte('bexica_be')">BEXICA</div>
+          <div class="opcion-recuadro" onclick="mostrarReporte('wigas_be')">WIGAS</div>
+        </div>
+      </div>`;
+  } else if(categoria === 'herramientas') {
+    contenido += `
+      <div class="card p-3 bienvenida banner-view">
+        <h2>Herramientas de Análisis</h2>
+        <p>Seleccione la estación:</p>
+        <div class="opciones-vista">
+          <div class="opcion-recuadro" onclick="mostrarReporte('13gas_tool')">13 GAS</div>
+          <div class="opcion-recuadro" onclick="mostrarReporte('wigas_tool')">WIGAS</div>
+        </div>
+      </div>`;
+  } else if(categoria === 'ventas') {
+    contenido += `
+      <div class="card p-3 bienvenida banner-view">
+        <h2>Ventas</h2>
+        <p>Seleccione el reporte:</p>
+        <div class="opciones-vista">
+          <div class="opcion-recuadro" onclick="mostrarReporte('13gas_vd')">13 GAS</div>
+          <div class="opcion-recuadro" onclick="mostrarReporte('wigas_vd')">WIGAS</div>
+        </div>
+      </div>`;
+  } else if(categoria === 'cumplimiento') {
+    contenido += `
+      <div class="card p-3 bienvenida banner-view">
+        <h2>Cumplimiento</h2>
+        <p>Seleccione el reporte:</p>
+        <div class="opciones-vista">
+          <div class="opcion-recuadro" onclick="mostrarAcuses('13 GAS')">Acuses</div>
+          <div class="opcion-recuadro" onclick="mostrarReporte('json_tool')">JSON Mensual</div>
+        </div>
+      </div>`;
+  }
+
   document.getElementById('contenedor').innerHTML = contenido;
 }
 
-// ====== Mostrar acuses ======
+// ====== Acuses ======
 async function mostrarAcuses(estacion) {
   const response = await fetch('assets/pdf/acuses/metadata.json');
   const metadata = await response.json();
@@ -135,7 +135,7 @@ async function mostrarAcuses(estacion) {
 
   let contenido = renderBanner();
   contenido += `
-    <div class="card bienvenida banner-view">
+    <div class="card p-3 bienvenida banner-view">
       <h2>Acuses ${estacion}</h2>
       <p>Seleccione el año:</p>
       <div class="opciones-vista">`;
@@ -151,7 +151,6 @@ async function mostrarAcuses(estacion) {
   document.getElementById('contenedor').innerHTML = contenido;
 }
 
-// ====== Mostrar acuses por ejercicio ======
 async function mostrarAcusesPorEjercicio(estacion, ejercicio) {
   const response = await fetch('assets/pdf/acuses/metadata.json');
   const metadata = await response.json();
@@ -159,10 +158,9 @@ async function mostrarAcusesPorEjercicio(estacion, ejercicio) {
 
   let contenido = renderBanner();
   contenido += `
-    <div class="card bienvenida banner-view">
+    <div class="card p-3 bienvenida banner-view">
       <h2>Acuses ${estacion} - ${ejercicio}</h2>
-      <p>Seleccione el mes:</p>
-      <div class="opciones-vista">`;
+      <p>Seleccione el mes:</p>`;
 
   for (const mes in meses) {
     contenido += `
@@ -180,7 +178,7 @@ async function mostrarAcusesPorEjercicio(estacion, ejercicio) {
     contenido += `</div></div>`;
   }
 
-  contenido += `</div></div>`;
+  contenido += `</div>`;
   document.getElementById('contenedor').innerHTML = contenido;
 }
 
@@ -188,30 +186,37 @@ async function mostrarAcusesPorEjercicio(estacion, ejercicio) {
 function mostrarReporte(estacion) {
   let src = '';
 
-  if(estacion === 'wigas_be') {
-    src = "https://app.powerbi.com/reportEmbed?reportId=40572fd5-d90b-441b-acac-30eae98e545b&autoAuth=true&ctid=fed0588c-2eb2-4466-bb01-afd3795657ec";
-  } else if(estacion === '13gas_be') {
+  // Balance de Energía
+  if(estacion === '13gas_be') {
     src = "https://app.powerbi.com/reportEmbed?reportId=56676f9f-5b2a-48bb-9e70-01bcba832eb2&autoAuth=true&ctid=fed0588c-2eb2-4466-bb01-afd3795657ec";
+  } else if(estacion === 'bexica_be') {
+    src = "https://app.powerbi.com/reportEmbed?reportId=bd69620e-cb6f-4401-b25d-bd3c401c909c&autoAuth=true&ctid=fed0588c-2eb2-4466-bb01-afd3795657ec";
+  } else if(estacion === 'wigas_be') {
+    src = "https://app.powerbi.com/reportEmbed?reportId=40572fd5-d90b-441b-acac-30eae98e545b&autoAuth=true&ctid=fed0588c-2eb2-4466-bb01-afd3795657ec";
+
+  // Ventas
   } else if(estacion === '13gas_vd') {
     src = "https://app.powerbi.com/reportEmbed?reportId=3a0bd50d-1c22-47a5-93e6-64724f740208&autoAuth=true&ctid=fed0588c-2eb2-4466-bb01-afd3795657ec";
   } else if(estacion === 'wigas_vd') {
     src = "https://app.powerbi.com/reportEmbed?reportId=094fff5e-dbe2-459c-9c5a-b189dcac71e9&autoAuth=true&ctid=fed0588c-2eb2-4466-bb01-afd3795657ec";
+
+  // Herramientas
   } else if(estacion === '13gas_tool') {
     src = "https://app.powerbi.com/reportEmbed?reportId=318743fa-05d5-40a5-b0db-11ae78c595e5&autoAuth=true&ctid=fed0588c-2eb2-4466-bb01-afd3795657ec";
   } else if(estacion === 'wigas_tool') {
     src = "https://app.powerbi.com/reportEmbed?reportId=02fe3d46-7d4e-41a2-84a5-f863b364643a&autoAuth=true&ctid=fed0588c-2eb2-4466-bb01-afd3795657ec";
+
+  // Cumplimiento
   } else if(estacion === 'json_tool') {
     src = "https://app.powerbi.com/reportEmbed?reportId=71c98777-7533-4821-b145-4ad8c9cc2e9d&autoAuth=true&ctid=fed0588c-2eb2-4466-bb01-afd3795657ec";
   }
 
   document.getElementById('contenedor').innerHTML =
     renderBanner() +
-    '<div class="card bienvenida banner-view">' +
+    '<div class="card p-3 bienvenida banner-view">' +
       '<iframe src="'+src+'" width="1140" height="541.25" frameborder="0" allowFullScreen="true"></iframe>' +
     '</div>';
 }
 
-// ====== Inicializar ======
-document.addEventListener('DOMContentLoaded', mostrarBienvenida);
-
+// ====== Inicialización ======
 console.log("Portal listo: bienvenida con clase inicio-view, categorías y reportes con clase banner-view, acuses integrados desde metadata.json");
