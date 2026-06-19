@@ -167,13 +167,12 @@ async function mostrarAcuses(estacion) {
       </div>`;
   });
 
-  // 🔙 Botón de regresar al menú Cumplimiento
-  contenido += `
-      <div class="opcion-recuadro volver-btn" onclick="abrirVista('cumplimiento')">
-        <img src="assets/images/Regresar.png" alt="Regresar" class="icono-img">
-        <span class="texto">Volver</span>
-      </div>
-    </div></div>`;
+ // 🔙 Botón de regresar al menú Cumplimiento
+contenido += `
+  <div class="opcion-recuadro volver-btn" onclick="abrirVista('cumplimiento')">
+    <img src="assets/images/Regresar.png" alt="Regresar" class="icono-img">
+  </div>
+</div></div>`;
 
   document.getElementById('contenedor').innerHTML = contenido;
 }
@@ -199,12 +198,11 @@ async function mostrarAcusesPorEjercicio(estacion, ejercicio) {
   }
 
   // 🔙 Botón de regresar a la selección de años de la estación
-  contenido += `
-      <div class="opcion-recuadro volver-btn" onclick="mostrarAcuses('${estacion}')">
-        <img src="assets/images/Regresar.png" alt="Regresar" class="icono-img">
-        <span class="texto">Volver</span>
-      </div>
-    </div></div>`;
+contenido += `
+  <div class="opcion-recuadro volver-btn" onclick="mostrarAcuses('${estacion}')">
+    <img src="assets/images/Regresar.png" alt="Regresar" class="icono-img">
+  </div>
+</div></div>`;
 
   document.getElementById('contenedor').innerHTML = contenido;
 }
