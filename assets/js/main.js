@@ -147,6 +147,21 @@ function abrirVista(categoria) {
   document.getElementById('contenedor').innerHTML = contenido;
 }
 
+function renderBreadcrumb(estacion = null, ejercicio = null) {
+  let ruta = `<div class="breadcrumb">
+                <img src="assets/images/Regresar.png" alt="Regresar" class="breadcrumb-icon" onclick="abrirVista('cumplimiento')">`;
+
+  if (estacion) {
+    ruta += ` <span onclick="mostrarAcuses('${estacion}')">${estacion}</span>`;
+  }
+  if (ejercicio) {
+    ruta += ` <span onclick="mostrarAcusesPorEjercicio('${estacion}', '${ejercicio}')">${ejercicio}</span>`;
+  }
+
+  ruta += `</div>`;
+  return ruta;
+}
+
 // ====== Acuses ======
 async function mostrarAcuses(estacion) {
   const response = await fetch('assets/pdf/acuses/metadata.json');
@@ -154,6 +169,7 @@ async function mostrarAcuses(estacion) {
   const ejercicios = Object.keys(metadata[estacion]);
 
   let contenido = renderBanner();
+  contenido += renderBreadcrumb(estacion); // 🔗 breadcrumb fijo
   contenido += `
     <div class="card p-3 bienvenida banner-view">
       <h2>Acuses ${estacion}</h2>
@@ -167,13 +183,7 @@ async function mostrarAcuses(estacion) {
       </div>`;
   });
 
- // 🔙 Botón de regresar al menú Cumplimiento
-contenido += `
-  <div class="opcion-recuadro volver-btn" onclick="abrirVista('cumplimiento')">
-    <img src="assets/images/Regresar.png" alt="Regresar" class="icono-img">
-  </div>
-</div></div>`;
-
+  contenido += `</div></div>`;
   document.getElementById('contenedor').innerHTML = contenido;
 }
 
@@ -183,6 +193,7 @@ async function mostrarAcusesPorEjercicio(estacion, ejercicio) {
   const meses = metadata[estacion][ejercicio];
 
   let contenido = renderBanner();
+  contenido += renderBreadcrumb(estacion, ejercicio); // 🔗 breadcrumb fijo
   contenido += `
     <div class="card p-3 bienvenida banner-view">
       <h2>Acuses ${estacion} - ${ejercicio}</h2>
@@ -197,13 +208,7 @@ async function mostrarAcusesPorEjercicio(estacion, ejercicio) {
       </div>`;
   }
 
-  // 🔙 Botón de regresar a la selección de años de la estación
-contenido += `
-  <div class="opcion-recuadro volver-btn" onclick="mostrarAcuses('${estacion}')">
-    <img src="assets/images/Regresar.png" alt="Regresar" class="icono-img">
-  </div>
-</div></div>`;
-
+  contenido += `</div></div>`;
   document.getElementById('contenedor').innerHTML = contenido;
 }
 
