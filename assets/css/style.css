@@ -214,24 +214,19 @@ html, body {
 
 /* ====== Botón Volver ====== */
 .opcion-recuadro.volver-btn {
-  background-color: #e0e0e0; /* gris claro */
-  border: 2px solid #CA142B; /* borde rojo institucional */
-  color: #000;
+  background-color: transparent; /* sin cuadro gris */
+  border: none; /* sin borde */
+  box-shadow: none;
+  cursor: pointer;
 }
 
 .opcion-recuadro.volver-btn:hover {
-  background-color: #CA142B;
-  color: #fff;
+  transform: scale(1.1); /* efecto elegante al pasar el mouse */
 }
 
 .opcion-recuadro.volver-btn img.icono-img {
-  width: 24px;
-  height: 24px;
-  margin-right: 8px;
-}
-
-.opcion-recuadro.volver-btn {
-  gap: 8px; /* espacio entre ícono y texto */
+  width: 32px;
+  height: 32px;
 }
 
 /* ====== Banner institucional superior ====== */
