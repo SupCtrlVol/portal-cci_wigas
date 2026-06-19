@@ -167,7 +167,14 @@ async function mostrarAcuses(estacion) {
       </div>`;
   });
 
-  contenido += `</div></div>`;
+  // 🔙 Botón de regresar al menú Cumplimiento
+  contenido += `
+      <div class="opcion-recuadro volver-btn" onclick="abrirVista('cumplimiento')">
+        <img src="assets/images/Regresar.png" alt="Regresar" class="icono-img">
+        <span class="texto">Volver</span>
+      </div>
+    </div></div>`;
+
   document.getElementById('contenedor').innerHTML = contenido;
 }
 
@@ -184,14 +191,21 @@ async function mostrarAcusesPorEjercicio(estacion, ejercicio) {
       <div class="opciones-vista">`;
 
   for (const mes in meses) {
-    const pdf = meses[mes][0]; // siempre tomamos el primer archivo
+    const pdf = meses[mes][0];
     contenido += `
       <div class="opcion-recuadro">
         <a href="assets/pdf/acuses/${estacion}/${ejercicio}/${pdf}" target="_blank" class="texto">${mes}</a>
       </div>`;
   }
 
-  contenido += `</div></div>`;
+  // 🔙 Botón de regresar a la selección de años de la estación
+  contenido += `
+      <div class="opcion-recuadro volver-btn" onclick="mostrarAcuses('${estacion}')">
+        <img src="assets/images/Regresar.png" alt="Regresar" class="icono-img">
+        <span class="texto">Volver</span>
+      </div>
+    </div></div>`;
+
   document.getElementById('contenedor').innerHTML = contenido;
 }
 
