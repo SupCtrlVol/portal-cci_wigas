@@ -1,128 +1,103 @@
 {
   "13 GAS": {
     "2022": {
-      "Octubre": [
-        "Aceptacion_2023112114162237954.pdf"
-      ],
-      "Noviembre": [
-        "Aceptacion_2023112114162237975.pdf"
-      ],
-      "Diciembre": [
-        "Aceptacion_2023112114162238021.pdf"
-      ]
+      "Octubre": ["Aceptacion_2023112114162237954.pdf"],
+      "Noviembre": ["Aceptacion_2023112114162237975.pdf"],
+      "Diciembre": ["Aceptacion_2023112114162238021.pdf"]
     },
     "2023": {
-      "Junio": [
-        "Aceptacion_2025062414162700573.pdf"
-      ],
-      "Julio": [
-        "Aceptacion_2025062414162700773.pdf"
-      ],
-      "Agosto": [
-        "Aceptacion_2025062514162707347.pdf"
-      ],
-      "Septiembre": [
-        "Aceptacion_2025062614162710511.pdf"
-      ],
-      "Octubre": [
-        "Aceptacion_2025062614162710527.pdf"
-      ],
-      "Noviembre": [
-        "Aceptacion_2025062514162707845.pdf"
-      ],
-      "Diciembre": [
-        "Aceptacion_2025062514162707910.pdf"
-      ]
+      "Junio": ["Aceptacion_2025062414162700573.pdf"],
+      "Julio": ["Aceptacion_2025062414162700773.pdf"],
+      "Agosto": ["Aceptacion_2025062514162707347.pdf"],
+      "Septiembre": ["Aceptacion_2025062614162710511.pdf"],
+      "Octubre": ["Aceptacion_2025062614162710527.pdf"],
+      "Noviembre": ["Aceptacion_2025062514162707845.pdf"],
+      "Diciembre": ["Aceptacion_2025062514162707910.pdf"]
     },
     "2024": {
-      "Enero": [
-        "Aceptacion_2024040214162505630.pdf"
-      ],
-      "Febrero": [
-        "Aceptacion_2024040214162505672.pdf"
-      ],
-      "Marzo": [
-        "Aceptacion_2025021214162260973.pdf"
-      ],
-      "Abril": [
-        "Aceptacion_2025020514162236872.pdf"
-      ],
-      "Mayo": [
-        "Aceptacion_2025020514162236933.pdf"
-      ],
-      "Junio": [
-        "Aceptacion_2025020514162237096.pdf"
-      ],
-      "Julio": [
-        "Aceptacion_2025021414162268335.pdf"
-      ],
-      "Agosto": [
-        "Aceptacion_2025100814162053013.pdf"
-      ],
-      "Septiembre": [
-        "Aceptacion_2025100814162052935.pdf"
-      ],
-      "Octubre": [
-        "Aceptacion_2025020514162238110.pdf"
-      ],
-      "Noviembre": [
-        "Aceptacion_2025102114162085552.pdf"
-      ],
-      "Diciembre": [
-        "Aceptacion_2025102114162085547.pdf"
-      ]
+      "Enero": ["Aceptacion_2024040214162505630.pdf"],
+      "Febrero": ["Aceptacion_2024040214162505672.pdf"],
+      "Marzo": ["Aceptacion_2025021214162260973.pdf"],
+      "Abril": ["Aceptacion_2025020514162236872.pdf"],
+      "Mayo": ["Aceptacion_2025020514162236933.pdf"],
+      "Junio": ["Aceptacion_2025020514162237096.pdf"],
+      "Julio": ["Aceptacion_2025021414162268335.pdf"],
+      "Agosto": ["Aceptacion_2025100814162053013.pdf"],
+      "Septiembre": ["Aceptacion_2025100814162052935.pdf"],
+      "Octubre": ["Aceptacion_2025020514162238110.pdf"],
+      "Noviembre": ["Aceptacion_2025102114162085552.pdf"],
+      "Diciembre": ["Aceptacion_2025102114162085547.pdf"]
     },
     "2025": {
-      "Enero": [
-        "Aceptacion_2025022814162300645.pdf"
-      ],
-      "Febrero": [
-        "Aceptacion_2025032714162383477.pdf"
-      ],
-      "Marzo": [
-        "Aceptacion_2025100614162042891.pdf"
-      ],
-      "Abril": [
-        "Aceptacion_2025100814162052150.pdf"
-      ],
-      "Mayo": [
-        "Aceptacion_2025100814162052237.pdf"
-      ],
-      "Junio": [
-        "Aceptacion_2025100814162051750.pdf"
-      ],
-      "Julio": [
-        "Aceptacion_2025100814162052163.pdf"
-      ],
-      "Agosto": [
-        "Aceptacion_2025100814162052531.pdf"
-      ],
-      "Septiembre": [
-        "Aceptacion_2025103114162114739.pdf"
-      ],
-      "Octubre": [
-        "Aceptacion_2025112714162208157.pdf"
-      ],
-      "Noviembre": [
-        "Aceptacion_2025123014162320201.pdf"
-      ],
-      "Diciembre": [
-        "Aceptacion_2026012914162430250.pdf"
-      ]
+      "Enero": ["Aceptacion_2025022814162300645.pdf"],
+      "Febrero": ["Aceptacion_2025032714162383477.pdf"],
+      "Marzo": ["Aceptacion_2025100614162042891.pdf"],
+      "Abril": ["Aceptacion_2025100814162052150.pdf"],
+      "Mayo": ["Aceptacion_2025100814162052237.pdf"],
+      "Junio": ["Aceptacion_2025100814162051750.pdf"],
+      "Julio": ["Aceptacion_2025100814162052163.pdf"],
+      "Agosto": ["Aceptacion_2025100814162052531.pdf"],
+      "Septiembre": ["Aceptacion_2025103114162114739.pdf"],
+      "Octubre": ["Aceptacion_2025112714162208157.pdf"],
+      "Noviembre": ["Aceptacion_2025123014162320201.pdf"],
+      "Diciembre": ["Aceptacion_2026012914162430250.pdf"]
     },
     "2026": {
-      "Enero": [
-        "Aceptacion_2026030314162537476.pdf"
-      ],
-      "Febrero": [
-        "Aceptacion_2026032014162587308.pdf"
-      ],
-      "Marzo": [
-        "Aceptacion_2026042914162705412.pdf"
-      ],
-      "Abril": [
-        "Aceptacion_2026060114162826060.pdf"
-      ]
+      "Enero": ["Aceptacion_2026030314162537476.pdf"],
+      "Febrero": ["Aceptacion_2026032014162587308.pdf"],
+      "Marzo": ["Aceptacion_2026042914162705412.pdf"],
+      "Abril": ["Aceptacion_2026060114162826060.pdf"]
+    }
+  },
+  "WIGAS": {
+    "2022": {
+      "Enero": ["Aceptacion_2025073014162823102.pdf"],
+      "Febrero": ["Aceptacion_2025073014162823107.pdf"],
+      "Marzo": ["Aceptacion_2025073114162827963.pdf"],
+      "Abril": ["Aceptacion_2025073114162827850.pdf"],
+      "Mayo": ["Aceptacion_2025073114162827882.pdf"],
+      "Junio": ["Aceptacion_2025073114162828103.pdf"],
+      "Julio": ["Aceptacion_2025091914162979410.pdf"],
+      "Agosto": ["Aceptacion_2025090814162950000.pdf"],
+      "Septiembre": ["Aceptacion_2025090814162950997.pdf"],
+      "Octubre": ["Aceptacion_2025080514162848626.pdf"],
+      "Noviembre": ["Aceptacion_2025080514162848639.pdf"],
+      "Diciembre": ["Aceptacion_2025080514162848645.pdf"]
+    },
+    "2023": {
+      "Abril": ["Aceptacion_2025080714162857434.pdf"],
+      "Mayo": ["Aceptacion_2025080714162857438.pdf"]
+    },
+    "2024": {
+      "Marzo": ["Aceptacion_2025021014162255272.pdf"],
+      "Abril": ["Aceptacion_2025013014162219784.pdf"],
+      "Mayo": ["Aceptacion_2025013014162219847.pdf"],
+      "Junio": ["Aceptacion_2025013014162219877.pdf"],
+      "Julio": ["Aceptacion_2025013014162219940.pdf"],
+      "Agosto": ["Aceptacion_2025013014162220078.pdf"],
+      "Septiembre": ["Aceptacion_2025013014162220098.pdf"],
+      "Octubre": ["Aceptacion_2025013014162219427.pdf"],
+      "Noviembre": ["Aceptacion_2025013014162220588.pdf"],
+      "Diciembre": ["Aceptacion_2025013014162220630.pdf"]
+    },
+    "2025": {
+      "Enero": ["Aceptacion_2025022814162300669.pdf"],
+      "Febrero": ["Aceptacion_2025032614162379729.pdf"],
+      "Marzo": ["Aceptacion_2025101014162059979.pdf"],
+      "Abril": ["Aceptacion_2025101014162060991.pdf"],
+      "Mayo": ["Aceptacion_2025101514162070548.pdf"],
+      "Junio": ["Aceptacion_2025101514162070622.pdf"],
+      "Julio": ["Aceptacion_2025102414162092876.pdf"],
+      "Agosto": ["Aceptacion_2025101714162077487.pdf"],
+      "Septiembre": ["Aceptacion_2025103114162117769.pdf"],
+      "Octubre": ["Aceptacion_2025112714162208256.pdf"],
+      "Noviembre": ["Aceptacion_2025123014162320794.pdf"],
+      "Diciembre": ["Aceptacion_2026012914162430498.pdf"]
+    },
+    "2026": {
+      "Enero": ["Aceptacion_2026030314162537433.pdf"],
+      "Febrero": ["Aceptacion_2026032014162587301.pdf"],
+      "Marzo": ["Aceptacion_2026042914162705450.pdf"]
     }
   }
 }
