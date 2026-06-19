@@ -132,16 +132,17 @@ function abrirVista(categoria) {
         </div>
       </div>`;
   } else if(categoria === 'cumplimiento') {
-    contenido += `
-      <div class="card p-3 bienvenida banner-view">
-        <h2>Cumplimiento</h2>
-        <p>Seleccione el reporte:</p>
-        <div class="opciones-vista">
-          <div class="opcion-recuadro" onclick="mostrarAcuses('13 GAS')">Acuses</div>
-          <div class="opcion-recuadro" onclick="mostrarReporte('json_tool')">JSON Mensual</div>
-        </div>
-      </div>`;
-  }
+  contenido += `
+    <div class="card p-3 bienvenida banner-view">
+      <h2>Cumplimiento</h2>
+      <p>Seleccione el reporte:</p>
+      <div class="opciones-vista">
+        <div class="opcion-recuadro" onclick="mostrarAcuses('13 GAS')">Acuses 13 GAS</div>
+        <div class="opcion-recuadro" onclick="mostrarAcuses('WIGAS')">Acuses WIGAS</div>
+        <div class="opcion-recuadro" onclick="mostrarReporte('json_tool')">JSON Mensual</div>
+      </div>
+    </div>`;
+}
 
   document.getElementById('contenedor').innerHTML = contenido;
 }
@@ -183,8 +184,7 @@ async function mostrarAcusesPorEjercicio(estacion, ejercicio) {
       <div class="opciones-vista">`;
 
   for (const mes in meses) {
-    // Tomamos el primer PDF del mes y lo abrimos directamente
-    const pdf = meses[mes][0];
+    const pdf = meses[mes][0]; // siempre tomamos el primer archivo
     contenido += `
       <div class="opcion-recuadro">
         <a href="assets/pdf/acuses/${estacion}/${ejercicio}/${pdf}" target="_blank" class="texto">${mes}</a>
