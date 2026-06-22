@@ -299,32 +299,18 @@ html, body {
 /* ====== Breadcrumb fijo ====== */
 .breadcrumb {
   position: fixed;
-  top: 100px; /* más abajo, debajo del banner y sobre fondo blanco */
-  left: 20px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
+  top: 95px;   /* debajo del banner, sobre fondo blanco */
+  left: 40px;  /* margen más amplio para que no quede al filo */
   z-index: 1100;
 }
 
 .breadcrumb-icon {
-  width: 20px;   /* tamaño reducido */
-  height: 20px;  /* tamaño reducido */
+  width: 30px;   /* tamaño más grande y visible */
+  height: 30px;
   cursor: pointer;
   transition: transform 0.2s ease;
 }
 
 .breadcrumb-icon:hover {
   transform: scale(1.2); /* efecto ligero al pasar el mouse */
-}
-
-.breadcrumb span {
-  font-size: 0.8em;
-  color: #CA142B;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.breadcrumb span:hover {
-  text-decoration: underline;
 }
