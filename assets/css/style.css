@@ -299,7 +299,7 @@ html, body {
 /* ====== Breadcrumb fijo ====== */
 .breadcrumb {
   position: fixed;
-  top: 70px; /* debajo del banner */
+  top: 100px; /* más abajo, debajo del banner y sobre fondo blanco */
   left: 20px;
   display: flex;
   align-items: center;
