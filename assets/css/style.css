@@ -299,8 +299,8 @@ html, body {
 /* ====== Breadcrumb fijo ====== */
 .breadcrumb {
   position: fixed;
-  top: 95px;   /* debajo del banner, sobre fondo blanco */
-  left: 40px;  /* margen más amplio para que no quede al filo */
+  top: 95px;   /* justo debajo del banner rojo */
+  left: 30px;  /* margen más cómodo, no tan al filo */
   z-index: 1100;
 }
 
