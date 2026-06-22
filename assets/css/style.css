@@ -168,16 +168,29 @@ html, body {
   display: block;
 }
 
-/* ====== Opciones ejecutivas en recuadros (cuadrícula tipo barra de chocolate) ====== */
+/* ====== Opciones ejecutivas en recuadros (cuadrícula responsiva tipo barra de chocolate) ====== */
 .opciones-vista {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* siempre 3 columnas */
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas fijas en pantallas grandes */
   gap: 30px;                             /* espacio uniforme entre tarjetas */
   padding: 40px;                         /* margen interno en todas direcciones */
   box-sizing: border-box;
   height: 100%;                          /* ocupa todo el alto del contenedor */
-  align-content: start;                  /* filas desde arriba */
-  justify-content: center;               /* centra la cuadrícula dentro del contenedor */
+  align-content: start;
+  justify-items: center;
+}
+
+/* Responsividad: ajustar columnas según ancho */
+@media (max-width: 1200px) {
+  .opciones-vista {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas medianas */
+  }
+}
+
+@media (max-width: 768px) {
+  .opciones-vista {
+    grid-template-columns: 1fr; /* 1 columna en pantallas pequeñas */
+  }
 }
 
 .opcion-recuadro {
@@ -190,9 +203,9 @@ html, body {
   transition: transform 0.3s ease, background-color 0.3s ease;
   color: #000;
 
-  max-width: 250px;        /* límite de ancho para que no se desborde */
-  min-height: 120px;       /* altura uniforme */
   width: 100%;             /* ocupa el ancho de su celda */
+  min-height: 120px;       /* altura uniforme */
+  max-width: 250px;        /* límite para que no se desborde */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -206,7 +219,7 @@ html, body {
 
 .opcion-recuadro:hover {
   background-color: #CA142B;
-  transform: translateY(-5px); /* efecto dinámico elegante */
+  transform: translateY(-5px);
   color: #fff;
 }
 
