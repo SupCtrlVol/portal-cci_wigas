@@ -1,4 +1,4 @@
-/* ====== Fondo general ====== */
+/* ====== Estilos generales ====== */
 html, body {
   height: 100%;
   margin: 0;
@@ -61,7 +61,7 @@ html, body {
   box-sizing: border-box;
 }
 
-/* ====== Tarjeta de bienvenida (contenedor visual) ====== */
+/* ====== Contenedor visual de página ====== */
 .card.bienvenida {
   background-color: #fff;
   border-radius: 10px;
@@ -89,6 +89,77 @@ html, body {
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* ====== Opciones principales en círculos ====== */
+.opciones-principales {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.opcion-circulo {
+  background-color: #808080;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeUp 0.8s ease forwards;
+  overflow: hidden;
+  transition: transform 0.4s ease, background-color 0.4s ease, color 0.4s ease;
+}
+
+.opcion-circulo:nth-child(1) { animation-delay: 0.3s; }
+.opcion-circulo:nth-child(2) { animation-delay: 0.6s; }
+.opcion-circulo:nth-child(3) { animation-delay: 0.9s; }
+.opcion-circulo:nth-child(4) { animation-delay: 1.2s; }
+
+.opcion-circulo .texto {
+  font-size: 0.9em;
+  padding: 0 10px;
+  color: #000;
+  transition: color 0.4s ease;
+}
+
+.texto.multilinea {
+  display: block;
+  text-align: center;
+  line-height: 1.2em;
+}
+
+.opcion-circulo:hover {
+  background-color: #CA142B;
+  transform: scale(1.1);
+}
+
+.opcion-circulo:hover .texto {
+  color: #fff;
+}
+
+.opcion-circulo.seleccionado {
+  background-color: #CA142B;
+}
+
+.opcion-circulo.seleccionado .texto {
+  color: #fff;
+}
+
+.icono-img {
+  max-width: 50%;
+  max-height: 50%;
+  object-fit: contain;
+  margin-bottom: 8px;
+  display: block;
+}
+
 /* ====== Opciones ejecutivas en recuadros (cuadrícula tipo barra de chocolate) ====== */
 .opciones-vista {
   display: grid;
@@ -114,12 +185,12 @@ html, body {
 
 .opcion-recuadro {
   background-color: #808080;
-  border-radius: 12px;
-  padding: 25px;
+  border-radius: 15px;
+  padding: 20px;
   text-align: center;
   font-weight: bold;
   cursor: pointer;
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  transition: transform 0.4s ease, background-color 0.4s ease, color 0.4s ease;
   color: #000;
 
   width: 100%;
@@ -134,6 +205,7 @@ html, body {
   font-size: 1em;
   font-weight: bold;
   color: #000;
+  line-height: 1.2em;
 }
 
 .opcion-recuadro:hover {
@@ -152,23 +224,20 @@ html, body {
 }
 
 /* ====== Botón Volver ====== */
-.breadcrumb {
-  position: fixed;
-  top: 95px;
-  left: 30px;
-  z-index: 1100;
-}
-
-.breadcrumb-icon {
-  width: 30px;
-  height: 30px;
+.opcion-recuadro.volver-btn {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
   cursor: pointer;
-  transition: transform 0.2s ease;
-  display: block;
 }
 
-.breadcrumb-icon:hover {
-  transform: scale(1.2);
+.opcion-recuadro.volver-btn:hover {
+  transform: scale(1.1);
+}
+
+.opcion-recuadro.volver-btn img.icono-img {
+  width: 32px;
+  height: 32px;
 }
 
 /* ====== Banner institucional superior ====== */
@@ -236,4 +305,24 @@ html, body {
 
 .banner-menu.open .banner-menu-opciones {
   display: block;
+}
+
+/* ====== Breadcrumb fijo ====== */
+.breadcrumb {
+  position: fixed;
+  top: 95px;   /* justo debajo del banner rojo */
+  left: 30px;  /* margen cómodo */
+  z-index: 1100;
+}
+
+.breadcrumb-icon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  display: block;
+}
+
+.breadcrumb-icon:hover {
+  transform: scale(1.2);
 }
