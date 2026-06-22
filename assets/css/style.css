@@ -61,17 +61,21 @@ html, body {
   box-sizing: border-box;
 }
 
-/* ====== Tarjeta de bienvenida ====== */
+/* ====== Contenedor visual de página ====== */
 .card.bienvenida {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   padding: 30px;
   text-align: center;
-  max-width: 900px;
-  width: 90%;
+
+  /* 🔧 Ajustes para ocupar todo el espacio visual */
+  width: calc(100% - 60px);   /* ancho completo con margen lateral */
+  height: calc(100vh - 120px); /* alto completo con margen superior e inferior */
+  margin: 60px auto;           /* margen uniforme alrededor */
+  box-sizing: border-box;
+
   animation: fadeDown 1s ease forwards;
-  margin: 0 auto;
 }
 
 .bienvenida.inicio-view {
