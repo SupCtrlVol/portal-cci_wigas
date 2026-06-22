@@ -168,15 +168,16 @@ html, body {
   display: block;
 }
 
-/* ====== Opciones ejecutivas en recuadros (Opción 3) ====== */
+/* ====== Opciones ejecutivas en recuadros (cuadrícula 3 columnas) ====== */
 .opciones-vista {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* tarjetas más amplias */
-  gap: 30px;
-  margin-top: 40px;
-  justify-items: center;
-  align-items: start;
-  padding: 20px;
+  grid-template-columns: repeat(3, 1fr); /* siempre 3 columnas */
+  gap: 30px;                             /* espacio uniforme entre tarjetas */
+  padding: 30px;                         /* margen interno para simular separación */
+  box-sizing: border-box;
+  height: 100%;                          /* ocupa todo el alto del contenedor */
+  align-content: start;                  /* las filas se acomodan desde arriba */
+  justify-items: center;                 /* centra cada tarjeta en su celda */
 }
 
 .opcion-recuadro {
@@ -189,8 +190,8 @@ html, body {
   transition: transform 0.3s ease, background-color 0.3s ease;
   color: #000;
 
-  min-width: 200px;
-  min-height: 120px;   /* más grandes, estilo ejecutivo */
+  width: 100%;             /* ocupa todo el ancho de la celda */
+  min-height: 120px;       /* altura uniforme */
   display: flex;
   align-items: center;
   justify-content: center;
