@@ -299,8 +299,8 @@ html, body {
 /* ====== Breadcrumb fijo ====== */
 .breadcrumb {
   position: fixed;
-  top: 95px;   /* debajo del banner, alineado con la tarjeta blanca */
-  left: 30px;  /* margen cómodo, no al filo */
+  top: 95px;   /* justo debajo del banner rojo */
+  left: 30px;  /* margen cómodo, no pegado al filo */
   z-index: 1100;
 }
 
@@ -309,9 +309,9 @@ html, body {
   height: 30px;
   cursor: pointer;
   transition: transform 0.2s ease;
+  display: block;
 }
 
 .breadcrumb-icon:hover {
   transform: scale(1.2); /* efecto ligero al pasar el mouse */
 }
-
