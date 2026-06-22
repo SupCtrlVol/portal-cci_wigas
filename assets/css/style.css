@@ -177,6 +177,7 @@ html, body {
   box-sizing: border-box;
   height: 100%;                          /* ocupa todo el alto del contenedor */
   align-content: start;                  /* filas desde arriba */
+  justify-content: center;               /* centra la cuadrícula dentro del contenedor */
 }
 
 .opcion-recuadro {
@@ -189,8 +190,9 @@ html, body {
   transition: transform 0.3s ease, background-color 0.3s ease;
   color: #000;
 
-  width: 100%;             /* ocupa todo el ancho de la celda */
+  max-width: 250px;        /* límite de ancho para que no se desborde */
   min-height: 120px;       /* altura uniforme */
+  width: 100%;             /* ocupa el ancho de su celda */
   display: flex;
   align-items: center;
   justify-content: center;
