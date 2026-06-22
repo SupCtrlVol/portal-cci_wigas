@@ -1,10 +1,10 @@
-/* ====== Estilos generales ====== */
+/* ====== Fondo general ====== */
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Arial, sans-serif;
-  background-color: #f4f4f4;
+  background-color: #CCCCCC; /* contraste sutil */
 }
 
 /* ====== Pantalla de inicio ====== */
@@ -42,7 +42,7 @@ html, body {
   align-items: flex-start;
   height: 100vh;
   width: 100%;
-  background-color: #f9f9f9;
+  background-color: #CCCCCC;
   opacity: 0;
   transition: opacity 0.8s ease-in-out;
 }
@@ -61,7 +61,7 @@ html, body {
   box-sizing: border-box;
 }
 
-/* ====== Tarjeta de bienvenida ====== */
+/* ====== Tarjeta de bienvenida (contenedor visual) ====== */
 .card.bienvenida {
   background-color: #fff;
   border-radius: 10px;
@@ -69,21 +69,13 @@ html, body {
   padding: 30px;
   text-align: center;
 
-  /* 🔧 Ajustes para ocupar todo el espacio visual */
   width: calc(100% - 60px);   /* ancho completo con margen lateral */
   height: calc(100vh - 120px); /* alto completo con margen superior e inferior */
-  margin: 60px auto;           /* margen uniforme alrededor */
+  margin: 60px auto;
   box-sizing: border-box;
 
+  overflow-y: auto;            /* scroll interno si hay muchas opciones */
   animation: fadeDown 1s ease forwards;
-}
-
-.bienvenida.inicio-view {
-  margin-top: 30px;
-}
-
-.bienvenida.banner-view {
-  margin-top: 100px;
 }
 
 /* ====== Animaciones ====== */
@@ -97,90 +89,17 @@ html, body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ====== Opciones principales en círculos ====== */
-.opciones-principales {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  margin-top: 30px;
-  flex-wrap: wrap;
-}
-
-.opcion-circulo {
-  background-color: #808080;
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-weight: bold;
-  cursor: pointer;
-  opacity: 0;
-  transform: translateY(50px);
-  animation: fadeUp 0.8s ease forwards;
-  overflow: hidden;
-  transition: transform 0.4s ease, background-color 0.4s ease, color 0.4s ease;
-}
-
-.opcion-circulo:nth-child(1) { animation-delay: 0.3s; }
-.opcion-circulo:nth-child(2) { animation-delay: 0.6s; }
-.opcion-circulo:nth-child(3) { animation-delay: 0.9s; }
-.opcion-circulo:nth-child(4) { animation-delay: 1.2s; }
-
-.opcion-circulo .texto {
-  font-size: 0.9em;
-  padding: 0 10px;
-  color: #000;
-  transition: color 0.4s ease;
-}
-
-.texto.multilinea {
-  display: block;
-  text-align: center;
-  line-height: 1.2em;
-}
-
-.opcion-circulo:hover {
-  background-color: #CA142B;
-  transform: scale(1.1);
-}
-
-.opcion-circulo:hover .texto {
-  color: #fff;
-}
-
-.opcion-circulo.seleccionado {
-  background-color: #CA142B;
-}
-
-.opcion-circulo.seleccionado .texto {
-  color: #fff;
-}
-
-.icono-img {
-  max-width: 50%;
-  max-height: 50%;
-  object-fit: contain;
-  margin-bottom: 8px;
-  display: block;
-}
-
-/* ====== Opciones ejecutivas en recuadros (cuadrícula responsiva tipo barra de chocolate) ====== */
+/* ====== Opciones ejecutivas en recuadros (cuadrícula tipo barra de chocolate) ====== */
 .opciones-vista {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columnas fijas en pantallas grandes */
-  gap: 30px;                             /* espacio uniforme entre tarjetas */
+  grid-template-columns: repeat(3, 1fr); /* siempre 3 columnas */
+  gap: 30px;
   padding: 40px;                         /* margen interno en todas direcciones */
   box-sizing: border-box;
-  height: 100%;                          /* ocupa todo el alto del contenedor */
   align-content: start;
   justify-items: center;
 }
 
-/* Responsividad: ajustar columnas según ancho */
 @media (max-width: 1200px) {
   .opciones-vista {
     grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas medianas */
@@ -203,8 +122,8 @@ html, body {
   transition: transform 0.3s ease, background-color 0.3s ease;
   color: #000;
 
-  width: 100%;             /* ocupa el ancho de su celda */
-  min-height: 120px;       /* altura uniforme */
+  width: 100%;
+  min-height: 120px;
   max-width: 250px;        /* límite para que no se desborde */
   display: flex;
   align-items: center;
@@ -235,8 +154,8 @@ html, body {
 /* ====== Botón Volver ====== */
 .breadcrumb {
   position: fixed;
-  top: 95px;   /* debajo del banner */
-  left: 30px;  /* margen cómodo */
+  top: 95px;
+  left: 30px;
   z-index: 1100;
 }
 
