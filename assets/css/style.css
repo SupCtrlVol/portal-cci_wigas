@@ -168,16 +168,15 @@ html, body {
   display: block;
 }
 
-/* ====== Opciones ejecutivas en recuadros (cuadrícula 3 columnas) ====== */
+/* ====== Opciones ejecutivas en recuadros (cuadrícula tipo barra de chocolate) ====== */
 .opciones-vista {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* siempre 3 columnas */
   gap: 30px;                             /* espacio uniforme entre tarjetas */
-  padding: 30px;                         /* margen interno para simular separación */
+  padding: 40px;                         /* margen interno en todas direcciones */
   box-sizing: border-box;
   height: 100%;                          /* ocupa todo el alto del contenedor */
-  align-content: start;                  /* las filas se acomodan desde arriba */
-  justify-items: center;                 /* centra cada tarjeta en su celda */
+  align-content: start;                  /* filas desde arriba */
 }
 
 .opcion-recuadro {
