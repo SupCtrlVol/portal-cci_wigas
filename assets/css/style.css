@@ -309,7 +309,7 @@ html, body {
   height: 30px;
   cursor: pointer;
   transition: transform 0.2s ease;
-  display: block;
+  display: block; /* asegura que se muestre solo el ícono */
 }
 
 .breadcrumb-icon:hover {
