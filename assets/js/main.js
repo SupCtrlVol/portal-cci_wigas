@@ -149,14 +149,32 @@ function abrirVista(categoria) {
 
 // ====== Breadcrumb fijo con botón regresar solo ícono ======
 function renderBreadcrumb(estacion = null, ejercicio = null) {
-  let ruta = `<div class="breadcrumb">
-                <img src="assets/images/Regresar.png" alt="Regresar" class="breadcrumb-icon" onclick="abrirVista('cumplimiento')">`;
+  let ruta = `<div class="breadcrumb">`;
 
-  if (estacion) {
-    ruta += ` <span onclick="mostrarAcuses('${estacion}')">${estacion}</span>`;
+  // Nivel Cumplimiento → no hay estación ni ejercicio
+  if (!estacion && !ejercicio) {
+    ruta += `<img src="assets/images/Regresar.png" alt="Regresar" class="breadcrumb-icon" onclick="mostrarBienvenida()">`;
   }
-  if (ejercicio) {
+
+  // Nivel Estación → regresar a Cumplimiento
+  if (estacion && !ejercicio) {
+    ruta += `<img src="assets/images/Regresar.png" alt="Regresar" class="breadcrumb-icon" onclick="abrirVista('cumplimiento')">`;
+    ruta += ` <span>${estacion}</span>`;
+  }
+
+  // Nivel Año → regresar a Estación
+  if (estacion && ejercicio && !window.mesSeleccionado) {
+    ruta += `<img src="assets/images/Regresar.png" alt="Regresar" class="breadcrumb-icon" onclick="mostrarAcuses('${estacion}')">`;
+    ruta += ` <span onclick="mostrarAcuses('${estacion}')">${estacion}</span>`;
+    ruta += ` <span>${ejercicio}</span>`;
+  }
+
+  // Nivel Mes → regresar a Año
+  if (estacion && ejercicio && window.mesSeleccionado) {
+    ruta += `<img src="assets/images/Regresar.png" alt="Regresar" class="breadcrumb-icon" onclick="mostrarAcusesPorEjercicio('${estacion}', '${ejercicio}')">`;
+    ruta += ` <span onclick="mostrarAcuses('${estacion}')">${estacion}</span>`;
     ruta += ` <span onclick="mostrarAcusesPorEjercicio('${estacion}', '${ejercicio}')">${ejercicio}</span>`;
+    ruta += ` <span>${window.mesSeleccionado}</span>`;
   }
 
   ruta += `</div>`;
