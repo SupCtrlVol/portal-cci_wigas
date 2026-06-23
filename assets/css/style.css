@@ -229,16 +229,21 @@ html, body {
   border: none;
   box-shadow: none;
   cursor: pointer;
+  padding: 0;              /* elimina espacio extra */
+  width: auto;
+  height: auto;
 }
 
-.opcion-recuadro.volver-btn:hover {
-  transform: scale(1.1);
+.opcion-recuadro.volver-btn .texto {
+  display: none;           /* oculta cualquier texto */
 }
 
 .opcion-recuadro.volver-btn img.icono-img {
   width: 32px;
   height: 32px;
+  display: block;
 }
+
 
 /* ====== Banner institucional superior ====== */
 .banner-superior {
