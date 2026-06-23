@@ -147,22 +147,6 @@ function abrirVista(categoria) {
   document.getElementById('contenedor').innerHTML = contenido;
 }
 
-// ====== Breadcrumb fijo con botón regresar solo ícono ======
-function renderBreadcrumb(estacion = null, ejercicio = null) {
-  let ruta = `<div class="breadcrumb">`;
-
-  // Ya no insertamos el botón aquí, solo mostramos la ruta
-  if (estacion) {
-    ruta += ` <span onclick="mostrarAcuses('${estacion}')">${estacion}</span>`;
-  }
-  if (ejercicio) {
-    ruta += ` <span onclick="mostrarAcusesPorEjercicio('${estacion}', '${ejercicio}')">${ejercicio}</span>`;
-  }
-
-  ruta += `</div>`;
-  return ruta;
-}
-
 // ====== Acuses ======
 async function mostrarAcuses(estacion) {
   const response = await fetch('assets/pdf/acuses/metadata.json');
