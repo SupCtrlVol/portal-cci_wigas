@@ -132,21 +132,22 @@ function abrirVista(categoria) {
         </div>
       </div>`;
   } else if(categoria === 'cumplimiento') {
-  contenido += `
-    <div class="card p-3 bienvenida banner-view">
-      <h2>Cumplimiento</h2>
-      <p>Seleccione el reporte:</p>
-      <div class="opciones-vista">
-        <div class="opcion-recuadro" onclick="mostrarAcuses('13 GAS')">Acuses 13 GAS</div>
-        <div class="opcion-recuadro" onclick="mostrarAcuses('WIGAS')">Acuses WIGAS</div>
-        <div class="opcion-recuadro" onclick="mostrarReporte('json_tool')">JSON Mensual</div>
-      </div>
-    </div>`;
-}
+    contenido += `
+      <div class="card p-3 bienvenida banner-view">
+        <h2>Cumplimiento</h2>
+        <p>Seleccione el reporte:</p>
+        <div class="opciones-vista">
+          <div class="opcion-recuadro" onclick="mostrarAcuses('13 GAS')">Acuses 13 GAS</div>
+          <div class="opcion-recuadro" onclick="mostrarAcuses('WIGAS')">Acuses WIGAS</div>
+          <div class="opcion-recuadro" onclick="mostrarReporte('json_tool')">JSON Mensual</div>
+        </div>
+      </div>`;
+  }
 
   document.getElementById('contenedor').innerHTML = contenido;
 }
 
+// ====== Breadcrumb fijo con botón regresar solo ícono ======
 function renderBreadcrumb(estacion = null, ejercicio = null) {
   let ruta = `<div class="breadcrumb">
                 <img src="assets/images/Regresar.png" alt="Regresar" class="breadcrumb-icon" onclick="abrirVista('cumplimiento')">`;
@@ -169,11 +170,11 @@ async function mostrarAcuses(estacion) {
   const ejercicios = Object.keys(metadata[estacion]);
 
   let contenido = renderBanner();
-  contenido += renderBreadcrumb(estacion);
+  contenido += renderBreadcrumb(estacion); // 🔗 breadcrumb fijo
   contenido += `
     <div class="card p-3 bienvenida banner-view">
       <div class="opcion-recuadro volver-btn" onclick="abrirVista('cumplimiento')">
-        <img src="assets/img/Regresar.png" class="icono-img" alt="Regresar">
+        <img src="assets/images/Regresar.png" class="icono-img" alt="Regresar">
       </div>
       <h2>Acuses ${estacion}</h2>
       <p>Seleccione el año:</p>
@@ -196,11 +197,11 @@ async function mostrarAcusesPorEjercicio(estacion, ejercicio) {
   const meses = metadata[estacion][ejercicio];
 
   let contenido = renderBanner();
-  contenido += renderBreadcrumb(estacion, ejercicio);
+  contenido += renderBreadcrumb(estacion, ejercicio); // 🔗 breadcrumb fijo
   contenido += `
     <div class="card p-3 bienvenida banner-view">
       <div class="opcion-recuadro volver-btn" onclick="mostrarAcuses('${estacion}')">
-        <img src="assets/img/Regresar.png" class="icono-img" alt="Regresar">
+        <img src="assets/images/Regresar.png" class="icono-img" alt="Regresar">
       </div>
       <h2>Acuses ${estacion} - ${ejercicio}</h2>
       <p>Seleccione el mes:</p>
