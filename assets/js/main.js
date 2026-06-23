@@ -169,9 +169,12 @@ async function mostrarAcuses(estacion) {
   const ejercicios = Object.keys(metadata[estacion]);
 
   let contenido = renderBanner();
-  contenido += renderBreadcrumb(estacion); // 🔗 breadcrumb fijo
+  contenido += renderBreadcrumb(estacion);
   contenido += `
     <div class="card p-3 bienvenida banner-view">
+      <div class="opcion-recuadro volver-btn" onclick="abrirVista('cumplimiento')">
+        <img src="assets/img/Regresar.png" class="icono-img" alt="Regresar">
+      </div>
       <h2>Acuses ${estacion}</h2>
       <p>Seleccione el año:</p>
       <div class="opciones-vista">`;
@@ -193,9 +196,12 @@ async function mostrarAcusesPorEjercicio(estacion, ejercicio) {
   const meses = metadata[estacion][ejercicio];
 
   let contenido = renderBanner();
-  contenido += renderBreadcrumb(estacion, ejercicio); // 🔗 breadcrumb fijo
+  contenido += renderBreadcrumb(estacion, ejercicio);
   contenido += `
     <div class="card p-3 bienvenida banner-view">
+      <div class="opcion-recuadro volver-btn" onclick="mostrarAcuses('${estacion}')">
+        <img src="assets/img/Regresar.png" class="icono-img" alt="Regresar">
+      </div>
       <h2>Acuses ${estacion} - ${ejercicio}</h2>
       <p>Seleccione el mes:</p>
       <div class="opciones-vista">`;
