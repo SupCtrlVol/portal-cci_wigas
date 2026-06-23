@@ -149,9 +149,9 @@ function abrirVista(categoria) {
 
 // ====== Breadcrumb fijo con botón regresar solo ícono ======
 function renderBreadcrumb(estacion = null, ejercicio = null) {
-  let ruta = `<div class="breadcrumb">
-                <img src="assets/images/Regresar.png" alt="Regresar" class="breadcrumb-icon" onclick="abrirVista('cumplimiento')">`;
+  let ruta = `<div class="breadcrumb">`;
 
+  // Ya no insertamos el botón aquí, solo mostramos la ruta
   if (estacion) {
     ruta += ` <span onclick="mostrarAcuses('${estacion}')">${estacion}</span>`;
   }
