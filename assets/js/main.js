@@ -14,7 +14,7 @@ function entrarPortal() {
 function mostrarBienvenida() {
   const contenido = `
     <div class="card p-3 bienvenida inicio-view">
-      <h2>BIENVENIDO</h2>
+      <h2 class="titulo-ejecutivo">BIENVENIDO</h2>
       <p>Seleccione una opción para continuar</p>
       <div class="opciones-principales">
         <div class="opcion-circulo" data-cat="balance">
@@ -97,9 +97,15 @@ function abrirVista(categoria) {
         <div class="opciones-vista">
           <div class="opcion-recuadro" onclick="mostrarReporte('13gas_be')">13 GAS</div>
           <div class="opcion-recuadro" onclick="mostrarReporte('bexica_be')">BEXICA</div>
-          <div class="opcion-recuadro" onclick="mostrarReporte('coacalco_be')">CONSORCIO DE GNV Coacalco</div>
-          <div class="opcion-recuadro" onclick="mostrarReporte('ecatepec_be')">CONSORCIO DE GNV Ecatepec</div>
-          <div class="opcion-recuadro" onclick="mostrarReporte('tlanepantla_be')">CONSORCIO DE GNV Tlanepantla</div>
+          <div class="opcion-recuadro" onclick="mostrarReporte('coacalco_be')">
+            <span class="texto multilinea">CONSORCIO DE GNV<br>Coacalco</span>
+          </div>
+          <div class="opcion-recuadro" onclick="mostrarReporte('ecatepec_be')">
+            <span class="texto multilinea">CONSORCIO DE GNV<br>Ecatepec</span>
+          </div>
+          <div class="opcion-recuadro" onclick="mostrarReporte('tlanepantla_be')">
+            <span class="texto multilinea">CONSORCIO DE GNV<br>Tlanepantla</span>
+          </div>
           <div class="opcion-recuadro" onclick="mostrarReporte('landsegen_be')">LANDSEGEN</div>
           <div class="opcion-recuadro" onclick="mostrarReporte('wigas_be')">WIGAS</div>
         </div>
@@ -129,7 +135,9 @@ function abrirVista(categoria) {
           <div class="opcion-recuadro" onclick="mostrarReporte('13gas_vd')">13 GAS</div>
           <div class="opcion-recuadro" onclick="mostrarReporte('landsegen_vd')">LANDSEGEN</div>
           <div class="opcion-recuadro" onclick="mostrarReporte('wigas_vd')">WIGAS</div>
-          <div class="opcion-recuadro" onclick="mostrarReporte('ventxcliente_trimes')">GLOBAL Ventas por cliente</div>
+          <div class="opcion-recuadro" onclick="mostrarReporte('ventxcliente_trimes')">
+            <span class="texto multilinea">GLOBAL<br>Ventas por cliente</span>
+          </div>
         </div>
       </div>`;
   } else if(categoria === 'cumplimiento') {
@@ -184,7 +192,7 @@ async function mostrarAcuses(estacion) {
   const ejercicios = Object.keys(metadata[estacion]);
 
   let contenido = renderBanner();
-  contenido += renderBreadcrumb(estacion); 
+  contenido += renderBreadcrumb(estacion); // breadcrumb ya incluye el botón regresar
   contenido += `
     <div class="card p-3 bienvenida banner-view">
       <h2 class="titulo-ejecutivo">Acuses ${estacion}</h2>
@@ -194,7 +202,7 @@ async function mostrarAcuses(estacion) {
   ejercicios.forEach(ejercicio => {
     contenido += `
       <div class="opcion-recuadro" onclick="mostrarAcusesPorEjercicio('${estacion}', '${ejercicio}')">
-        ${ejercicio}
+        <span class="texto">${ejercicio}</span>
       </div>`;
   });
 
@@ -208,7 +216,7 @@ async function mostrarAcusesPorEjercicio(estacion, ejercicio) {
   const meses = metadata[estacion][ejercicio];
 
   let contenido = renderBanner();
-  contenido += renderBreadcrumb(estacion, ejercicio); 
+  contenido += renderBreadcrumb(estacion, ejercicio); // breadcrumb ya incluye el botón regresar
   contenido += `
     <div class="card p-3 bienvenida banner-view">
       <h2 class="titulo-ejecutivo">Acuses ${estacion} - ${ejercicio}</h2>
@@ -271,9 +279,10 @@ function mostrarReporte(estacion) {
   document.getElementById('contenedor').innerHTML =
     renderBanner() +
     '<div class="card p-3 bienvenida banner-view">' +
+      '<h2 class="titulo-ejecutivo">Reporte</h2>' +
       '<iframe src="'+src+'" width="1140" height="541.25" frameborder="0" allowFullScreen="true"></iframe>' +
     '</div>';
 }
 
 // ====== Inicialización ======
-console.log("Portal listo: bienvenida con clase inicio-view, categorías y reportes con clase banner-view, acuses simplificados por mes");
+console.log("Portal listo: bienvenida con clase inicio-view, categorías y reportes con clase banner-view, acuses con títulos ejecutivos y breadcrumb limpio");
