@@ -89,20 +89,17 @@ function abrirVista(categoria) {
   if(categoria === 'balance') {
     contenido += `
       <div class="card p-3 bienvenida banner-view">
-        <h2>Balance de Energía</h2>
+        <div class="breadcrumb">
+          <img src="assets/images/Regresar.png" alt="Regresar" class="breadcrumb-icon" onclick="mostrarBienvenida()">
+        </div>
+        <h2 class="titulo-ejecutivo">Balance de Energía</h2>
         <p>Seleccione la estación:</p>
         <div class="opciones-vista">
           <div class="opcion-recuadro" onclick="mostrarReporte('13gas_be')">13 GAS</div>
           <div class="opcion-recuadro" onclick="mostrarReporte('bexica_be')">BEXICA</div>
-          <div class="opcion-recuadro" onclick="mostrarReporte('coacalco_be')">
-            <span class="texto multilinea">CONSORCIO DE GNV<br>Coacalco</span>
-          </div>
-          <div class="opcion-recuadro" onclick="mostrarReporte('ecatepec_be')">
-            <span class="texto multilinea">CONSORCIO DE GNV<br>Ecatepec</span>
-          </div>
-          <div class="opcion-recuadro" onclick="mostrarReporte('tlanepantla_be')">
-            <span class="texto multilinea">CONSORCIO DE GNV<br>Tlanepantla</span>
-          </div>
+          <div class="opcion-recuadro" onclick="mostrarReporte('coacalco_be')">CONSORCIO DE GNV Coacalco</div>
+          <div class="opcion-recuadro" onclick="mostrarReporte('ecatepec_be')">CONSORCIO DE GNV Ecatepec</div>
+          <div class="opcion-recuadro" onclick="mostrarReporte('tlanepantla_be')">CONSORCIO DE GNV Tlanepantla</div>
           <div class="opcion-recuadro" onclick="mostrarReporte('landsegen_be')">LANDSEGEN</div>
           <div class="opcion-recuadro" onclick="mostrarReporte('wigas_be')">WIGAS</div>
         </div>
@@ -110,7 +107,10 @@ function abrirVista(categoria) {
   } else if(categoria === 'herramientas') {
     contenido += `
       <div class="card p-3 bienvenida banner-view">
-        <h2>Herramientas de Análisis</h2>
+        <div class="breadcrumb">
+          <img src="assets/images/Regresar.png" alt="Regresar" class="breadcrumb-icon" onclick="mostrarBienvenida()">
+        </div>
+        <h2 class="titulo-ejecutivo">Herramientas de Análisis</h2>
         <p>Seleccione la estación:</p>
         <div class="opciones-vista">
           <div class="opcion-recuadro" onclick="mostrarReporte('13gas_tool')">13 GAS</div>
@@ -120,21 +120,25 @@ function abrirVista(categoria) {
   } else if(categoria === 'ventas') {
     contenido += `
       <div class="card p-3 bienvenida banner-view">
-        <h2>Ventas</h2>
+        <div class="breadcrumb">
+          <img src="assets/images/Regresar.png" alt="Regresar" class="breadcrumb-icon" onclick="mostrarBienvenida()">
+        </div>
+        <h2 class="titulo-ejecutivo">Ventas</h2>
         <p>Seleccione el reporte:</p>
         <div class="opciones-vista">
           <div class="opcion-recuadro" onclick="mostrarReporte('13gas_vd')">13 GAS</div>
           <div class="opcion-recuadro" onclick="mostrarReporte('landsegen_vd')">LANDSEGEN</div>
           <div class="opcion-recuadro" onclick="mostrarReporte('wigas_vd')">WIGAS</div>
-          <div class="opcion-recuadro" onclick="mostrarReporte('ventxcliente_trimes')">
-            <span class="texto multilinea">GLOBAL<br>Ventas por cliente</span>
-          </div>
+          <div class="opcion-recuadro" onclick="mostrarReporte('ventxcliente_trimes')">GLOBAL Ventas por cliente</div>
         </div>
       </div>`;
   } else if(categoria === 'cumplimiento') {
     contenido += `
       <div class="card p-3 bienvenida banner-view">
-        <h2>Cumplimiento</h2>
+        <div class="breadcrumb">
+          <img src="assets/images/Regresar.png" alt="Regresar" class="breadcrumb-icon" onclick="mostrarBienvenida()">
+        </div>
+        <h2 class="titulo-ejecutivo">Cumplimiento</h2>
         <p>Seleccione el reporte:</p>
         <div class="opciones-vista">
           <div class="opcion-recuadro" onclick="mostrarAcuses('13 GAS')">Acuses 13 GAS</div>
@@ -180,17 +184,17 @@ async function mostrarAcuses(estacion) {
   const ejercicios = Object.keys(metadata[estacion]);
 
   let contenido = renderBanner();
-  contenido += renderBreadcrumb(estacion); // breadcrumb ya incluye el botón regresar
+  contenido += renderBreadcrumb(estacion); 
   contenido += `
     <div class="card p-3 bienvenida banner-view">
-      <h2>Acuses ${estacion}</h2>
+      <h2 class="titulo-ejecutivo">Acuses ${estacion}</h2>
       <p>Seleccione el año:</p>
       <div class="opciones-vista">`;
 
   ejercicios.forEach(ejercicio => {
     contenido += `
       <div class="opcion-recuadro" onclick="mostrarAcusesPorEjercicio('${estacion}', '${ejercicio}')">
-        <span class="texto">${ejercicio}</span>
+        ${ejercicio}
       </div>`;
   });
 
@@ -204,10 +208,10 @@ async function mostrarAcusesPorEjercicio(estacion, ejercicio) {
   const meses = metadata[estacion][ejercicio];
 
   let contenido = renderBanner();
-  contenido += renderBreadcrumb(estacion, ejercicio); // breadcrumb ya incluye el botón regresar
+  contenido += renderBreadcrumb(estacion, ejercicio); 
   contenido += `
     <div class="card p-3 bienvenida banner-view">
-      <h2>Acuses ${estacion} - ${ejercicio}</h2>
+      <h2 class="titulo-ejecutivo">Acuses ${estacion} - ${ejercicio}</h2>
       <p>Seleccione el mes:</p>
       <div class="opciones-vista">`;
 
