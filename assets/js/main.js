@@ -165,7 +165,6 @@ function renderBreadcrumb(estacion = null, ejercicio = null) {
   // Nivel Año → regresar a Estación
   if (estacion && ejercicio && !window.mesSeleccionado) {
     ruta += `<img src="assets/images/Regresar.png" alt="Regresar" class="breadcrumb-icon" onclick="mostrarAcuses('${estacion}')">`;
-    ruta += ` <span onclick="mostrarAcuses('${estacion}')">${estacion}</span>`;
     ruta += ` <span>${ejercicio}</span>`;
   }
 
@@ -173,7 +172,6 @@ function renderBreadcrumb(estacion = null, ejercicio = null) {
   if (estacion && ejercicio && window.mesSeleccionado) {
     ruta += `<img src="assets/images/Regresar.png" alt="Regresar" class="breadcrumb-icon" onclick="mostrarAcusesPorEjercicio('${estacion}', '${ejercicio}')">`;
     ruta += ` <span onclick="mostrarAcuses('${estacion}')">${estacion}</span>`;
-    ruta += ` <span onclick="mostrarAcusesPorEjercicio('${estacion}', '${ejercicio}')">${ejercicio}</span>`;
     ruta += ` <span>${window.mesSeleccionado}</span>`;
   }
 
