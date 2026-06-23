@@ -148,31 +148,25 @@ function abrirVista(categoria) {
 }
 
 // ====== Breadcrumb fijo con botón regresar solo ícono ======
-function renderBreadcrumb(estacion = null, ejercicio = null) {
+function renderBreadcrumb(estacion = null, ejercicio = null, mes = null) {
   let ruta = `<div class="breadcrumb">`;
 
-  // Nivel Cumplimiento → no hay estación ni ejercicio
-  if (!estacion && !ejercicio) {
-    ruta += `<img src="assets/images/Regresar.png" alt="Regresar" class="breadcrumb-icon" onclick="mostrarBienvenida()">`;
-  }
-
   // Nivel Estación → regresar a Cumplimiento
-  if (estacion && !ejercicio) {
-    ruta += `<img src="assets/images/Regresar.png" alt="Regresar" class="breadcrumb-icon" onclick="abrirVista('cumplimiento')">`;
-    ruta += ` <span>${estacion}</span>`;
+  if (estacion && !ejercicio && !mes) {
+    ruta += `<img src="assets/images/Regresar.png" alt="Regresar" 
+              class="breadcrumb-icon" onclick="abrirVista('cumplimiento')">`;
   }
 
   // Nivel Año → regresar a Estación
-  if (estacion && ejercicio && !window.mesSeleccionado) {
-    ruta += `<img src="assets/images/Regresar.png" alt="Regresar" class="breadcrumb-icon" onclick="mostrarAcuses('${estacion}')">`;
-    ruta += ` <span>${ejercicio}</span>`;
+  if (estacion && ejercicio && !mes) {
+    ruta += `<img src="assets/images/Regresar.png" alt="Regresar" 
+              class="breadcrumb-icon" onclick="mostrarAcuses('${estacion}')">`;
   }
 
   // Nivel Mes → regresar a Año
-  if (estacion && ejercicio && window.mesSeleccionado) {
-    ruta += `<img src="assets/images/Regresar.png" alt="Regresar" class="breadcrumb-icon" onclick="mostrarAcusesPorEjercicio('${estacion}', '${ejercicio}')">`;
-    ruta += ` <span onclick="mostrarAcuses('${estacion}')">${estacion}</span>`;
-    ruta += ` <span>${window.mesSeleccionado}</span>`;
+  if (estacion && ejercicio && mes) {
+    ruta += `<img src="assets/images/Regresar.png" alt="Regresar" 
+              class="breadcrumb-icon" onclick="mostrarAcusesPorEjercicio('${estacion}', '${ejercicio}')">`;
   }
 
   ruta += `</div>`;
