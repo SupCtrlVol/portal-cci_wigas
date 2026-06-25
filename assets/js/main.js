@@ -147,7 +147,7 @@ function abrirVista(categoria) {
           <img src="assets/images/Regresar.png" alt="Regresar" class="breadcrumb-icon" onclick="mostrarBienvenida()">
         </div>
         <h2 class="titulo-ejecutivo">Cumplimiento</h2>
-        <p>Seleccione el reporte:</p>
+        <p>Seleccione una opción:</p>
         <div class="opciones-vista">
           <div class="opcion-recuadro" onclick="mostrarAcuses('13 GAS')">Acuses 13 GAS</div>
           <div class="opcion-recuadro" onclick="mostrarAcuses('WIGAS')">Acuses WIGAS</div>
