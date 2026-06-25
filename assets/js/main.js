@@ -218,7 +218,7 @@ async function mostrarAcusesPorEjercicio(estacion, ejercicio) {
   let contenido = renderBanner();
   contenido += renderBreadcrumb(estacion, ejercicio); // breadcrumb ya incluye el botón regresar
   contenido += `
-    <div class="card p-3 bienvenida banner-view">
+    <div class="card p-3 bienvenida banner-view acuses-view">
       <h2 class="titulo-ejecutivo">Acuses ${estacion} - ${ejercicio}</h2>
       <p>Seleccione el mes:</p>
       <div class="opciones-vista">`;
@@ -226,10 +226,9 @@ async function mostrarAcusesPorEjercicio(estacion, ejercicio) {
   for (const mes in meses) {
     const pdf = meses[mes][0];
     contenido += `
-  <div class="card p-3 bienvenida banner-view acuses-view">
-    <h2 class="titulo-ejecutivo">Acuses ${estacion} - ${ejercicio}</h2>
-    <p>Seleccione el mes:</p>
-    <div class="opciones-vista">`;
+      <div class="opcion-recuadro">
+        <a href="assets/pdf/acuses/${estacion}/${ejercicio}/${pdf}" target="_blank" class="texto">${mes}</a>
+      </div>`;
   }
 
   contenido += `</div></div>`;
