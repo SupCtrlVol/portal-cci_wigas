@@ -71,16 +71,36 @@ html, body {
 
   width: calc(100% - 60px);
   height: calc(100vh - 120px);
-  margin: 100px auto 60px auto; /* margen superior para evitar que se oculte detrás del banner */
+  margin: 100px auto 60px auto;
   box-sizing: border-box;
 
   overflow-y: auto;
   animation: fadeDown 1s ease forwards;
+  position: relative; /* necesario para posicionar breadcrumb dentro */
+}
+
+/* ====== Breadcrumb dentro de la tarjeta ====== */
+.breadcrumb {
+  position: absolute;   /* relativo al card */
+  top: 20px;            /* altura dentro del card */
+  left: 20px;
+}
+
+.breadcrumb-icon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  display: block;
+}
+
+.breadcrumb-icon:hover {
+  transform: scale(1.2);
 }
 
 /* ====== Ajuste específico para Acuses ====== */
 .acuses-view {
-  padding-top: 120px; /* espacio superior para alinear el botón regresar con las demás categorías */
+  padding-top: 60px; /* espacio superior para que el título no choque con el breadcrumb */
 }
 
 /* ====== Encabezados ejecutivos ====== */
