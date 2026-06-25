@@ -71,22 +71,27 @@ html, body {
 
   width: calc(100% - 60px);
   height: calc(100vh - 120px);
-  margin: 100px auto 60px auto; /* margen superior aumentado para evitar que se oculte detrás del banner */
+  margin: 100px auto 60px auto; /* margen superior para evitar que se oculte detrás del banner */
   box-sizing: border-box;
 
   overflow-y: auto;
   animation: fadeDown 1s ease forwards;
 }
 
+/* ====== Ajuste específico para Acuses ====== */
+.acuses-view {
+  padding-top: 120px; /* espacio superior para alinear el botón regresar con las demás categorías */
+}
+
 /* ====== Encabezados ejecutivos ====== */
 .titulo-ejecutivo {
-  display: inline-flex;       /* inline-flex para que se centre dentro del card */
+  display: inline-flex;
   align-items: center;
-  justify-content: center;    /* centrado horizontal */
+  justify-content: flex-start;   /* títulos alineados a la izquierda */
   font-weight: bold;
   font-size: 22px;
   color: #000;
-  margin: 20px auto 15px auto; /* auto para centrar */
+  margin: 20px auto 15px auto;
   position: relative;
 }
 
