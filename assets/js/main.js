@@ -193,11 +193,11 @@ async function mostrarAcuses(estacion) {
 
   let contenido = renderBanner();
   contenido += renderBreadcrumb(estacion); // breadcrumb ya incluye el botón regresar
-contenido += `
-  <div class="card p-3 bienvenida banner-view acuses-view">
-    <h2 class="titulo-ejecutivo">Acuses ${estacion}</h2>
-    <p>Seleccione el año:</p>
-    <div class="opciones-vista">`;
+  contenido += `
+    <div class="card p-3 bienvenida banner-view acuses-view">
+      <h2 class="titulo-ejecutivo">Acuses ${estacion}</h2>
+      <p>Seleccione el año:</p>
+      <div class="opciones-vista">`;
 
   ejercicios.forEach(ejercicio => {
     contenido += `
