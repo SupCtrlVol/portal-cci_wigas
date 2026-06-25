@@ -230,12 +230,12 @@ async function mostrarAcusesPorEjercicio(estacion, ejercicio) {
       <div class="opciones-vista">`;
 
   for (const mes in meses) {
-    const pdf = meses[mes][0];
-    contenido += `
-      <div class="opcion-recuadro">
-        <a href="assets/pdf/acuses/${estacion}/${ejercicio}/${pdf}" target="_blank" class="texto">${mes}</a>
-      </div>`;
-  }
+  const pdf = meses[mes][0];
+  contenido += `
+    <div class="opcion-recuadro" onclick="window.open('assets/pdf/acuses/${estacion}/${ejercicio}/${pdf}', '_blank')">
+      <span class="texto">${mes}</span>
+    </div>`;
+}
 
   contenido += `</div></div>`;
   document.getElementById('contenedor').innerHTML = contenido;
