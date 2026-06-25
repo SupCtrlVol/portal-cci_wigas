@@ -337,11 +337,6 @@ html, body {
   display: block;
 }
 
-/* Ajuste específico para Acuses */
-.acuses-view {
-  padding-top: 100px; /* espacio superior para alinear el breadcrumb con las demás categorías */
-}
-
 /* ====== Breadcrumb fijo ====== */
 .breadcrumb {
   position: fixed;
