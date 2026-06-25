@@ -67,25 +67,26 @@ html, body {
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   padding: 30px;
-  text-align: left; /* títulos ejecutivos alineados a la izquierda */
+  text-align: center; /* centramos el contenido */
 
-  width: calc(100% - 60px);   /* ancho completo con margen lateral */
-  height: calc(100vh - 120px); /* alto completo con margen superior e inferior */
+  width: calc(100% - 60px);
+  height: calc(100vh - 120px);
   margin: 60px auto;
   box-sizing: border-box;
 
-  overflow-y: auto;            /* scroll interno si hay muchas opciones */
+  overflow-y: auto;
   animation: fadeDown 1s ease forwards;
 }
 
 /* ====== Encabezados ejecutivos ====== */
 .titulo-ejecutivo {
-  display: flex;
+  display: inline-flex;       /* inline-flex para que se centre dentro del card */
   align-items: center;
+  justify-content: center;    /* centrado horizontal */
   font-weight: bold;
   font-size: 22px;
   color: #000;
-  margin: 20px 0 15px 0;
+  margin: 20px auto 15px auto; /* auto para centrar */
   position: relative;
 }
 
@@ -94,7 +95,7 @@ html, body {
   display: inline-block;
   width: 6px;
   height: 100%;
-  background-color: #CA142B; /* rojo institucional */
+  background-color: #CA142B;
   margin-right: 12px;
 }
 
