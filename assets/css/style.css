@@ -356,3 +356,17 @@ html, body {
 .breadcrumb-icon:hover {
   transform: scale(1.2);
 }
+
+/* ====== Scrollbar moderno ejecutivo ====== */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* sin fondo para mayor limpieza */
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #CA142B, #8B0E1C); /* degradado institucional */
+  border-radius: 6px;
+}
