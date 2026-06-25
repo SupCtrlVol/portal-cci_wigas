@@ -67,11 +67,11 @@ html, body {
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   padding: 30px;
-  text-align: center; /* centramos el contenido */
+  text-align: center;
 
   width: calc(100% - 60px);
   height: calc(100vh - 120px);
-  margin: 60px auto;
+  margin: 100px auto 60px auto; /* margen superior aumentado para evitar que se oculte detrás del banner */
   box-sizing: border-box;
 
   overflow-y: auto;
