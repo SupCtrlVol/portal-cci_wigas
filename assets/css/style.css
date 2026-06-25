@@ -1,10 +1,90 @@
+/* ====== Estilos generales ====== */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #CCCCCC; /* contraste sutil */
+}
+
+/* ====== Pantalla de inicio ====== */
+.inicio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  background-color: #fff;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.inicio.hidden {
+  opacity: 0;
+  pointer-events: none;
+  display: none;
+}
+
+.logo-grande {
+  width: 200px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.logo-grande:hover {
+  transform: scale(1.1);
+}
+
+/* ====== Contenedor principal ====== */
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  width: 100%;
+  background-color: #CCCCCC;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.main.visible {
+  opacity: 1;
+}
+
+/* ====== Contenedor dinámico ====== */
+#contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ====== Contenedor visual de página ====== */
+.card.bienvenida {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 30px;
+  text-align: left; /* títulos ejecutivos alineados a la izquierda */
+
+  width: calc(100% - 60px);   /* ancho completo con margen lateral */
+  height: calc(100vh - 120px); /* alto completo con margen superior e inferior */
+  margin: 60px auto;
+  box-sizing: border-box;
+
+  overflow-y: auto;            /* scroll interno si hay muchas opciones */
+  animation: fadeDown 1s ease forwards;
+}
+
 /* ====== Encabezados ejecutivos ====== */
 .titulo-ejecutivo {
   display: flex;
   align-items: center;
   font-weight: bold;
   font-size: 22px;
-  color: #000; /* negro */
+  color: #000;
   margin: 20px 0 15px 0;
   position: relative;
 }
@@ -12,45 +92,92 @@
 .titulo-ejecutivo::before {
   content: "";
   display: inline-block;
-  width: 6px;               /* grosor de la barra */
-  height: 100%;             /* altura del título */
+  width: 6px;
+  height: 100%;
   background-color: #CA142B; /* rojo institucional */
-  margin-right: 12px;       /* separación entre barra y texto */
+  margin-right: 12px;
 }
 
-/* ====== Breadcrumb (botón regresar reubicado) ====== */
-.breadcrumb {
-  position: fixed;
-  top: 95px;   /* justo debajo del banner rojo */
-  left: 30px;  /* margen cómodo */
-  z-index: 1100;
+/* ====== Animaciones ====== */
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.breadcrumb-icon {
-  width: 30px;
-  height: 30px;
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ====== Opciones principales en círculos ====== */
+.opciones-principales {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.opcion-circulo {
+  background-color: #808080;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: bold;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeUp 0.8s ease forwards;
+  overflow: hidden;
+  transition: transform 0.4s ease, background-color 0.4s ease, color 0.4s ease;
+}
+
+.opcion-circulo:nth-child(1) { animation-delay: 0.3s; }
+.opcion-circulo:nth-child(2) { animation-delay: 0.6s; }
+.opcion-circulo:nth-child(3) { animation-delay: 0.9s; }
+.opcion-circulo:nth-child(4) { animation-delay: 1.2s; }
+
+.opcion-circulo .texto {
+  font-size: 0.9em;
+  padding: 0 10px;
+  color: #000;
+  transition: color 0.4s ease;
+}
+
+.texto.multilinea {
   display: block;
+  text-align: center;
+  line-height: 1.2em;
 }
 
-.breadcrumb-icon:hover {
-  transform: scale(1.2);
+.opcion-circulo:hover {
+  background-color: #CA142B;
+  transform: scale(1.1);
 }
 
-/* ====== Tarjetas ejecutivas ====== */
-.card.bienvenida {
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* sombra más marcada */
-  padding: 40px;
-  text-align: left; /* títulos alineados a la izquierda */
-  width: calc(100% - 80px);
-  height: calc(100vh - 140px);
-  margin: 70px auto;
-  box-sizing: border-box;
-  overflow-y: auto;
-  animation: fadeDown 0.8s ease forwards;
+.opcion-circulo:hover .texto {
+  color: #fff;
+}
+
+.opcion-circulo.seleccionado {
+  background-color: #CA142B;
+}
+
+.opcion-circulo.seleccionado .texto {
+  color: #fff;
+}
+
+.icono-img {
+  max-width: 50%;
+  max-height: 50%;
+  object-fit: contain;
+  margin-bottom: 8px;
+  display: block;
 }
 
 /* ====== Opciones ejecutivas en recuadros ====== */
@@ -58,7 +185,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
-  padding: 20px 0; /* menos padding para que luzca más sobrio */
+  padding: 40px;
   box-sizing: border-box;
   align-content: start;
   justify-items: center;
@@ -81,11 +208,12 @@
   border-left: 6px solid #CA142B; /* barra vertical institucional */
   border-radius: 8px;
   padding: 20px;
-  text-align: left; /* texto alineado a la izquierda */
+  text-align: left; /* estilo ejecutivo */
   font-weight: bold;
   cursor: pointer;
   transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
   color: #000;
+
   width: 100%;
   min-height: 100px;
   max-width: 280px;
@@ -102,7 +230,7 @@
 
 .opcion-recuadro:hover {
   background-color: #CA142B;
-  transform: translateY(-4px);
+  transform: translateY(-4px) scale(1.02);
   color: #fff;
 }
 
@@ -115,53 +243,110 @@
   color: #fff;
 }
 
-/* ====== Animaciones refinadas ====== */
-@keyframes fadeDown {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
+/* ====== Botón Volver ====== */
+.opcion-recuadro.volver-btn {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+  padding: 0;              /* elimina espacio extra */
+  width: auto;
+  height: auto;
 }
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+.opcion-recuadro.volver-btn .texto {
+  display: none;           /* oculta cualquier texto */
 }
 
-/* ====== Consistencia de colores ====== */
-:root {
-  --color-institucional: #CA142B;
-  --color-fondo-claro: #f5f5f5;
-  --color-texto: #000;
-  --color-hover-texto: #fff;
+.opcion-recuadro.volver-btn img.icono-img {
+  width: 32px;
+  height: 32px;
+  display: block;
 }
 
-/* ====== Hover refinado para recuadros ====== */
-.opcion-recuadro {
-  background-color: var(--color-fondo-claro);
-  border-left: 6px solid var(--color-institucional);
-  transition: all 0.3s ease;
+/* ====== Banner institucional superior ====== */
+.banner-superior {
+  background-color: #CA142B;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  z-index: 1000;
 }
 
-.opcion-recuadro:hover {
-  background-color: var(--color-institucional);
-  color: var(--color-hover-texto);
-  transform: translateY(-4px) scale(1.02); /* efecto más elegante */
+.banner-logo img {
+  height: 40px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-.opcion-recuadro:hover .texto {
-  color: var(--color-hover-texto);
+.banner-logo img:hover {
+  transform: scale(1.1);
 }
 
-/* ====== Hover refinado para círculos ====== */
-.opcion-circulo {
-  background-color: #808080;
-  transition: all 0.3s ease;
+.banner-menu {
+  position: relative;
 }
 
-.opcion-circulo:hover {
-  background-color: var(--color-institucional);
-  transform: scale(1.08);
+.banner-menu button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1em;
 }
 
-.opcion-circulo:hover .texto {
-  color: var(--color-hover-texto);
+.banner-menu-opciones {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background-color: #fff;
+  color: #000;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+.banner-menu-opciones a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #000;
+  transition: background-color 0.3s ease;
+}
+
+.banner-menu-opciones a:hover {
+  background-color: #f0f0f0;
+}
+
+.banner-menu.open .banner-menu-opciones {
+  display: block;
+}
+
+/* ====== Breadcrumb fijo ====== */
+.breadcrumb {
+  position: fixed;
+  top: 95px;   /* justo debajo del banner rojo */
+  left: 30px;  /* margen cómodo */
+  z-index: 1100;
+}
+
+.breadcrumb-icon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  display: block;
+}
+
+.breadcrumb-icon:hover {
+  transform: scale(1.2);
 }
