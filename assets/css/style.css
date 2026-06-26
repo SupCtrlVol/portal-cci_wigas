@@ -105,13 +105,14 @@ html, body {
 
 /* ====== Encabezados ejecutivos ====== */
 .titulo-ejecutivo {
-  display: block;
+  display: block;              /* bloque para permitir salto de línea */
   font-weight: bold;
-  font-size: 24px;   /* tamaño principal */
+  font-size: 24px;             /* tamaño principal para "Acuses" */
   color: #000;
   margin: 20px auto 15px auto;
-  text-align: center;
+  text-align: center;          /* centrado horizontal */
   line-height: 1.3em;
+  position: relative;
 }
 
 .titulo-ejecutivo::before {
@@ -121,9 +122,10 @@ html, body {
   height: 100%;
   background-color: #CA142B;
   margin-right: 12px;
+  display: none; /* ocultamos la barra para títulos multilínea */
 }
 
-/* Segunda línea de títulos (estación / año) */
+/* Segunda línea (estación / año) */
 .titulo-ejecutivo .subtitulo {
   font-size: 18px;
   font-weight: normal;
