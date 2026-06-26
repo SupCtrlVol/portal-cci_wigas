@@ -204,7 +204,10 @@ async function mostrarAcuses(estacion) {
         <img src="assets/images/Regresar.png" alt="Regresar" 
              class="breadcrumb-icon" onclick="abrirVista('cumplimiento')">
       </div>
-      <h2 class="titulo-ejecutivo">Acuses ${estacion}</h2>
+      <h2 class="titulo-ejecutivo">
+  Acuses<br>
+  ${estacion}
+</h2>
       <p>Seleccione el año:</p>
       <div class="opciones-vista">`;
 
@@ -231,7 +234,10 @@ async function mostrarAcusesPorEjercicio(estacion, ejercicio) {
         <img src="assets/images/Regresar.png" alt="Regresar" 
              class="breadcrumb-icon" onclick="mostrarAcuses('${estacion}')">
       </div>
-      <h2 class="titulo-ejecutivo">Acuses ${estacion} - ${ejercicio}</h2>
+      <h2 class="titulo-ejecutivo">
+  Acuses<br>
+  ${estacion} / ${ejercicio}
+</h2>
       <p>Seleccione el mes:</p>
       <div class="opciones-vista">`;
 
