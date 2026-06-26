@@ -123,11 +123,17 @@ html, body {
   margin-right: 12px;
 }
 
-/* Segunda línea (estación / año) */
-.titulo-ejecutivo br + * {
-  font-size: 18px;   /* más pequeño que "Acuses" */
+/* Segunda línea de títulos (estación / año) */
+.titulo-ejecutivo .subtitulo {
+  font-size: 18px;
   font-weight: normal;
   color: #333;
+}
+
+/* Diagonal con color institucional */
+.titulo-ejecutivo .diagonal {
+  color: #CA142B;
+  font-weight: bold;
 }
 
 /* ====== Animaciones ====== */
