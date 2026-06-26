@@ -236,7 +236,7 @@ async function mostrarAcusesPorEjercicio(estacion, ejercicio) {
       </div>
       <h2 class="titulo-ejecutivo">
   Acuses<br>
-  ${estacion} / ${ejercicio}
+  ${estacion}
 </h2>
       <p>Seleccione el mes:</p>
       <div class="opciones-vista">`;
