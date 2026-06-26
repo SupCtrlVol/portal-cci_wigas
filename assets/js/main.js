@@ -205,9 +205,9 @@ async function mostrarAcuses(estacion) {
              class="breadcrumb-icon" onclick="abrirVista('cumplimiento')">
       </div>
       <h2 class="titulo-ejecutivo">
-  Acuses<br>
-  ${estacion} / ${ejercicio}
-</h2>
+        Acuses<br>
+        ${estacion}
+      </h2>
       <p>Seleccione el año:</p>
       <div class="opciones-vista">`;
 
@@ -235,19 +235,19 @@ async function mostrarAcusesPorEjercicio(estacion, ejercicio) {
              class="breadcrumb-icon" onclick="mostrarAcuses('${estacion}')">
       </div>
       <h2 class="titulo-ejecutivo">
-  Acuses<br>
-  ${estacion}
-</h2>
+        Acuses<br>
+        ${estacion} / ${ejercicio}
+      </h2>
       <p>Seleccione el mes:</p>
       <div class="opciones-vista">`;
 
   for (const mes in meses) {
-  const pdf = meses[mes][0];
-  contenido += `
-    <div class="opcion-recuadro" onclick="window.open('assets/pdf/acuses/${estacion}/${ejercicio}/${pdf}', '_blank')">
-      <span class="texto">${mes}</span>
-    </div>`;
-}
+    const pdf = meses[mes][0];
+    contenido += `
+      <div class="opcion-recuadro" onclick="window.open('assets/pdf/acuses/${estacion}/${ejercicio}/${pdf}', '_blank')">
+        <span class="texto">${mes}</span>
+      </div>`;
+  }
 
   contenido += `</div></div>`;
   document.getElementById('contenedor').innerHTML = contenido;
