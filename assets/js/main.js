@@ -92,7 +92,7 @@ function abrirVista(categoria) {
         <div class="breadcrumb">
           <img src="assets/images/Regresar.png" alt="Regresar" class="breadcrumb-icon" onclick="mostrarBienvenida()">
         </div>
-        <h2 class="titulo-ejecutivo">Balance de Energía</h2>
+        -ejecutivo">Balance de Energía</h2>
         <p>Seleccione la EDS:</p>
         <div class="opciones-vista">
           <div class="opcion-recuadro" onclick="mostrarReporte('13gas_be')">13 GAS</div>
@@ -116,7 +116,7 @@ function abrirVista(categoria) {
         <div class="breadcrumb">
           <img src="assets/images/Regresar.png" alt="Regresar" class="breadcrumb-icon" onclick="mostrarBienvenida()">
         </div>
-        <h2 class="titulo-ejecutivo">Herramientas de Análisis</h2>
+        -ejecutivo">Herramientas de Análisis</h2>
         <p>Seleccione la EDS:</p>
         <div class="opciones-vista">
           <div class="opcion-recuadro" onclick="mostrarReporte('13gas_tool')">13 GAS</div>
@@ -206,7 +206,7 @@ async function mostrarAcuses(estacion) {
       </div>
       <h2 class="titulo-ejecutivo">
   Acuses<br>
-  ${estacion}
+  ${estacion} / ${ejercicio}
 </h2>
       <p>Seleccione el año:</p>
       <div class="opciones-vista">`;
