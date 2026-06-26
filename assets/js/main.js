@@ -149,9 +149,15 @@ function abrirVista(categoria) {
         <h2 class="titulo-ejecutivo">Cumplimiento</h2>
         <p>Seleccione una opción:</p>
         <div class="opciones-vista">
-          <div class="opcion-recuadro" onclick="mostrarAcuses('13 GAS')">Acuses 13 GAS</div>
-          <div class="opcion-recuadro" onclick="mostrarAcuses('WIGAS')">Acuses WIGAS</div>
-          <div class="opcion-recuadro" onclick="mostrarReporte('json_tool')">JSON Mensual</div>
+          <div class="opcion-recuadro" onclick="mostrarAcuses('13 GAS')">
+           <span class="texto multilinea">Acuses<br>13 GAS</span>
+           </div>
+          <div class="opcion-recuadro" onclick="mostrarAcuses('WIGAS')">
+          <span class="texto multilinea">Acuses<br>WIGAS</span>
+          </div>
+          <div class="opcion-recuadro" onclick="mostrarReporte('json_tool')">
+           <span class="texto multilinea">Control de<br>JSON</span>
+           </div>
         </div>
       </div>`;
   }
