@@ -104,7 +104,7 @@ function abrirVista(categoria) {
             <span class="texto multilinea">CONSORCIO DE GNV<br>Ecatepec</span>
           </div>
           <div class="opcion-recuadro" onclick="mostrarReporte('tlanepantla_be')">
-            <span class="texto multilinea">CONSORCIO DE GNV<br>Tlanepantla</span>
+            <span class="texto multilinea">CONSORCIO DE GNV<br>Tlalnepantla</span>
           </div>
           <div class="opcion-recuadro" onclick="mostrarReporte('landsegen_be')">LANDSEGEN</div>
           <div class="opcion-recuadro" onclick="mostrarReporte('wigas_be')">WIGAS</div>
