@@ -259,7 +259,7 @@ function mostrarReporte(estacion) {
 
   // Balance de Energía
   if(estacion === '13gas_be') {
-    src = "https://app.powerbi.com/reportEmbed?reportId=56676f9f-5b2a-48bb-9e70-01bcba832eb2&autoAuth=true&ctid=fed0588c-2eb2-4466-bb01-afd3795657ec";
+    src = "https://app.powerbi.com/reportEmbed?reportId=a2afcf0b-28d1-44c4-81eb-b5016072a747&autoAuth=true&ctid=fed0588c-2eb2-4466-bb01-afd3795657ec";
   } else if(estacion === 'bexica_be') {
     src = "https://app.powerbi.com/reportEmbed?reportId=bd69620e-cb6f-4401-b25d-bd3c401c909c&autoAuth=true&ctid=fed0588c-2eb2-4466-bb01-afd3795657ec";
   } else if(estacion === 'coacalco_be') {
